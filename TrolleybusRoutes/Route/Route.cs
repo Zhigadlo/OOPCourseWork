@@ -3,23 +3,19 @@
     public class Route
     {
         public int NumberOfRoute { get; set; }
-        private List<Stop> _stops;
+        public Stop FirstStop { get; }
+        public Stop LastStop { get; }
 
-        public Route(int numOfRoute, List<Stop> stops)
+        public Route(int numberOfRoute, Stop firstStop, Stop lastStop)
         {
-            NumberOfRoute = numOfRoute;
-            _stops = stops;
+            NumberOfRoute = numberOfRoute;
+            FirstStop = firstStop;
+            LastStop = lastStop;
         }
 
-        public string GetStops()
+        public override string ToString()
         {
-            string ListOfStops = "";
-            foreach (Stop stop in _stops)
-            {
-                ListOfStops += stop.ToString() + "\n";
-            }
-
-            return ListOfStops;
+            return NumberOfRoute.ToString();
         }
     }
 }
