@@ -1,6 +1,4 @@
-﻿using Routes;
-
-namespace Users
+﻿namespace RouteSystem.Users
 {
     public abstract class User
     {
@@ -14,11 +12,6 @@ namespace Users
             this.Login = Login;
             this.Password = Password;
             Role = Roles.User;
-        }
-        public List<Stop> GetListOfStopsByNumberOfRoute(int numberOfRoute)
-        {
-            List<Stop> stops = new List<Stop>();
-            return stops;
         }
     }
 }

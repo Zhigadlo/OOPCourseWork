@@ -1,4 +1,4 @@
-﻿namespace Users
+﻿namespace RouteSystem.Users
 {
     public class Admin : User
     {
@@ -16,6 +16,5 @@
         {
             user.Role = newRole;
         }
-
     }
 }
