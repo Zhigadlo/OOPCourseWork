@@ -1,22 +1,31 @@
-﻿namespace RouteSystem.Routes
+﻿using ORMLibrary.Interfaces;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+
+namespace RouteSystem.Routes
 {
-    public class StopPoint
+    public class StopPoint : Entity
     {
-        public DateTime ArriveTime { get; }
-        public Stop CurrentStop { get; }
-        public StopPoint(DateTime ArriveTime, Stop CurrentStop)
+        [BsonElement("Hour")]
+        public int Hour { get; }
+        [BsonElement("Minutes")]
+        public int Minutes { get; }
+        [BsonElement("Stop")]
+        public Stop Stop { get; }
+        public StopPoint(int Hour, int Minutes, Stop Stop)
         {
-            this.ArriveTime = ArriveTime;
-            this.CurrentStop = CurrentStop;
+            this.Hour = Hour;
+            this.Minutes = Minutes;
+            this.Stop = Stop;
         }
 
         public override string ToString()
         {
-             return CurrentStop.ToString() + ": " + ArriveTime.ToShortTimeString();
+             return Stop.ToString() + ": " + Hour.ToString() + ":" + Minutes.ToString();
         }
         public override int GetHashCode()
         {
-            return ArriveTime.GetHashCode() + CurrentStop.GetHashCode();
+            return Hour.GetHashCode() + Stop.GetHashCode();
         }
         public override bool Equals(object? obj)
         {
@@ -25,7 +34,7 @@
             else
             {
                 StopPoint newObj = obj as StopPoint;
-                return newObj.ArriveTime == ArriveTime && newObj.CurrentStop == CurrentStop;
+                return newObj.Hour == Hour && newObj.Stop == Stop;
             }
         }
     }

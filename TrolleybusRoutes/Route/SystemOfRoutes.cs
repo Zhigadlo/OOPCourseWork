@@ -1,6 +1,6 @@
 ﻿using RouteSystem.Routes;
 
-namespace Routes
+namespace RouteSystem
 {
     public class SystemOfRoutes
     {
@@ -20,14 +20,13 @@ namespace Routes
             {
                 foreach (StopPoint stopPoints in route.StopPoints)
                 {
-                    if (stopPoints.CurrentStop.Name == stop.Name)
+                    if (stopPoints.Stop.Name == stop.Name)
                         routeNumbers.Add(route.NumberOfRoute);
                 }
             }
             
             return routeNumbers;
         }
-
         public List<int> GetRoutesBetweenStops(Stop firstStop, Stop secondStop)
         {
             List<int> routeNumbers = new List<int>();
@@ -38,12 +37,12 @@ namespace Routes
                 bool isSecondStop = false;
                 foreach(StopPoint stopPoint in route.StopPoints)
                 {
-                    if(stopPoint.CurrentStop.Equals(firstStop) && !isSecondStop && !isFirstStop)
+                    if(stopPoint.Stop.Equals(firstStop) && !isSecondStop && !isFirstStop)
                     {
                         isFirstStop = true;
                     }
 
-                    if(stopPoint.CurrentStop.Equals(secondStop) && isFirstStop && !isSecondStop)
+                    if(stopPoint.Stop.Equals(secondStop) && isFirstStop && !isSecondStop)
                     {
                         isSecondStop = true;
                     }
@@ -55,6 +54,7 @@ namespace Routes
 
             return routeNumbers;
         }
+        
 
         public override string ToString()
         {

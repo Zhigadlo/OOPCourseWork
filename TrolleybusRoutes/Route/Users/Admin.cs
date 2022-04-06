@@ -4,7 +4,7 @@
     {
         public Admin(string Name, string Password) : base(Name, Password)
         {
-
+            Role = Roles.Admin;
         }
 
         public void ChangeUserPassword(User user, string newPassword)

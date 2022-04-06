@@ -1,14 +1,20 @@
-﻿namespace RouteSystem.Routes
+﻿using ORMLibrary.Interfaces;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace RouteSystem.Routes
 {
-    public class Route
+    public class Route : Entity
     {
+        [BsonElement("NumberOfRoute")]
         public int NumberOfRoute { get; set; }
+        [BsonElement("StopPoints")]
         public List<StopPoint> StopPoints { get; }
 
-        public Route(int numberOfRoute, List<StopPoint> stops)
+        public Route(int numberOfRoute, List<StopPoint> StopPoints)
         {
             NumberOfRoute = numberOfRoute;
-            StopPoints = stops;
+            this.StopPoints = StopPoints;
         }
 
         public override string ToString()

@@ -4,7 +4,7 @@
     {
         public RegistredUser(string Name, string Password) : base(Name, Password)
         {
-
+            Role = Roles.User;
         }
     }
 }
