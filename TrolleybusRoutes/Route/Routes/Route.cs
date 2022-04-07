@@ -1,4 +1,4 @@
-﻿using ORMLibrary.Interfaces;
+﻿using ORMLibrary.Abstract;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -11,9 +11,9 @@ namespace RouteSystem.Routes
         [BsonElement("StopPoints")]
         public List<StopPoint> StopPoints { get; }
 
-        public Route(int numberOfRoute, List<StopPoint> StopPoints)
+        public Route(int NumberOfRoute, List<StopPoint> StopPoints)
         {
-            NumberOfRoute = numberOfRoute;
+            this.NumberOfRoute = NumberOfRoute;
             this.StopPoints = StopPoints;
         }
 

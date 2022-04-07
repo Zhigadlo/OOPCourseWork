@@ -1,4 +1,4 @@
-﻿using ORMLibrary.Interfaces;
+﻿using ORMLibrary.Abstract;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 

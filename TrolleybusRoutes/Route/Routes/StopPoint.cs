@@ -1,10 +1,9 @@
-﻿using ORMLibrary.Interfaces;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 
 namespace RouteSystem.Routes
 {
-    public class StopPoint : Entity
+    public class StopPoint
     {
         [BsonElement("Hour")]
         public int Hour { get; }

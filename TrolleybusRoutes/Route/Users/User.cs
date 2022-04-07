@@ -1,12 +1,14 @@
 ﻿using MongoDB.Bson;
+using ORMLibrary.Abstract;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace RouteSystem.Users
 {
-    public abstract class User
+    public class User : Entity
     {
-        public int Id { get; set; }
+        [BsonRepresentation(BsonType.String)]
         public string Login { get; set; }
+        [BsonRepresentation(BsonType.String)]
         public string Password { get; set; }
         [BsonRepresentation(BsonType.String)]
         public Roles Role { get; set; }
