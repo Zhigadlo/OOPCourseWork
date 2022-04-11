@@ -19,7 +19,7 @@ namespace RouteSystem.Routes
 
         public override string ToString()
         {
-            return NumberOfRoute.ToString();
+            return NumberOfRoute.ToString() + ":" + StopPoints[0].Stop.Name + "-" + StopPoints.Last().Stop.Name;
         }
         public override int GetHashCode()
         {

@@ -17,17 +17,22 @@ namespace TrolleybusScheduleApplication
     {
         private StartWindow _startWindow;
         private string _emptyString = "Поле пустое";
+        private ToolTip _toolTip = new ToolTip();
         private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
         public RegistrationWindow(StartWindow startWindow)
         {
             _startWindow = startWindow;
             InitializeComponent();
+            
+            _toolTip.SetToolTip(LoginBox, "Логин содержит от 6 до 12 символов, начинается с буквы");
+            _toolTip.SetToolTip(PasswordBox, "9-20 символов,одна обычная и заглавная буквы, спец. символ и цифра");
+            _toolTip.SetToolTip(SecondPasswordBox, "Повторите пароль который вы написали выше");
         }
 
         private bool IsRegistrationSuccessful()
         {
             string regexForLogin = @"^[a-zA-Z][a-zA-Z0-9]{5,12}$";
-            string regexForPassword = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
+            string regexForPassword = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,20}$";
             if (Regex.IsMatch(LoginBox.Text, regexForLogin))
             {
                 if (_userORM.Find("Login", LoginBox.Text))
@@ -43,7 +48,6 @@ namespace TrolleybusScheduleApplication
                     }
                     else if (!Regex.IsMatch(PasswordBox.Text, regexForPassword))
                     {
-                        PasswordError.Text = "Пример пароля: Abcde12345_, AbCaaaA443&";
                         PasswordError.Visible = true;
                     }
                     else
@@ -56,7 +60,6 @@ namespace TrolleybusScheduleApplication
             }
             else
             {
-                LoginError.Text = "Логин содержит от 6 до 12 символов, начинается с буквы";
                 LoginError.Visible = true;
                 return false;
             }
@@ -185,7 +188,7 @@ namespace TrolleybusScheduleApplication
                 SecondPasswordBox.Text = "Введите пароль еще раз";
             }
         }
-
+        
         private void RegistrationButton_Click(object sender, EventArgs e)
         {
             if (LoginBox.Text == "" || LoginBox.Text == "Введите логин")
@@ -211,13 +214,18 @@ namespace TrolleybusScheduleApplication
                 SecondPasswordBox.Text != "" && SecondPasswordBox.Text != "Введите пароль еще раз" &&
                 IsRegistrationSuccessful())
             {
-                
-                _userORM.Write(new User(LoginBox.Text, PasswordBox.Text));
-                MessageBox.Show("Вы зарегистрировались.", "Успех");
+                var newUser = new User(LoginBox.Text, PasswordBox.Text);
+                newUser.Role = Roles.User;
+                _userORM.Write(newUser);
+                MessageBox.Show("Вы зарегистрировались. Теперь вы можете войти в систему:)", "Успех");
                 Close();
                 _startWindow.Show();
-                
             }
+        }
+
+        private void LoginBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            _toolTip.Active = true;
         }
     }
 }

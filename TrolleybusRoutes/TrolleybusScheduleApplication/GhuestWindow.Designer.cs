@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BoxForNumbers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.StopBox = new System.Windows.Forms.ListBox();
+            this.RouteBox = new System.Windows.Forms.ListBox();
+            this.FindButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // BoxForNumbers
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(184, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(54, 28);
-            this.comboBox1.TabIndex = 0;
+            this.BoxForNumbers.FormattingEnabled = true;
+            this.BoxForNumbers.Location = new System.Drawing.Point(184, 25);
+            this.BoxForNumbers.Name = "BoxForNumbers";
+            this.BoxForNumbers.Size = new System.Drawing.Size(54, 28);
+            this.BoxForNumbers.TabIndex = 0;
             // 
             // label1
             // 
@@ -49,13 +52,46 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Выбор маршрута";
             // 
+            // StopBox
+            // 
+            this.StopBox.FormattingEnabled = true;
+            this.StopBox.ItemHeight = 20;
+            this.StopBox.Location = new System.Drawing.Point(457, 59);
+            this.StopBox.Name = "StopBox";
+            this.StopBox.Size = new System.Drawing.Size(292, 344);
+            this.StopBox.TabIndex = 2;
+            this.StopBox.Visible = false;
+            // 
+            // RouteBox
+            // 
+            this.RouteBox.FormattingEnabled = true;
+            this.RouteBox.ItemHeight = 20;
+            this.RouteBox.Location = new System.Drawing.Point(55, 59);
+            this.RouteBox.Name = "RouteBox";
+            this.RouteBox.Size = new System.Drawing.Size(292, 344);
+            this.RouteBox.TabIndex = 3;
+            this.RouteBox.Click += new System.EventHandler(this.RouteBox_Click);
+            // 
+            // FindButton
+            // 
+            this.FindButton.Location = new System.Drawing.Point(253, 25);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(94, 29);
+            this.FindButton.TabIndex = 4;
+            this.FindButton.Text = "Найти";
+            this.FindButton.UseVisualStyleBackColor = true;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
+            // 
             // GhuestWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.FindButton);
+            this.Controls.Add(this.RouteBox);
+            this.Controls.Add(this.StopBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.BoxForNumbers);
             this.Name = "GhuestWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расписание троллейбусов";
@@ -66,7 +102,10 @@
 
         #endregion
 
-        private ComboBox comboBox1;
+        private ComboBox BoxForNumbers;
         private Label label1;
+        private ListBox StopBox;
+        private ListBox RouteBox;
+        private Button FindButton;
     }
 }
