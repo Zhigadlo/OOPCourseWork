@@ -76,6 +76,36 @@ namespace ORMLibrary
             return obj;
         }
         /// <summary>
+        /// Read one object by propery value from database collection
+        /// </summary>
+        /// <param name="property"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public T Read(string property, string value)
+        {
+            var collection = _db.GetCollection<BsonDocument>(_collectionName);
+            var filter = Builders<BsonDocument>.Filter.Eq(property, value);
+            var doc = collection.Find(filter).First();
+            var json = doc.ToJson();
+            T obj = JsonConvert.DeserializeObject<T>(json);
+            return obj;
+        }
+        public bool Find(string property, string value)
+        {
+            var collection = _db.GetCollection<BsonDocument>(_collectionName);
+            var filter = Builders<BsonDocument>.Filter.Eq(property, value);
+            try
+            {
+                var doc = collection.Find(filter).First();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            
+        }
+        /// <summary>
         /// Read all objects from database collection
         /// </summary>
         /// <typeparam name="T">Type of object</typeparam>

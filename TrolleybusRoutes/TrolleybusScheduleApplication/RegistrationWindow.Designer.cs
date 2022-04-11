@@ -36,21 +36,29 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SecondPasswordBox = new System.Windows.Forms.TextBox();
             this.BackButton = new System.Windows.Forms.Button();
+            this.NewPasswordError = new System.Windows.Forms.Label();
+            this.SecondPasswordError = new System.Windows.Forms.Label();
+            this.PasswordError = new System.Windows.Forms.Label();
+            this.LoginError = new System.Windows.Forms.Label();
+            this.EmptyLogin = new System.Windows.Forms.Label();
+            this.EmptyPassword = new System.Windows.Forms.Label();
+            this.EmptySecondPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // RegistrationButton
             // 
-            this.RegistrationButton.Location = new System.Drawing.Point(328, 261);
+            this.RegistrationButton.Location = new System.Drawing.Point(330, 325);
             this.RegistrationButton.Name = "RegistrationButton";
             this.RegistrationButton.Size = new System.Drawing.Size(132, 29);
             this.RegistrationButton.TabIndex = 11;
             this.RegistrationButton.Text = "Далее";
             this.RegistrationButton.UseVisualStyleBackColor = true;
+            this.RegistrationButton.Click += new System.EventHandler(this.RegistrationButton_Click);
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(223, 168);
+            this.PasswordLabel.Location = new System.Drawing.Point(368, 162);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(62, 20);
             this.PasswordLabel.TabIndex = 10;
@@ -59,7 +67,7 @@
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Location = new System.Drawing.Point(233, 124);
+            this.LoginLabel.Location = new System.Drawing.Point(368, 85);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(52, 20);
             this.LoginLabel.TabIndex = 9;
@@ -68,7 +76,7 @@
             // PasswordBox
             // 
             this.PasswordBox.ForeColor = System.Drawing.Color.LightGray;
-            this.PasswordBox.Location = new System.Drawing.Point(301, 165);
+            this.PasswordBox.Location = new System.Drawing.Point(303, 185);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(195, 27);
             this.PasswordBox.TabIndex = 8;
@@ -80,7 +88,7 @@
             // LoginBox
             // 
             this.LoginBox.ForeColor = System.Drawing.Color.LightGray;
-            this.LoginBox.Location = new System.Drawing.Point(301, 121);
+            this.LoginBox.Location = new System.Drawing.Point(303, 108);
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(195, 27);
             this.LoginBox.TabIndex = 7;
@@ -92,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(147, 213);
+            this.label1.Location = new System.Drawing.Point(330, 242);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 13;
@@ -101,7 +109,7 @@
             // SecondPasswordBox
             // 
             this.SecondPasswordBox.ForeColor = System.Drawing.Color.LightGray;
-            this.SecondPasswordBox.Location = new System.Drawing.Point(301, 210);
+            this.SecondPasswordBox.Location = new System.Drawing.Point(303, 265);
             this.SecondPasswordBox.Name = "SecondPasswordBox";
             this.SecondPasswordBox.Size = new System.Drawing.Size(195, 27);
             this.SecondPasswordBox.TabIndex = 12;
@@ -120,12 +128,96 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // NewPasswordError
+            // 
+            this.NewPasswordError.AutoSize = true;
+            this.NewPasswordError.ForeColor = System.Drawing.Color.Red;
+            this.NewPasswordError.Location = new System.Drawing.Point(300, 357);
+            this.NewPasswordError.Name = "NewPasswordError";
+            this.NewPasswordError.Size = new System.Drawing.Size(198, 20);
+            this.NewPasswordError.TabIndex = 15;
+            this.NewPasswordError.Text = "Пароли должны совпадать";
+            this.NewPasswordError.Visible = false;
+            // 
+            // SecondPasswordError
+            // 
+            this.SecondPasswordError.AutoSize = true;
+            this.SecondPasswordError.ForeColor = System.Drawing.Color.Red;
+            this.SecondPasswordError.Location = new System.Drawing.Point(317, 295);
+            this.SecondPasswordError.Name = "SecondPasswordError";
+            this.SecondPasswordError.Size = new System.Drawing.Size(163, 20);
+            this.SecondPasswordError.TabIndex = 16;
+            this.SecondPasswordError.Text = "Пароли не совпадают";
+            this.SecondPasswordError.Visible = false;
+            // 
+            // PasswordError
+            // 
+            this.PasswordError.AutoSize = true;
+            this.PasswordError.ForeColor = System.Drawing.Color.Red;
+            this.PasswordError.Location = new System.Drawing.Point(239, 222);
+            this.PasswordError.Name = "PasswordError";
+            this.PasswordError.Size = new System.Drawing.Size(340, 20);
+            this.PasswordError.TabIndex = 17;
+            this.PasswordError.Text = "Неверный формат пароля(Abcd123_, @12jfdkK)";
+            this.PasswordError.Visible = false;
+            // 
+            // LoginError
+            // 
+            this.LoginError.AutoSize = true;
+            this.LoginError.ForeColor = System.Drawing.Color.Red;
+            this.LoginError.Location = new System.Drawing.Point(195, 142);
+            this.LoginError.Name = "LoginError";
+            this.LoginError.Size = new System.Drawing.Size(456, 20);
+            this.LoginError.TabIndex = 18;
+            this.LoginError.Text = "Неверный формат логина, от 5 до 8 символов начиная  с буквы";
+            this.LoginError.Visible = false;
+            // 
+            // EmptyLogin
+            // 
+            this.EmptyLogin.AutoSize = true;
+            this.EmptyLogin.ForeColor = System.Drawing.Color.Red;
+            this.EmptyLogin.Location = new System.Drawing.Point(513, 111);
+            this.EmptyLogin.Name = "EmptyLogin";
+            this.EmptyLogin.Size = new System.Drawing.Size(50, 20);
+            this.EmptyLogin.TabIndex = 19;
+            this.EmptyLogin.Text = "label2";
+            this.EmptyLogin.Visible = false;
+            // 
+            // EmptyPassword
+            // 
+            this.EmptyPassword.AutoSize = true;
+            this.EmptyPassword.ForeColor = System.Drawing.Color.Red;
+            this.EmptyPassword.Location = new System.Drawing.Point(513, 188);
+            this.EmptyPassword.Name = "EmptyPassword";
+            this.EmptyPassword.Size = new System.Drawing.Size(50, 20);
+            this.EmptyPassword.TabIndex = 20;
+            this.EmptyPassword.Text = "label2";
+            this.EmptyPassword.Visible = false;
+            // 
+            // EmptySecondPassword
+            // 
+            this.EmptySecondPassword.AutoSize = true;
+            this.EmptySecondPassword.ForeColor = System.Drawing.Color.Red;
+            this.EmptySecondPassword.Location = new System.Drawing.Point(513, 268);
+            this.EmptySecondPassword.Name = "EmptySecondPassword";
+            this.EmptySecondPassword.Size = new System.Drawing.Size(50, 20);
+            this.EmptySecondPassword.TabIndex = 21;
+            this.EmptySecondPassword.Text = "label2";
+            this.EmptySecondPassword.Visible = false;
+            // 
             // RegistrationWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EmptySecondPassword);
+            this.Controls.Add(this.EmptyPassword);
+            this.Controls.Add(this.EmptyLogin);
+            this.Controls.Add(this.LoginError);
+            this.Controls.Add(this.PasswordError);
+            this.Controls.Add(this.SecondPasswordError);
+            this.Controls.Add(this.NewPasswordError);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SecondPasswordBox);
@@ -152,5 +244,12 @@
         private Label label1;
         private TextBox SecondPasswordBox;
         private Button BackButton;
+        private Label NewPasswordError;
+        private Label SecondPasswordError;
+        private Label PasswordError;
+        private Label LoginError;
+        private Label EmptyLogin;
+        private Label EmptyPassword;
+        private Label EmptySecondPassword;
     }
 }
