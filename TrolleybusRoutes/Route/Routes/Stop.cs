@@ -36,7 +36,11 @@ namespace RouteSystem.Routes
             else
             {
                 Stop newObj = obj as Stop;
-                return newObj.Name == Name;
+
+                if(newObj.Name != Name)
+                    return false;
+                else
+                    return true;
             }
         }
     }

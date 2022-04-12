@@ -17,6 +17,46 @@ namespace RouteSystem.Routes
             this.StopPoints = StopPoints;
         }
 
+        public static List<Stop> FindAllStops(List<Route> routes)
+        {
+            List<Stop> stopList = new List<Stop>();
+
+            foreach(Route route in routes)
+            {
+                foreach(StopPoint stopPoint in route.StopPoints)
+                {
+                    if (!stopList.Contains(stopPoint.Stop))
+                    {
+                        stopList.Add(stopPoint.Stop);
+                    }
+                }
+            }
+
+            return stopList;
+        }
+        public static List<Route> FindRoutesBetweenStops(Stop stop1, Stop stop2)
+        {
+            List<Route> routes = new List<Route>();
+
+            foreach(Route route in routes)
+            {
+                Stop s1 = null;
+                Stop s2 = null;
+                foreach(StopPoint stopPoint in route.StopPoints)
+                {
+                    if (stopPoint.Stop.Equals(stop1))
+                        s1 = stopPoint.Stop;
+
+                    if (stopPoint.Stop.Equals(stop2))
+                        s2 = stopPoint.Stop;
+                }
+
+                if (s1 != null && s2 != null)
+                    routes.Add(route);
+            }
+
+            return routes;
+        }
         public override string ToString()
         {
             return NumberOfRoute.ToString() + ":" + StopPoints[0].Stop.Name + "-" + StopPoints.Last().Stop.Name;
@@ -32,7 +72,13 @@ namespace RouteSystem.Routes
             else
             {
                 Route newObj = obj as Route;
-                return newObj.NumberOfRoute == NumberOfRoute && StopPoints.SequenceEqual(newObj.StopPoints);
+                if (newObj.NumberOfRoute != NumberOfRoute)
+                    return false;
+
+                if (!StopPoints.SequenceEqual(newObj.StopPoints))
+                    return false;
+
+                return  true;
             }    
         }
     }

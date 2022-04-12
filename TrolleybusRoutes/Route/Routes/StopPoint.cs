@@ -5,26 +5,23 @@ namespace RouteSystem.Routes
 {
     public class StopPoint
     {
-        [BsonElement("Hour")]
-        public int Hour { get; }
-        [BsonElement("Minutes")]
-        public int Minutes { get; }
+        [BsonElement("Schedule")]
+        public List<Time> Schedule { get; set; }
         [BsonElement("Stop")]
         public Stop Stop { get; }
-        public StopPoint(int Hour, int Minutes, Stop Stop)
+        public StopPoint(List<Time> Schedule, Stop Stop)
         {
-            this.Hour = Hour;
-            this.Minutes = Minutes;
+            this.Schedule = Schedule;
             this.Stop = Stop;
         }
 
         public override string ToString()
         {
-             return Stop.ToString() + ": " + Hour.ToString() + ":" + Minutes.ToString();
+            return Stop.ToString();
         }
         public override int GetHashCode()
         {
-            return Hour.GetHashCode() + Stop.GetHashCode();
+            return Schedule.GetHashCode() + Stop.GetHashCode();
         }
         public override bool Equals(object? obj)
         {
@@ -33,7 +30,13 @@ namespace RouteSystem.Routes
             else
             {
                 StopPoint newObj = obj as StopPoint;
-                return newObj.Hour == Hour && newObj.Stop == Stop;
+                if(!Schedule.SequenceEqual(newObj.Schedule))
+                    return false;
+
+                if(!newObj.Stop.Equals(Stop))
+                    return false;
+
+                return true;
             }
         }
     }

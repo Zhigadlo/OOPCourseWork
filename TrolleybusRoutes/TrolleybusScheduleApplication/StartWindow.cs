@@ -16,7 +16,6 @@ namespace TrolleybusScheduleApplication
             GhuestWindow ghuestWindow = new GhuestWindow(this);
             Hide();
             ghuestWindow.ShowDialog();
-            Close();
         }
         private void RegistrationButton_Click(object sender, EventArgs e)
         {
@@ -93,7 +92,6 @@ namespace TrolleybusScheduleApplication
                 LoginBox.ForeColor = Color.LightGray;
             }
         }
-
         private void LoginButton_Click(object sender, EventArgs e)
         {
             if((PasswordBox.Text == "" || PasswordBox.Text == "¬ведите пароль") &&(LoginBox.Text == "" || LoginBox.Text == "¬ведите логин"))
@@ -122,13 +120,11 @@ namespace TrolleybusScheduleApplication
                                 AdminWindow adminWindow = new AdminWindow();
                                 Hide();
                                 adminWindow.ShowDialog();
-                                Close();
                                 break;
                             case Roles.User:
-                                UserWindow userWindow = new UserWindow();
+                                UserWindow userWindow = new UserWindow(this);
                                 Hide();
                                 userWindow.ShowDialog();
-                                Close();
                                 break;
                         }
                     }

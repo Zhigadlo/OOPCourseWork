@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        protected System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -26,13 +26,14 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
             this.BoxForNumbers = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.StopBox = new System.Windows.Forms.ListBox();
             this.RouteBox = new System.Windows.Forms.ListBox();
             this.FindButton = new System.Windows.Forms.Button();
+            this.QuitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BoxForNumbers
@@ -61,6 +62,7 @@
             this.StopBox.Size = new System.Drawing.Size(292, 344);
             this.StopBox.TabIndex = 2;
             this.StopBox.Visible = false;
+            this.StopBox.Click += new System.EventHandler(this.StopBox_Click);
             // 
             // RouteBox
             // 
@@ -82,11 +84,22 @@
             this.FindButton.UseVisualStyleBackColor = true;
             this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
+            // QuitButton
+            // 
+            this.QuitButton.Location = new System.Drawing.Point(23, 409);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(94, 29);
+            this.QuitButton.TabIndex = 5;
+            this.QuitButton.Text = "Выйти";
+            this.QuitButton.UseVisualStyleBackColor = true;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            // 
             // GhuestWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.FindButton);
             this.Controls.Add(this.RouteBox);
             this.Controls.Add(this.StopBox);
@@ -102,10 +115,11 @@
 
         #endregion
 
-        private ComboBox BoxForNumbers;
-        private Label label1;
-        private ListBox StopBox;
-        private ListBox RouteBox;
-        private Button FindButton;
+        protected ComboBox BoxForNumbers;
+        protected Label label1;
+        protected ListBox StopBox;
+        protected ListBox RouteBox;
+        protected Button FindButton;
+        protected Button QuitButton;
     }
 }

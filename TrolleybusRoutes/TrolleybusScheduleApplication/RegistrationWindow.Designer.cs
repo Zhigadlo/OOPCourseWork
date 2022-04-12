@@ -90,7 +90,7 @@
             // LoginBox
             // 
             this.LoginBox.ForeColor = System.Drawing.Color.LightGray;
-            this.LoginBox.Location = new System.Drawing.Point(304, 90);
+            this.LoginBox.Location = new System.Drawing.Point(303, 86);
             this.LoginBox.Name = "LoginBox";
             this.LoginBox.Size = new System.Drawing.Size(195, 27);
             this.LoginBox.TabIndex = 7;
@@ -112,7 +112,7 @@
             // SecondPasswordBox
             // 
             this.SecondPasswordBox.ForeColor = System.Drawing.Color.LightGray;
-            this.SecondPasswordBox.Location = new System.Drawing.Point(301, 268);
+            this.SecondPasswordBox.Location = new System.Drawing.Point(304, 268);
             this.SecondPasswordBox.Name = "SecondPasswordBox";
             this.SecondPasswordBox.Size = new System.Drawing.Size(195, 27);
             this.SecondPasswordBox.TabIndex = 12;
@@ -123,7 +123,7 @@
             // 
             // BackButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(41, 399);
+            this.BackButton.Location = new System.Drawing.Point(12, 409);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(94, 29);
             this.BackButton.TabIndex = 14;
