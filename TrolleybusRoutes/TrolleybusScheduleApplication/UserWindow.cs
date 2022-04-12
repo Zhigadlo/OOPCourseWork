@@ -88,5 +88,29 @@ namespace TrolleybusScheduleApplication
                 MessageBox.Show(time, stopPoint.Stop.ToString());
             }
         }
+
+        private void FindButton2_Click(object sender, EventArgs e)
+        {
+            Stop stop1 = StopComboBox1.SelectedItem as Stop;
+            Stop stop2 = StopComboBox2.SelectedItem as Stop;
+            var routes = Route.FindRoutesBetweenStops(stop1, stop2, _routes);
+            if (routes.Count != 0 && stop1 != null && stop2 != null)
+            {
+                if (stop1.Name == stop2.Name)
+                {
+                    MessageBox.Show("Выберете разные остановки", "Ошибка");
+                }
+                else
+                {
+                    ResultBox.Visible = true;
+                    ResultBox.Items.Clear();
+                    ResultBox.Items.AddRange(routes.ToArray());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Нет таких маршрутов", "Ошибка");
+            }
+        }
     }
 }

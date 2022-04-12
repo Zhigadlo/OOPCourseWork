@@ -34,24 +34,24 @@ namespace RouteSystem.Routes
 
             return stopList;
         }
-        public static List<Route> FindRoutesBetweenStops(Stop stop1, Stop stop2)
+        public static List<Route> FindRoutesBetweenStops(Stop stop1, Stop stop2, List<Route> listOfRoutes)
         {
             List<Route> routes = new List<Route>();
 
-            foreach(Route route in routes)
+            foreach(Route route in listOfRoutes)
             {
-                Stop s1 = null;
-                Stop s2 = null;
+                bool first = false;
+                bool second = false;
                 foreach(StopPoint stopPoint in route.StopPoints)
                 {
-                    if (stopPoint.Stop.Equals(stop1))
-                        s1 = stopPoint.Stop;
+                    if (stopPoint.Stop.Name == stop1.Name && second == false)
+                        first = true;
 
-                    if (stopPoint.Stop.Equals(stop2))
-                        s2 = stopPoint.Stop;
+                    if (stopPoint.Stop.Name == stop2.Name && first == true)
+                        second = true;
                 }
 
-                if (s1 != null && s2 != null)
+                if (first && second)
                     routes.Add(route);
             }
 
