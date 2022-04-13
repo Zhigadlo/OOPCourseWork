@@ -14,10 +14,10 @@ namespace TrolleybusScheduleApplication
 {
     public partial class UserWindow : Form
     {
-        protected StartWindow _startWindow;
+        protected Form _startWindow;
         protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         protected List<Route> _routes;
-        public UserWindow(StartWindow startWindow) 
+        public UserWindow(Form startWindow) 
         {
             _startWindow = startWindow;
             InitializeComponent();
@@ -70,7 +70,6 @@ namespace TrolleybusScheduleApplication
                 ResultBox.Items.AddRange(route.StopPoints.ToArray());
             }
         }
-
         private void ResultBox_Click(object sender, EventArgs e)
         {
             var stopPoint = ResultBox.SelectedItem as StopPoint;
@@ -88,7 +87,6 @@ namespace TrolleybusScheduleApplication
                 MessageBox.Show(time, stopPoint.Stop.ToString());
             }
         }
-
         private void FindButton2_Click(object sender, EventArgs e)
         {
             Stop stop1 = StopComboBox1.SelectedItem as Stop;

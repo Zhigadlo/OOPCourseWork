@@ -81,7 +81,7 @@ namespace ORMLibrary
         /// <param name="property"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public T Read(string property, string value)
+        public T Read<TValue>(string property, TValue value)
         {
             var collection = _db.GetCollection<BsonDocument>(_collectionName);
             var filter = Builders<BsonDocument>.Filter.Eq(property, value);

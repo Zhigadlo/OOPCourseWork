@@ -14,10 +14,10 @@ namespace TrolleybusScheduleApplication
 {
     public partial class GhuestWindow : Form
     {
-        protected StartWindow _startWindow;
+        protected Form _startWindow;
         protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         protected List<Route> _routes;
-        public GhuestWindow(StartWindow startWindow)
+        public GhuestWindow(Form startWindow)
         {
             _startWindow = startWindow;
             InitializeComponent();

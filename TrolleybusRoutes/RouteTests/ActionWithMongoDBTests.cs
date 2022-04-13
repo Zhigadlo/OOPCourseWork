@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace RouteTests
 {
-    public class UnitTest1
+    public class ActionWithMongoDBTests
     {
         private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
 
         [Fact]
-        public void Test1()
+        public void ReadTest()
         {
             List<Stop> stops1 = new List<Stop>
             {
@@ -84,8 +84,8 @@ namespace RouteTests
 
             Route route1 = new Route(23, stopPoints1);
             Route route2 = new Route(14, stopPoints2);
-            Route expectedRoute1 = _routeORM.Read(0);
-            Route expectedRoute2 = _routeORM.Read(1);
+            Route expectedRoute1 = _routeORM.Read("NumberOfRoute", 23);
+            Route expectedRoute2 = _routeORM.Read("NumberOfRoute", 14);
             Assert.True(route1.Equals(expectedRoute1));
             Assert.True(route2.Equals(expectedRoute2));
             

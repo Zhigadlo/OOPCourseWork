@@ -11,31 +11,31 @@ using System.Windows.Forms;
 using ORMLibrary;
 using RouteSystem.Users;
 
+
 namespace TrolleybusScheduleApplication
 {
-    public partial class RegistrationWindow : Form
+    public partial class UserManagmentWindow : Form
     {
         private Form _startWindow;
-        private string _emptyString = "Поле пустое";
         private ToolTip _toolTip = new ToolTip();
-        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
-        public RegistrationWindow(Form startWindow)
+        private string _emptyString = "Поле пустое";
+        private MongoDBORM<User> _usersORM = new MongoDBORM<User>("RouteSystem", "Users");
+        public UserManagmentWindow(Form startWindow)
         {
             _startWindow = startWindow;
             InitializeComponent();
-            
             _toolTip.SetToolTip(LoginBox, "Логин содержит от 6 до 12 символов, начинается с буквы");
             _toolTip.SetToolTip(PasswordBox, "9-20 символов,одна обычная и заглавная буквы, спец. символ и цифра");
             _toolTip.SetToolTip(SecondPasswordBox, "Повторите пароль который вы написали выше");
         }
 
-        private bool IsRegistrationSuccessful()
+        private bool IsAddingSuccessful()
         {
             string regexForLogin = @"^[a-zA-Z][a-zA-Z0-9]{5,12}$";
             string regexForPassword = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,20}$";
             if (Regex.IsMatch(LoginBox.Text, regexForLogin))
             {
-                if (_userORM.Find("Login", LoginBox.Text))
+                if (_usersORM.Find("Login", LoginBox.Text))
                 {
                     NewPasswordError.Text = "Пользователь с таким логином уже зарегестрирован";
                     NewPasswordError.Visible = true;
@@ -64,12 +64,54 @@ namespace TrolleybusScheduleApplication
                 return false;
             }
         }
-
-        private void BackButton_Click(object sender, EventArgs e)
+        private void AddUserButton_Click(object sender, EventArgs e)
         {
-            _startWindow.Show();
-            Close();
+            RegistrationWindow registrationWindow = new RegistrationWindow(this);
+            Hide();
+            registrationWindow.ShowDialog();
+            Show();
+            //LoginLabel.Visible = true;
+            //PasswordLabel.Visible = true;
+            //LoginBox.Visible = true;
+            //PasswordBox.Visible = true;
+            //TitleLabel.Visible = true;
+            //TitleLabel.Text = "Добавление пользователя";
+            //SecondPasswordBox.Visible = true;
+            //SecondPasswordLabel.Visible = true;
+            //RegistrationButton.Visible = true;
         }
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            if (LoginBox.Text == "" || LoginBox.Text == "Введите логин")
+            {
+                EmptyLogin.Text = _emptyString;
+                EmptyLogin.Visible = true;
+            }
+
+            if (PasswordBox.Text == "" || PasswordBox.Text == "Введите пароль")
+            {
+                EmptyPassword.Text = _emptyString;
+                EmptyPassword.Visible = true;
+            }
+
+            if (SecondPasswordBox.Text == "" || SecondPasswordBox.Text == "Введите пароль еще раз")
+            {
+                EmptySecondPassword.Text = _emptyString;
+                EmptySecondPassword.Visible = true;
+            }
+
+            if (LoginBox.Text != "" && LoginBox.Text != "Введите логин" &&
+                PasswordBox.Text != "" && PasswordBox.Text != "Введите пароль" &&
+                SecondPasswordBox.Text != "" && SecondPasswordBox.Text != "Введите пароль еще раз" &&
+                IsAddingSuccessful())
+            {
+                var newUser = new User(LoginBox.Text, PasswordBox.Text);
+                newUser.Role = Roles.User;
+                _usersORM.Write(newUser);
+                MessageBox.Show("Пользователь добавлен в базу данных", "Успех");
+            }
+        }
+
         private void LoginBox_Click(object sender, EventArgs e)
         {
             EmptyLogin.Visible = false;
@@ -123,19 +165,6 @@ namespace TrolleybusScheduleApplication
             if (SecondPasswordBox.Text == "")
                 SecondPasswordBox.Text = "Введите пароль еще раз";
         }
-        private void PasswordBox_TextChanged(object sender, EventArgs e)
-        {
-            if (PasswordBox.Text != "" && PasswordBox.Text != "Введите пароль")
-            {
-                PasswordBox.UseSystemPasswordChar = true;
-                PasswordBox.ForeColor = Color.Black;
-            }
-            else
-            {
-                PasswordBox.UseSystemPasswordChar = false;
-                PasswordBox.ForeColor = Color.LightGray;
-            }
-        }
         private void PasswordBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -148,17 +177,17 @@ namespace TrolleybusScheduleApplication
                 PasswordBox.Text = "Введите пароль";
             }
         }
-        private void SecondPasswordBox_TextChanged(object sender, EventArgs e)
+        private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
-            if (SecondPasswordBox.Text != "" && SecondPasswordBox.Text != "Введите пароль еще раз")
+            if (PasswordBox.Text != "" && PasswordBox.Text != "Введите пароль")
             {
-                SecondPasswordBox.UseSystemPasswordChar = true;
-                SecondPasswordBox.ForeColor = Color.Black;
+                PasswordBox.UseSystemPasswordChar = true;
+                PasswordBox.ForeColor = Color.Black;
             }
             else
             {
-                SecondPasswordBox.UseSystemPasswordChar = false;
-                SecondPasswordBox.ForeColor = Color.LightGray;
+                PasswordBox.UseSystemPasswordChar = false;
+                PasswordBox.ForeColor = Color.LightGray;
             }
         }
         private void SecondPasswordBox_Click(object sender, EventArgs e)
@@ -188,44 +217,32 @@ namespace TrolleybusScheduleApplication
                 SecondPasswordBox.Text = "Введите пароль еще раз";
             }
         }
-        
-        private void RegistrationButton_Click(object sender, EventArgs e)
+        private void SecondPasswordBox_TextChanged(object sender, EventArgs e)
         {
-            if (LoginBox.Text == "" || LoginBox.Text == "Введите логин")
+            if (SecondPasswordBox.Text != "" && SecondPasswordBox.Text != "Введите пароль еще раз")
             {
-                EmptyLogin.Text = _emptyString;
-                EmptyLogin.Visible = true;
+                SecondPasswordBox.UseSystemPasswordChar = true;
+                SecondPasswordBox.ForeColor = Color.Black;
             }
-
-            if (PasswordBox.Text == "" || PasswordBox.Text == "Введите пароль")
+            else
             {
-                EmptyPassword.Text = _emptyString;
-                EmptyPassword.Visible = true;
-            }
-
-            if (SecondPasswordBox.Text == "" || SecondPasswordBox.Text == "Введите пароль еще раз")
-            {
-                EmptySecondPassword.Text = _emptyString;
-                EmptySecondPassword.Visible = true;
-            }
-
-            if (LoginBox.Text != "" && LoginBox.Text != "Введите логин" &&
-                PasswordBox.Text != "" && PasswordBox.Text != "Введите пароль" &&
-                SecondPasswordBox.Text != "" && SecondPasswordBox.Text != "Введите пароль еще раз" &&
-                IsRegistrationSuccessful())
-            {
-                var newUser = new User(LoginBox.Text, PasswordBox.Text);
-                newUser.Role = Roles.User;
-                _userORM.Write(newUser);
-                MessageBox.Show("Вы зарегистрировались. Теперь вы можете войти в систему:)", "Успех");
-                Close();
-                _startWindow.Show();
+                SecondPasswordBox.UseSystemPasswordChar = false;
+                SecondPasswordBox.ForeColor = Color.LightGray;
             }
         }
 
-        private void LoginBox_MouseMove(object sender, MouseEventArgs e)
+        private void ChangeRoleButton_Click(object sender, EventArgs e)
         {
-            _toolTip.Active = true;
+            SecondPasswordBox.Visible = false;
+            SecondPasswordError.Visible = false;
+            SecondPasswordLabel.Visible = false;
+            EmptySecondPassword.Visible = false;
+        }
+
+        private void QuitButton_Click(object sender, EventArgs e)
+        {
+            Close();
+            _startWindow.Show();
         }
     }
 }

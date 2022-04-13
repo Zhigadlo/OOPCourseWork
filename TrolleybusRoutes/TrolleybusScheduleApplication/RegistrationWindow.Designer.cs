@@ -59,7 +59,7 @@
             // 
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PasswordLabel.Location = new System.Drawing.Point(365, 140);
+            this.PasswordLabel.Location = new System.Drawing.Point(362, 140);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(81, 28);
             this.PasswordLabel.TabIndex = 10;
@@ -69,7 +69,7 @@
             // 
             this.LoginLabel.AutoSize = true;
             this.LoginLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LoginLabel.Location = new System.Drawing.Point(369, 59);
+            this.LoginLabel.Location = new System.Drawing.Point(365, 55);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(69, 28);
             this.LoginLabel.TabIndex = 9;
