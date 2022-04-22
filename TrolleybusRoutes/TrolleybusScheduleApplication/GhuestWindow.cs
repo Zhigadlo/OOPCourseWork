@@ -14,7 +14,7 @@ namespace TrolleybusScheduleApplication
 {
     public partial class GhuestWindow : Form
     {
-        protected Form _startWindow;
+        private Form _startWindow;
         protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         protected List<Route> _routes;
         public GhuestWindow(Form startWindow)
@@ -40,6 +40,8 @@ namespace TrolleybusScheduleApplication
                 StopBox.Visible = true;
                 StopBox.Items.Clear();
                 StopBox.Items.AddRange(route.StopPoints.ToArray());
+                NameOfResultBox.Visible = true;
+                NameOfResultBox.Text = "Список остановок\n маршрута " + route.NumberOfRoute.ToString();
             }
         }
         protected void FindButton_Click(object sender, EventArgs e)
@@ -52,6 +54,8 @@ namespace TrolleybusScheduleApplication
                 StopBox.Visible = true;
                 StopBox.Items.Clear();
                 StopBox.Items.AddRange(route.StopPoints.ToArray());
+                NameOfResultBox.Text = "Список остановок\n маршрута " + route.NumberOfRoute.ToString();
+                NameOfResultBox.Visible = true;
             }
             else
             {
@@ -62,7 +66,6 @@ namespace TrolleybusScheduleApplication
         {
             if (MessageBox.Show("Вы точно хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                _startWindow.Show();
                 Close();
             }
         }
@@ -83,6 +86,11 @@ namespace TrolleybusScheduleApplication
 
                 MessageBox.Show(time, stopPoint.Stop.ToString());
             }
+        }
+
+        private void GhuestWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _startWindow.Close();
         }
     }
 }

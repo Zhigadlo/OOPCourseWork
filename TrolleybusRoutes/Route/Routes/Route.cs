@@ -44,6 +44,7 @@ namespace RouteSystem.Routes
                 bool second = false;
                 foreach(StopPoint stopPoint in route.StopPoints)
                 {
+
                     if (stopPoint.Stop.Name == stop1.Name && second == false)
                         first = true;
 

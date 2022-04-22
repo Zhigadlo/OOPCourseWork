@@ -90,7 +90,7 @@ namespace ORMLibrary
             T obj = JsonConvert.DeserializeObject<T>(json);
             return obj;
         }
-        public bool Find(string property, string value)
+        public bool Contains(string property, string value)
         {
             var collection = _db.GetCollection<BsonDocument>(_collectionName);
             var filter = Builders<BsonDocument>.Filter.Eq(property, value);

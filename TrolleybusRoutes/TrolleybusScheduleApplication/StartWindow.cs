@@ -27,24 +27,10 @@ namespace TrolleybusScheduleApplication
         {
             PasswordError.Visible = false;
             PasswordLoginError.Visible = false;
-
-            if (PasswordBox.Text == "¬ведите пароль")
-                PasswordBox.Text = "";
-            if (LoginBox.Text == "")
-                LoginBox.Text = "¬ведите логин";
         }
         private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
-            if (PasswordBox.Text != "" && PasswordBox.Text != "¬ведите пароль")
-            {
-                PasswordBox.UseSystemPasswordChar = true;
-                PasswordBox.ForeColor = Color.Black;
-            }
-            else
-            {
-                PasswordBox.UseSystemPasswordChar = false;
-                PasswordBox.ForeColor = Color.LightGray;
-            }
+            PasswordBox.UseSystemPasswordChar = true;  
         }
         private void PasswordBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -53,10 +39,6 @@ namespace TrolleybusScheduleApplication
                 LoginButton.Focus();
             }
 
-            if (e.KeyCode == Keys.Enter && PasswordBox.Text == "")
-            {
-                PasswordBox.Text = "¬ведите пароль";
-            }
         }
         private void LoginBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -64,46 +46,24 @@ namespace TrolleybusScheduleApplication
             {
                 LoginButton.Focus();
             }
-
-            if (e.KeyCode == Keys.Enter && LoginBox.Text == "")
-            {
-                LoginBox.Text = "¬ведите логин";
-            }
         }
         private void LoginBox_Click(object sender, EventArgs e)
         {
             PasswordLoginError.Visible = false;
             LoginError.Visible = false;
-
-            if (LoginBox.Text == "¬ведите логин")
-                LoginBox.Text = "";
-
-            if (PasswordBox.Text == "")
-                PasswordBox.Text = "¬ведите пароль";
-        }
-        private void LoginBox_TextChanged(object sender, EventArgs e)
-        {
-            if(LoginBox.Text != "" && LoginBox.Text != "¬ведите логин")
-            {
-                LoginBox.ForeColor = Color.Black;
-            }
-            else
-            {
-                LoginBox.ForeColor = Color.LightGray;
-            }
         }
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if((PasswordBox.Text == "" || PasswordBox.Text == "¬ведите пароль") &&(LoginBox.Text == "" || LoginBox.Text == "¬ведите логин"))
+            if(PasswordBox.Text == "" && LoginBox.Text == "")
             {
                 PasswordError.Visible = true;
                 LoginError.Visible = true;
             }
-            else if (PasswordBox.Text == "" || PasswordBox.Text == "¬ведите пароль")
+            else if (PasswordBox.Text == "")
             {
                 PasswordError.Visible = true;
             }
-            else if (LoginBox.Text == "" || LoginBox.Text == "¬ведите логин")
+            else if (LoginBox.Text == "")
             {
                 LoginError.Visible = true;
             }
@@ -114,19 +74,19 @@ namespace TrolleybusScheduleApplication
                     User user = _userORM.Read("Login", LoginBox.Text);
                     if (user.Password == PasswordBox.Text)
                     {
+                        Hide();
                         switch (user.Role)
                         {
                             case Roles.Admin:
                                 AdminWindow adminWindow = new AdminWindow(this);
-                                Hide();
                                 adminWindow.ShowDialog();
                                 break;
                             case Roles.User:
                                 UserWindow userWindow = new UserWindow(this);
-                                Hide();
                                 userWindow.ShowDialog();
                                 break;
                         }
+                        
                     }
                     else
                     {

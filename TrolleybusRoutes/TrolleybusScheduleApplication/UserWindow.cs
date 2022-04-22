@@ -36,7 +36,7 @@ namespace TrolleybusScheduleApplication
             StopComboBox2.Items.AddRange(stopList.ToArray());
         }
 
-        private void QuitButton_Click(object sender, EventArgs e)
+        protected virtual void QuitButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Вы точно хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -54,6 +54,8 @@ namespace TrolleybusScheduleApplication
                 ResultBox.Visible = true;
                 ResultBox.Items.Clear();
                 ResultBox.Items.AddRange(route.StopPoints.ToArray());
+                NameOfResultBox.Visible = true;
+                NameOfResultBox.Text = "Список остановок\n маршрута " + route.NumberOfRoute.ToString();
             }
             else
             {
@@ -68,6 +70,8 @@ namespace TrolleybusScheduleApplication
                 ResultBox.Visible = true;
                 ResultBox.Items.Clear();
                 ResultBox.Items.AddRange(route.StopPoints.ToArray());
+                NameOfResultBox.Visible = true;
+                NameOfResultBox.Text = "Список остановок\n маршрута " + route.NumberOfRoute.ToString();
             }
         }
         private void ResultBox_Click(object sender, EventArgs e)
@@ -89,26 +93,38 @@ namespace TrolleybusScheduleApplication
         }
         private void FindButton2_Click(object sender, EventArgs e)
         {
-            Stop stop1 = StopComboBox1.SelectedItem as Stop;
-            Stop stop2 = StopComboBox2.SelectedItem as Stop;
-            var routes = Route.FindRoutesBetweenStops(stop1, stop2, _routes);
-            if (routes.Count != 0 && stop1 != null && stop2 != null)
+            if (StopComboBox1.SelectedItem == null || StopComboBox2.SelectedItem == null)
+                MessageBox.Show("Вы не выбрали остановок");
+            else
             {
-                if (stop1.Name == stop2.Name)
+                Stop stop1 = StopComboBox1.SelectedItem as Stop;
+                Stop stop2 = StopComboBox2.SelectedItem as Stop;
+                var routes = Route.FindRoutesBetweenStops(stop1, stop2, _routes);
+                if (routes.Count != 0 && stop1 != null && stop2 != null)
                 {
-                    MessageBox.Show("Выберете разные остановки", "Ошибка");
+                    if (stop1.Name == stop2.Name)
+                    {
+                        MessageBox.Show("Выберете разные остановки", "Ошибка");
+                    }
+                    else
+                    {
+                        ResultBox.Visible = true;
+                        ResultBox.Items.Clear();
+                        ResultBox.Items.AddRange(routes.ToArray());
+                        NameOfResultBox.Visible = true;
+                        NameOfResultBox.Text = "Список маршрутов\nмежду остановками";
+                    }
                 }
                 else
                 {
-                    ResultBox.Visible = true;
-                    ResultBox.Items.Clear();
-                    ResultBox.Items.AddRange(routes.ToArray());
+                    MessageBox.Show("Нет таких маршрутов", "Ошибка");
                 }
             }
-            else
-            {
-                MessageBox.Show("Нет таких маршрутов", "Ошибка");
-            }
+        }
+
+        protected virtual void UserWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _startWindow.Close();
         }
     }
 }

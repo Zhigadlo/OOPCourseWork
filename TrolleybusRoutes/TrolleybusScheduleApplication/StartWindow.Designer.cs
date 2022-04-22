@@ -52,24 +52,23 @@
             // 
             // LoginBox
             // 
-            this.LoginBox.ForeColor = System.Drawing.Color.LightGray;
+            this.LoginBox.ForeColor = System.Drawing.Color.Black;
             this.LoginBox.Location = new System.Drawing.Point(315, 74);
             this.LoginBox.Name = "LoginBox";
+            this.LoginBox.PlaceholderText = "Введите логин";
             this.LoginBox.Size = new System.Drawing.Size(176, 27);
             this.LoginBox.TabIndex = 1;
-            this.LoginBox.Text = "Введите логин";
             this.LoginBox.Click += new System.EventHandler(this.LoginBox_Click);
-            this.LoginBox.TextChanged += new System.EventHandler(this.LoginBox_TextChanged);
             this.LoginBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginBox_KeyDown);
             // 
             // PasswordBox
             // 
-            this.PasswordBox.ForeColor = System.Drawing.Color.LightGray;
+            this.PasswordBox.ForeColor = System.Drawing.Color.Black;
             this.PasswordBox.Location = new System.Drawing.Point(315, 165);
             this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PlaceholderText = "Введите пароль";
             this.PasswordBox.Size = new System.Drawing.Size(176, 27);
             this.PasswordBox.TabIndex = 2;
-            this.PasswordBox.Text = "Введите пароль";
             this.PasswordBox.Click += new System.EventHandler(this.PasswordBox_Click);
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             this.PasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordBox_KeyDown);

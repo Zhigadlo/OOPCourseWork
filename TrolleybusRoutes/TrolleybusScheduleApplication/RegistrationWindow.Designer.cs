@@ -77,26 +77,25 @@
             // 
             // PasswordBox
             // 
-            this.PasswordBox.ForeColor = System.Drawing.Color.LightGray;
+            this.PasswordBox.ForeColor = System.Drawing.Color.Black;
             this.PasswordBox.Location = new System.Drawing.Point(303, 171);
             this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PlaceholderText = "Введите пароль";
             this.PasswordBox.Size = new System.Drawing.Size(195, 27);
             this.PasswordBox.TabIndex = 8;
-            this.PasswordBox.Text = "Введите пароль";
             this.PasswordBox.Click += new System.EventHandler(this.PasswordBox_Click);
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             this.PasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordBox_KeyDown);
             // 
             // LoginBox
             // 
-            this.LoginBox.ForeColor = System.Drawing.Color.LightGray;
+            this.LoginBox.ForeColor = System.Drawing.Color.Black;
             this.LoginBox.Location = new System.Drawing.Point(303, 86);
             this.LoginBox.Name = "LoginBox";
+            this.LoginBox.PlaceholderText = "Введите логин";
             this.LoginBox.Size = new System.Drawing.Size(195, 27);
             this.LoginBox.TabIndex = 7;
-            this.LoginBox.Text = "Введите логин";
             this.LoginBox.Click += new System.EventHandler(this.LoginBox_Click);
-            this.LoginBox.TextChanged += new System.EventHandler(this.LoginBox_TextChanged);
             this.LoginBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginBox_KeyDown);
             // 
             // label1
@@ -111,12 +110,12 @@
             // 
             // SecondPasswordBox
             // 
-            this.SecondPasswordBox.ForeColor = System.Drawing.Color.LightGray;
+            this.SecondPasswordBox.ForeColor = System.Drawing.Color.Black;
             this.SecondPasswordBox.Location = new System.Drawing.Point(304, 268);
             this.SecondPasswordBox.Name = "SecondPasswordBox";
+            this.SecondPasswordBox.PlaceholderText = "Введите пароль еще раз";
             this.SecondPasswordBox.Size = new System.Drawing.Size(195, 27);
             this.SecondPasswordBox.TabIndex = 12;
-            this.SecondPasswordBox.Text = "Введите пароль еще раз";
             this.SecondPasswordBox.Click += new System.EventHandler(this.SecondPasswordBox_Click);
             this.SecondPasswordBox.TextChanged += new System.EventHandler(this.SecondPasswordBox_TextChanged);
             this.SecondPasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SecondPasswordBox_KeyDown);
@@ -232,6 +231,7 @@
             this.Name = "RegistrationWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RegistrationWindow_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
