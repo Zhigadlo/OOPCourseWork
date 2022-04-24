@@ -16,6 +16,8 @@ namespace TrolleybusScheduleApplication
     public partial class RegistrationWindow : Form
     {
         protected Form _startWindow;
+        protected string _regexForLogin = @"^[a-zA-Z][a-zA-Z0-9]{5,12}$";
+        protected string _regexForPassword = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,20}$";
         protected string _emptyString = "Поле пустое";
         private ToolTip _toolTip = new ToolTip();
         protected MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
@@ -30,9 +32,7 @@ namespace TrolleybusScheduleApplication
 
         protected bool IsRegistrationSuccessful()
         {
-            string regexForLogin = @"^[a-zA-Z][a-zA-Z0-9]{5,12}$";
-            string regexForPassword = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,20}$";
-            if (Regex.IsMatch(LoginBox.Text, regexForLogin))
+            if (Regex.IsMatch(LoginBox.Text, _regexForLogin))
             {
                 if (_userORM.Contains("Login", LoginBox.Text))
                 {
@@ -41,11 +41,11 @@ namespace TrolleybusScheduleApplication
                 }
                 else
                 {
-                    if (Regex.IsMatch(PasswordBox.Text, regexForPassword) && PasswordBox.Text == SecondPasswordBox.Text)
+                    if (Regex.IsMatch(PasswordBox.Text, _regexForPassword) && PasswordBox.Text == SecondPasswordBox.Text)
                     {
                         return true;
                     }
-                    else if (!Regex.IsMatch(PasswordBox.Text, regexForPassword))
+                    else if (!Regex.IsMatch(PasswordBox.Text, _regexForPassword))
                     {
                         PasswordError.Visible = true;
                     }

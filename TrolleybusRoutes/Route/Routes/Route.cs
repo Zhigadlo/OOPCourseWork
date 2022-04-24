@@ -1,6 +1,7 @@
 ﻿using ORMLibrary.Abstract;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System.Linq;
 
 namespace RouteSystem.Routes
 {
@@ -21,9 +22,9 @@ namespace RouteSystem.Routes
         {
             List<Stop> stopList = new List<Stop>();
 
-            foreach(Route route in routes)
+            foreach (Route route in routes)
             {
-                foreach(StopPoint stopPoint in route.StopPoints)
+                foreach (StopPoint stopPoint in route.StopPoints)
                 {
                     if (!stopList.Contains(stopPoint.Stop))
                     {
@@ -38,11 +39,11 @@ namespace RouteSystem.Routes
         {
             List<Route> routes = new List<Route>();
 
-            foreach(Route route in listOfRoutes)
+            foreach (Route route in listOfRoutes)
             {
                 bool first = false;
                 bool second = false;
-                foreach(StopPoint stopPoint in route.StopPoints)
+                foreach (StopPoint stopPoint in route.StopPoints)
                 {
 
                     if (stopPoint.Stop.Name == stop1.Name && second == false)
@@ -57,6 +58,21 @@ namespace RouteSystem.Routes
             }
 
             return routes;
+        }
+        public static void DeleteStopFromRoutes(List<Route> routes, Stop stop)
+        {
+            foreach(Route route in routes)
+            {
+                route.StopPoints.Where(x => x.Stop.Equals(stop)).ToList().ForEach(x => route.StopPoints.Remove(x));
+
+                //foreach(StopPoint stopPoint in route.StopPoints)
+                //{
+                //    if(stopPoint.Stop.Equals(stop))
+                //    {
+                //        route.StopPoints.Remove(stopPoint);
+                //    }
+                //}
+            }
         }
         public override string ToString()
         {

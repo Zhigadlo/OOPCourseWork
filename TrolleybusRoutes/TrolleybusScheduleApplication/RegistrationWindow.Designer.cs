@@ -57,13 +57,13 @@
             // 
             // PasswordLabel
             // 
-            this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PasswordLabel.Location = new System.Drawing.Point(362, 140);
+            this.PasswordLabel.Location = new System.Drawing.Point(304, 140);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(81, 28);
+            this.PasswordLabel.Size = new System.Drawing.Size(192, 28);
             this.PasswordLabel.TabIndex = 10;
             this.PasswordLabel.Text = "Пароль";
+            this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginLabel
             // 
@@ -238,21 +238,20 @@
         }
 
         #endregion
-
-        private Button RegistrationButton;
-        private Label PasswordLabel;
         private Label LoginLabel;
-        private Label label1;
         private Button BackButton;
         private Label NewPasswordError;
-        private Label SecondPasswordError;
-        private Label PasswordError;
-        private Label LoginError;
         protected TextBox PasswordBox;
         protected TextBox LoginBox;
         protected TextBox SecondPasswordBox;
         protected Label EmptyLogin;
         protected Label EmptyPassword;
         protected Label EmptySecondPassword;
+        protected Button RegistrationButton;
+        protected Label PasswordLabel;
+        protected Label label1;
+        protected Label SecondPasswordError;
+        protected Label PasswordError;
+        protected Label LoginError;
     }
 }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.ChangeUserInfoButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddRouteButton = new System.Windows.Forms.Button();
             this.CheckScheduleButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.QuitButton = new System.Windows.Forms.Button();
             this.AddUserButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ChangeUserPasswordButton = new System.Windows.Forms.Button();
+            this.DeleteStopButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ChangeUserInfoButton
@@ -48,14 +48,14 @@
             this.ChangeUserInfoButton.UseVisualStyleBackColor = true;
             this.ChangeUserInfoButton.Click += new System.EventHandler(this.ChangeUserInfoButton_Click);
             // 
-            // button1
+            // AddRouteButton
             // 
-            this.button1.Location = new System.Drawing.Point(266, 249);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(257, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить маршрут в базу данных";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AddRouteButton.Location = new System.Drawing.Point(266, 249);
+            this.AddRouteButton.Name = "AddRouteButton";
+            this.AddRouteButton.Size = new System.Drawing.Size(257, 29);
+            this.AddRouteButton.TabIndex = 1;
+            this.AddRouteButton.Text = "Добавить маршрут в базу данных";
+            this.AddRouteButton.UseVisualStyleBackColor = true;
             // 
             // CheckScheduleButton
             // 
@@ -97,23 +97,25 @@
             this.AddUserButton.UseVisualStyleBackColor = true;
             this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
-            // button3
+            // ChangeUserPasswordButton
             // 
-            this.button3.Location = new System.Drawing.Point(266, 211);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(257, 29);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Смена пароля пользователя";
-            this.button3.UseVisualStyleBackColor = true;
+            this.ChangeUserPasswordButton.Location = new System.Drawing.Point(266, 211);
+            this.ChangeUserPasswordButton.Name = "ChangeUserPasswordButton";
+            this.ChangeUserPasswordButton.Size = new System.Drawing.Size(257, 29);
+            this.ChangeUserPasswordButton.TabIndex = 6;
+            this.ChangeUserPasswordButton.Text = "Смена пароля пользователя";
+            this.ChangeUserPasswordButton.UseVisualStyleBackColor = true;
+            this.ChangeUserPasswordButton.Click += new System.EventHandler(this.ChangeUserPasswordButton_Click);
             // 
-            // button4
+            // DeleteStopButton
             // 
-            this.button4.Location = new System.Drawing.Point(266, 284);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(257, 29);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Удалить остановку из базы ";
-            this.button4.UseVisualStyleBackColor = true;
+            this.DeleteStopButton.Location = new System.Drawing.Point(266, 284);
+            this.DeleteStopButton.Name = "DeleteStopButton";
+            this.DeleteStopButton.Size = new System.Drawing.Size(257, 29);
+            this.DeleteStopButton.TabIndex = 7;
+            this.DeleteStopButton.Text = "Удалить остановку из базы ";
+            this.DeleteStopButton.UseVisualStyleBackColor = true;
+            this.DeleteStopButton.Click += new System.EventHandler(this.DeleteStopButton_Click);
             // 
             // AdminWindow
             // 
@@ -121,13 +123,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.DeleteStopButton);
+            this.Controls.Add(this.ChangeUserPasswordButton);
             this.Controls.Add(this.AddUserButton);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckScheduleButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddRouteButton);
             this.Controls.Add(this.ChangeUserInfoButton);
             this.Name = "AdminWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -141,12 +143,12 @@
         #endregion
 
         private Button ChangeUserInfoButton;
-        private Button button1;
+        private Button AddRouteButton;
         private Button CheckScheduleButton;
         private Label label1;
         private Button QuitButton;
         private Button AddUserButton;
-        private Button button3;
-        private Button button4;
+        private Button ChangeUserPasswordButton;
+        private Button DeleteStopButton;
     }
 }

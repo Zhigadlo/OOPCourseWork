@@ -53,5 +53,17 @@ namespace TrolleybusScheduleApplication
             AddUserWindow window = new AddUserWindow(this);
             window.ShowDialog();
         }
+
+        private void ChangeUserPasswordButton_Click(object sender, EventArgs e)
+        {
+            ChangeUserPasswordWindow window = new ChangeUserPasswordWindow(this);
+            window.ShowDialog();
+        }
+
+        private void DeleteStopButton_Click(object sender, EventArgs e)
+        {
+            DeleteStopWindow window = new DeleteStopWindow();
+            window.ShowDialog();
+        }
     }
 }

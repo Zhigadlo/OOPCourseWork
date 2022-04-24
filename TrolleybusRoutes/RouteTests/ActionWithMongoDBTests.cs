@@ -84,10 +84,12 @@ namespace RouteTests
 
             Route route1 = new Route(23, stopPoints1);
             Route route2 = new Route(14, stopPoints2);
-            Route expectedRoute1 = _routeORM.Read("NumberOfRoute", 23);
-            Route expectedRoute2 = _routeORM.Read("NumberOfRoute", 14);
-            Assert.True(route1.Equals(expectedRoute1));
-            Assert.True(route2.Equals(expectedRoute2));
+            //Route expectedRoute1 = _routeORM.Read("NumberOfRoute", 23);
+            //Route expectedRoute2 = _routeORM.Read("NumberOfRoute", 14);
+            //Assert.True(route1.Equals(expectedRoute1));
+            //Assert.True(route2.Equals(expectedRoute2));
+            _routeORM.Write(route1);
+            _routeORM.Write(route2);
             
         }
     }
