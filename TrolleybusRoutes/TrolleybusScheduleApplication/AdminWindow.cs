@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RouteSystem.Users;
 
 namespace TrolleybusScheduleApplication
 {
     public partial class AdminWindow : Form
     {
         private Form _startWindow;
-        public AdminWindow(Form startWindow)
+        private User _user;
+        public AdminWindow(Form startWindow, User user)
         {
             _startWindow = startWindow;
+            _user = user;
             InitializeComponent();
         }
 
@@ -25,8 +28,6 @@ namespace TrolleybusScheduleApplication
             userWindow.QuitButton.Text = "Назад";
             userWindow.ShowDialog();
         }
-
-
 
         private void QuitButton_Click(object sender, EventArgs e)
         {
@@ -38,13 +39,19 @@ namespace TrolleybusScheduleApplication
 
         private void ChangeUserInfoButton_Click(object sender, EventArgs e)
         {
-            
-            
+            ChangeUserRoleWindow window = new ChangeUserRoleWindow(_user);
+            window.ShowDialog();
         }
 
         private void AdminWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             _startWindow.Close();
+        }
+
+        private void AddUserButton_Click(object sender, EventArgs e)
+        {
+            AddUserWindow window = new AddUserWindow(this);
+            window.ShowDialog();
         }
     }
 }

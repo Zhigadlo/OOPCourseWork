@@ -33,7 +33,7 @@
             this.CheckScheduleButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.QuitButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AddUserButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -87,14 +87,15 @@
             this.QuitButton.UseVisualStyleBackColor = true;
             this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
-            // button2
+            // AddUserButton
             // 
-            this.button2.Location = new System.Drawing.Point(266, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(257, 29);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Добавление пользователя";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddUserButton.Location = new System.Drawing.Point(266, 176);
+            this.AddUserButton.Name = "AddUserButton";
+            this.AddUserButton.Size = new System.Drawing.Size(257, 29);
+            this.AddUserButton.TabIndex = 5;
+            this.AddUserButton.Text = "Добавление пользователя";
+            this.AddUserButton.UseVisualStyleBackColor = true;
+            this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // button3
             // 
@@ -118,10 +119,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.AddUserButton);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckScheduleButton);
@@ -143,7 +145,7 @@
         private Button CheckScheduleButton;
         private Label label1;
         private Button QuitButton;
-        private Button button2;
+        private Button AddUserButton;
         private Button button3;
         private Button button4;
     }

@@ -36,12 +36,10 @@ namespace ORMLibrary
         /// <param name="collectionName"></param>
         public void Write(T obj)
         {
-            MongoClient mongoClient = new MongoClient("mongodb://localhost:27017");
-
             var collection = _db.GetCollection<T>(_collectionName);
 
             var items = ReadAll();
-            if (items.Count == 0 && obj.Id != 0)
+            if (items.Count == 0 && obj.Id != 0 || obj.Id != 0)
             {
 
             }

@@ -78,7 +78,7 @@ namespace TrolleybusScheduleApplication
                         switch (user.Role)
                         {
                             case Roles.Admin:
-                                AdminWindow adminWindow = new AdminWindow(this);
+                                AdminWindow adminWindow = new AdminWindow(this, user);
                                 adminWindow.ShowDialog();
                                 break;
                             case Roles.User:

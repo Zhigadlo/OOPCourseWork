@@ -242,17 +242,17 @@
         private Button RegistrationButton;
         private Label PasswordLabel;
         private Label LoginLabel;
-        private TextBox PasswordBox;
-        private TextBox LoginBox;
         private Label label1;
-        private TextBox SecondPasswordBox;
         private Button BackButton;
         private Label NewPasswordError;
         private Label SecondPasswordError;
         private Label PasswordError;
         private Label LoginError;
-        private Label EmptyLogin;
-        private Label EmptyPassword;
-        private Label EmptySecondPassword;
+        protected TextBox PasswordBox;
+        protected TextBox LoginBox;
+        protected TextBox SecondPasswordBox;
+        protected Label EmptyLogin;
+        protected Label EmptyPassword;
+        protected Label EmptySecondPassword;
     }
 }

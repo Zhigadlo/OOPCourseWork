@@ -15,20 +15,20 @@ namespace TrolleybusScheduleApplication
 {
     public partial class RegistrationWindow : Form
     {
-        private Form _startWindow;
-        private string _emptyString = "Поле пустое";
+        protected Form _startWindow;
+        protected string _emptyString = "Поле пустое";
         private ToolTip _toolTip = new ToolTip();
-        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
+        protected MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
         public RegistrationWindow(Form startWindow)
         {
             _startWindow = startWindow;
             InitializeComponent();
             _toolTip.SetToolTip(LoginBox, "Логин содержит от 6 до 12 символов, начинается с буквы");
-            _toolTip.SetToolTip(PasswordBox, "9-20 символов,одна обычная и заглавная буквы, спец. символ и цифра");
+            _toolTip.SetToolTip(PasswordBox, "9-20 символов, одна обычная и заглавная буквы, спец. символ и цифра");
             _toolTip.SetToolTip(SecondPasswordBox, "Повторите пароль который вы написали выше");
         }
 
-        private bool IsRegistrationSuccessful()
+        protected bool IsRegistrationSuccessful()
         {
             string regexForLogin = @"^[a-zA-Z][a-zA-Z0-9]{5,12}$";
             string regexForPassword = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,20}$";
@@ -117,7 +117,7 @@ namespace TrolleybusScheduleApplication
             }
         }
         
-        private void RegistrationButton_Click(object sender, EventArgs e)
+        protected virtual void RegistrationButton_Click(object sender, EventArgs e)
         {
             if (LoginBox.Text == "")
             {
@@ -154,7 +154,7 @@ namespace TrolleybusScheduleApplication
             _toolTip.Active = true;
         }
 
-        private void RegistrationWindow_FormClosed(object sender, FormClosedEventArgs e)
+        protected virtual void RegistrationWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             _startWindow.Close();
         }
