@@ -15,6 +15,7 @@ namespace TrolleybusScheduleApplication.Forms
     public partial class DeleteStopWindow : Form
     {
         private MongoDBORM<Route> _routesORM = new MongoDBORM<Route>("RouteSystem", "Routes");
+        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
         public DeleteStopWindow()
         {
             InitializeComponent();
@@ -27,12 +28,13 @@ namespace TrolleybusScheduleApplication.Forms
             if (StopsComboBox.SelectedItem != null)
             {
                 Stop stop = StopsComboBox.SelectedItem as Stop;
+                _stopORM.Delete(stop.Id);
                 List<Route> routes = _routesORM.ReadAll();
                 foreach (Route route in routes)
                 {
-                    foreach(StopPoint stopPoint in route.StopPoints)
+                    foreach (StopPoint stopPoint in route.StopPoints)
                     {
-                        if(stopPoint.Stop.Equals(stop))
+                        if (stopPoint.Stop.Equals(stop))
                         {
                             int id = route.Id;
                             route.StopPoints.Remove(stopPoint);
@@ -44,6 +46,7 @@ namespace TrolleybusScheduleApplication.Forms
 
                 MessageBox.Show("Остановка удалена", "Успех");
                 Close();
+
             }
             else
                 ErrorLabel.Visible = true;

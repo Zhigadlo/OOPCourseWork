@@ -8,7 +8,7 @@ namespace RouteTests
     public class ActionWithMongoDBTests
     {
         private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
-
+        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
         [Fact]
         public void ReadTest()
         {
@@ -88,9 +88,14 @@ namespace RouteTests
             //Route expectedRoute2 = _routeORM.Read("NumberOfRoute", 14);
             //Assert.True(route1.Equals(expectedRoute1));
             //Assert.True(route2.Equals(expectedRoute2));
-            _routeORM.Write(route1);
-            _routeORM.Write(route2);
-            
+            //_routeORM.Write(route1);
+            //_routeORM.Write(route2);
+            _stopORM.Write(stops1[0]);
+            _stopORM.Write(stops1[1]);
+            _stopORM.Write(stops1[2]);
+            _stopORM.Write(stops2[0]);
+            _stopORM.Write(stops2[1]);
+            _stopORM.Write(stops2[2]);
         }
     }
 }
