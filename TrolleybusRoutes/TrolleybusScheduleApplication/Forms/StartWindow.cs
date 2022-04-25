@@ -1,7 +1,7 @@
 using RouteSystem.Users;
 using ORMLibrary;
 
-namespace TrolleybusScheduleApplication
+namespace TrolleybusScheduleApplication.Forms
 {
     public partial class StartWindow : Form
     {

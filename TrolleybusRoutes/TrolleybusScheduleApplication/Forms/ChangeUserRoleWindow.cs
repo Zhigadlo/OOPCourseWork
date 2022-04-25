@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using RouteSystem.Users;
 using ORMLibrary;
 
-namespace TrolleybusScheduleApplication
+namespace TrolleybusScheduleApplication.Forms
 {
     public partial class ChangeUserRoleWindow : Form
     {

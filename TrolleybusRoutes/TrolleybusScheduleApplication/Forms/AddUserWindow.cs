@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RouteSystem.Users;
 
-namespace TrolleybusScheduleApplication
+namespace TrolleybusScheduleApplication.Forms
 {
     public partial class AddUserWindow : RegistrationWindow
     {

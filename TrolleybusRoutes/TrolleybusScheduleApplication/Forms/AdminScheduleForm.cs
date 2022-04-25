@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TrolleybusScheduleApplication
+namespace TrolleybusScheduleApplication.Forms
 {
     public partial class AdminScheduleForm : UserWindow
     {

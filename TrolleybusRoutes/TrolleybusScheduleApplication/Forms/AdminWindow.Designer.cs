@@ -1,4 +1,4 @@
-﻿namespace TrolleybusScheduleApplication
+﻿namespace TrolleybusScheduleApplication.Forms
 {
     partial class AdminWindow
     {
@@ -56,6 +56,7 @@
             this.AddRouteButton.TabIndex = 1;
             this.AddRouteButton.Text = "Добавить маршрут в базу данных";
             this.AddRouteButton.UseVisualStyleBackColor = true;
+            this.AddRouteButton.Click += new System.EventHandler(this.AddRouteButton_Click);
             // 
             // CheckScheduleButton
             // 

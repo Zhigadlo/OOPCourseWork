@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using ORMLibrary;
 using RouteSystem.Users;
 
-namespace TrolleybusScheduleApplication
+namespace TrolleybusScheduleApplication.Forms
 {
     public partial class RegistrationWindow : Form
     {

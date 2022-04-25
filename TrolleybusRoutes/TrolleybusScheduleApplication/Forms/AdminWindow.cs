@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RouteSystem.Users;
 
-namespace TrolleybusScheduleApplication
+namespace TrolleybusScheduleApplication.Forms
 {
     public partial class AdminWindow : Form
     {
@@ -63,6 +63,12 @@ namespace TrolleybusScheduleApplication
         private void DeleteStopButton_Click(object sender, EventArgs e)
         {
             DeleteStopWindow window = new DeleteStopWindow();
+            window.ShowDialog();
+        }
+
+        private void AddRouteButton_Click(object sender, EventArgs e)
+        {
+            AddRouteWindow window = new AddRouteWindow();
             window.ShowDialog();
         }
     }

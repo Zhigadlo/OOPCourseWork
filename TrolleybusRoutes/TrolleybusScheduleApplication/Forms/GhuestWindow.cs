@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using RouteSystem.Routes;
 using ORMLibrary;
 
-namespace TrolleybusScheduleApplication
+namespace TrolleybusScheduleApplication.Forms
 {
     public partial class GhuestWindow : Form
     {
