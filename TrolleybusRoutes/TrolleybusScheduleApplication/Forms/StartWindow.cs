@@ -1,5 +1,5 @@
-using RouteSystem.Users;
 using ORMLibrary;
+using RouteSystem.Users;
 
 namespace TrolleybusScheduleApplication.Forms
 {
@@ -30,11 +30,11 @@ namespace TrolleybusScheduleApplication.Forms
         }
         private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
-            PasswordBox.UseSystemPasswordChar = true;  
+            PasswordBox.UseSystemPasswordChar = true;
         }
         private void PasswordBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 LoginButton.Focus();
             }
@@ -54,7 +54,7 @@ namespace TrolleybusScheduleApplication.Forms
         }
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if(PasswordBox.Text == "" && LoginBox.Text == "")
+            if (PasswordBox.Text == "" && LoginBox.Text == "")
             {
                 PasswordError.Visible = true;
                 LoginError.Visible = true;
@@ -86,7 +86,7 @@ namespace TrolleybusScheduleApplication.Forms
                                 userWindow.ShowDialog();
                                 break;
                         }
-                        
+
                     }
                     else
                     {

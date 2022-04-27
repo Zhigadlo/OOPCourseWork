@@ -1,15 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using RouteSystem.Users;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ORMLibrary;
-using RouteSystem.Users;
 
 namespace TrolleybusScheduleApplication.Forms
 {
@@ -23,7 +13,7 @@ namespace TrolleybusScheduleApplication.Forms
 
         protected override void RegistrationWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         protected override void RegistrationButton_Click(object sender, EventArgs e)
@@ -61,7 +51,7 @@ namespace TrolleybusScheduleApplication.Forms
 
         private bool IsPasswordUpdateSuccessful()
         {
-            if(_userORM.Contains("Login", LoginBox.Text))
+            if (_userORM.Contains("Login", LoginBox.Text))
             {
                 if (Regex.IsMatch(PasswordBox.Text, _regexForPassword) && PasswordBox.Text == SecondPasswordBox.Text)
                 {

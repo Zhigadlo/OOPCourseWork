@@ -34,7 +34,6 @@
             this.QuitButton = new System.Windows.Forms.Button();
             this.AddUserButton = new System.Windows.Forms.Button();
             this.ChangeUserPasswordButton = new System.Windows.Forms.Button();
-            this.DeleteStopButton = new System.Windows.Forms.Button();
             this.RouteManageButton = new System.Windows.Forms.Button();
             this.UserManagrButton = new System.Windows.Forms.Button();
             this.StopManageButton = new System.Windows.Forms.Button();
@@ -100,16 +99,6 @@
             this.ChangeUserPasswordButton.UseVisualStyleBackColor = true;
             this.ChangeUserPasswordButton.Click += new System.EventHandler(this.ChangeUserPasswordButton_Click);
             // 
-            // DeleteStopButton
-            // 
-            this.DeleteStopButton.Location = new System.Drawing.Point(543, 127);
-            this.DeleteStopButton.Name = "DeleteStopButton";
-            this.DeleteStopButton.Size = new System.Drawing.Size(257, 29);
-            this.DeleteStopButton.TabIndex = 7;
-            this.DeleteStopButton.Text = "Удалить остановку из базы ";
-            this.DeleteStopButton.UseVisualStyleBackColor = true;
-            this.DeleteStopButton.Click += new System.EventHandler(this.DeleteStopButton_Click);
-            // 
             // RouteManageButton
             // 
             this.RouteManageButton.Location = new System.Drawing.Point(96, 114);
@@ -144,11 +133,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(862, 299);
+            this.ClientSize = new System.Drawing.Size(451, 299);
             this.Controls.Add(this.StopManageButton);
             this.Controls.Add(this.UserManagrButton);
             this.Controls.Add(this.RouteManageButton);
-            this.Controls.Add(this.DeleteStopButton);
             this.Controls.Add(this.ChangeUserPasswordButton);
             this.Controls.Add(this.AddUserButton);
             this.Controls.Add(this.QuitButton);
@@ -172,7 +160,6 @@
         private Button QuitButton;
         private Button AddUserButton;
         private Button ChangeUserPasswordButton;
-        private Button DeleteStopButton;
         private Button RouteManageButton;
         private Button UserManagrButton;
         private Button StopManageButton;

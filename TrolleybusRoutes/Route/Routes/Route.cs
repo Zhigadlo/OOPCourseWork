@@ -1,7 +1,6 @@
-﻿using ORMLibrary.Abstract;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System.Linq;
+using ORMLibrary.Abstract;
 
 namespace RouteSystem.Routes
 {
@@ -61,7 +60,7 @@ namespace RouteSystem.Routes
         }
         public static void DeleteStopFromRoutes(List<Route> routes, Stop stop)
         {
-            foreach(Route route in routes)
+            foreach (Route route in routes)
             {
                 route.StopPoints.Where(x => x.Stop.Equals(stop)).ToList().ForEach(x => route.StopPoints.Remove(x));
 
@@ -84,7 +83,7 @@ namespace RouteSystem.Routes
         }
         public override bool Equals(object? obj)
         {
-            if(obj == null || obj is not Route)
+            if (obj == null || obj is not Route)
                 return false;
             else
             {
@@ -95,8 +94,8 @@ namespace RouteSystem.Routes
                 if (!StopPoints.SequenceEqual(newObj.StopPoints))
                     return false;
 
-                return  true;
-            }    
+                return true;
+            }
         }
     }
 }

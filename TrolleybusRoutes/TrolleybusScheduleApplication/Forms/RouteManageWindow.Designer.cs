@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.AddRouteButton = new System.Windows.Forms.Button();
             this.QuitButton = new System.Windows.Forms.Button();
-            this.PanelOfRoutes = new System.Windows.Forms.FlowLayoutPanel();
+            this.PanelForControls = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // RoutePanel
@@ -74,13 +74,13 @@
             this.QuitButton.UseVisualStyleBackColor = true;
             this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
-            // PanelOfRoutes
+            // PanelForControls
             // 
-            this.PanelOfRoutes.AutoScroll = true;
-            this.PanelOfRoutes.Location = new System.Drawing.Point(12, 50);
-            this.PanelOfRoutes.Name = "PanelOfRoutes";
-            this.PanelOfRoutes.Size = new System.Drawing.Size(587, 340);
-            this.PanelOfRoutes.TabIndex = 4;
+            this.PanelForControls.AutoScroll = true;
+            this.PanelForControls.Location = new System.Drawing.Point(12, 50);
+            this.PanelForControls.Name = "PanelForControls";
+            this.PanelForControls.Size = new System.Drawing.Size(587, 340);
+            this.PanelForControls.TabIndex = 4;
             // 
             // RouteManageWindow
             // 
@@ -88,7 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(592, 446);
-            this.Controls.Add(this.PanelOfRoutes);
+            this.Controls.Add(this.PanelForControls);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.AddRouteButton);
             this.Controls.Add(this.label1);
@@ -103,9 +103,9 @@
         #endregion
 
         private FlowLayoutPanel RoutePanel;
-        private Label label1;
         private Button AddRouteButton;
         private Button QuitButton;
-        public FlowLayoutPanel PanelOfRoutes;
+        public FlowLayoutPanel PanelForControls;
+        protected Label label1;
     }
 }

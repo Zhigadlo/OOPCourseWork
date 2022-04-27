@@ -1,7 +1,7 @@
-using Xunit;
-using RouteSystem.Routes;
 using ORMLibrary;
+using RouteSystem.Routes;
 using System.Collections.Generic;
+using Xunit;
 
 namespace RouteTests
 {
@@ -18,7 +18,7 @@ namespace RouteTests
                 new Stop("ТЦ Речицкий"),
                 new Stop("Площадь Ленина")
             };
-            
+
             List<Stop> stops2 = new List<Stop>
             {
                 new Stop("Рынок Привоз"),

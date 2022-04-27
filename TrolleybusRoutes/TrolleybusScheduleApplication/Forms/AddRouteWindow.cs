@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using TrolleybusScheduleApplication.Controls;
-using ORMLibrary;
+﻿using ORMLibrary;
 using RouteSystem.Routes;
+using TrolleybusScheduleApplication.Controls;
 
 namespace TrolleybusScheduleApplication.Forms
 {
@@ -75,7 +66,7 @@ namespace TrolleybusScheduleApplication.Forms
                 Route route = new Route(routeNumber, stopPoints);
                 _routeORM.Write(route);
                 _startWindow.RouteList.Add(route);
-                _startWindow.PanelOfRoutes.Controls.Add(new RouteControl(route));
+                _startWindow.PanelForControls.Controls.Add(new RouteControl(route));
                 MessageBox.Show("Маршрут номер " + routeNumber + " добавлен.", "Успех");
                 Close();
             }

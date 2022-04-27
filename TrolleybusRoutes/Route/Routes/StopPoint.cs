@@ -1,5 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace RouteSystem.Routes
 {
@@ -25,15 +25,15 @@ namespace RouteSystem.Routes
         }
         public override bool Equals(object? obj)
         {
-            if(obj == null || obj is not StopPoint)
+            if (obj == null || obj is not StopPoint)
                 return false;
             else
             {
                 StopPoint newObj = obj as StopPoint;
-                if(!Schedule.SequenceEqual(newObj.Schedule))
+                if (!Schedule.SequenceEqual(newObj.Schedule))
                     return false;
 
-                if(!newObj.Stop.Equals(Stop))
+                if (!newObj.Stop.Equals(Stop))
                     return false;
 
                 return true;

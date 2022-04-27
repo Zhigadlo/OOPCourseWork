@@ -41,6 +41,7 @@
             this.ChangeButton.TabIndex = 3;
             this.ChangeButton.Text = "✎";
             this.ChangeButton.UseVisualStyleBackColor = true;
+            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // DeleteButton
             // 
@@ -50,6 +51,7 @@
             this.DeleteButton.TabIndex = 2;
             this.DeleteButton.Text = "╳";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // StopName
             // 

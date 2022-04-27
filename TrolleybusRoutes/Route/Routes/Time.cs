@@ -19,21 +19,21 @@ namespace RouteSystem.Routes
             Minute = minute;
         }
 
-        public static bool operator == (Time time1, Time time2)
+        public static bool operator ==(Time time1, Time time2)
         {
             return time1.Equals(time2);
         }
-        public static bool operator != (Time time1, Time time2)
+        public static bool operator !=(Time time1, Time time2)
         {
             return !time1.Equals(time2);
         }
-        public static bool operator > (Time time1, Time time2)
+        public static bool operator >(Time time1, Time time2)
         {
             int minutes1 = time1.Minute + time1.Hour * 60;
             int minutes2 = time2.Minute + time2.Hour * 60;
             return minutes1 > minutes2;
         }
-        public static bool operator < (Time time1, Time time2)
+        public static bool operator <(Time time1, Time time2)
         {
             int minutes1 = time1.Minute + time1.Hour * 60;
             int minutes2 = time2.Minute + time2.Hour * 60;
@@ -42,12 +42,12 @@ namespace RouteSystem.Routes
 
         public override bool Equals(object? obj)
         {
-            if(obj == null || obj is not Time)
+            if (obj == null || obj is not Time)
                 return false;
             else
             {
                 var newObj = obj as Time;
-                if(newObj.Hour != Hour)
+                if (newObj.Hour != Hour)
                     return false;
 
                 if (newObj.Minute != Minute)
@@ -64,10 +64,10 @@ namespace RouteSystem.Routes
         {
             string hour = Hour.ToString();
             string minute = Minute.ToString();
-            if(Hour < 10)
+            if (Hour < 10)
                 hour = "0" + hour;
 
-            if(Minute < 10)
+            if (Minute < 10)
                 minute = "0" + minute;
 
             return hour + ":" + minute;

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using RouteSystem.Users;
+﻿using RouteSystem.Users;
 
 namespace TrolleybusScheduleApplication.Forms
 {
@@ -20,7 +11,7 @@ namespace TrolleybusScheduleApplication.Forms
 
         protected override void RegistrationWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+
         }
 
         protected override void RegistrationButton_Click(object sender, EventArgs e)

@@ -1,8 +1,8 @@
-﻿using MongoDB.Driver;
-using MongoDB.Bson;
-using ORMLibrary.Abstract;
-using Newtonsoft.Json;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using MongoDB.Driver.Linq;
+using Newtonsoft.Json;
+using ORMLibrary.Abstract;
 
 namespace ORMLibrary
 {
@@ -22,7 +22,7 @@ namespace ORMLibrary
             List<T> objects = ReadAll();
             foreach (var item in objects)
             {
-                if(item.Id >= _maxId)
+                if (item.Id >= _maxId)
                     _maxId = item.Id;
             }
         }
@@ -52,7 +52,7 @@ namespace ORMLibrary
                 obj.Id = _maxId + 1;
             }
             _maxId = obj.Id;
-            
+
             collection.InsertOne(obj);
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace ORMLibrary
             {
                 return false;
             }
-            
+
         }
         /// <summary>
         /// Read all objects from database collection
@@ -129,7 +129,7 @@ namespace ORMLibrary
         /// </summary>
         /// <param name="id"></param>
         /// <param name="newObj"></param>
-        public void Update(int id,T newObj)
+        public void Update(int id, T newObj)
         {
             newObj.Id = id;
             Delete(id);

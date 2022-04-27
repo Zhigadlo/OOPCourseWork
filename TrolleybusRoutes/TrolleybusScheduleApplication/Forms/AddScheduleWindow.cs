@@ -1,13 +1,4 @@
 ﻿using RouteSystem.Routes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using TrolleybusScheduleApplication.Controls;
 
 namespace TrolleybusScheduleApplication.Forms
@@ -19,9 +10,9 @@ namespace TrolleybusScheduleApplication.Forms
         public AddScheduleWindow(int routeCount, AddStopControl stopControl)
         {
             _stopControl = stopControl;
-            _routeCount = routeCount;   
+            _routeCount = routeCount;
             InitializeComponent();
-            for(int i = 0; i < routeCount; i++)
+            for (int i = 0; i < routeCount; i++)
             {
                 AddTimeControl timeControl = new AddTimeControl();
                 PanelForTime.Controls.Add(timeControl);
@@ -41,7 +32,7 @@ namespace TrolleybusScheduleApplication.Forms
                 {
                     int hour = int.Parse(control.HourBox.Text);
                     int minutes = int.Parse(control.MinuteBox.Text);
-                    if(hour <0 || hour >= 24 || minutes < 0 || minutes >= 60)
+                    if (hour < 0 || hour >= 24 || minutes < 0 || minutes >= 60)
                     {
                         throw new Exception();
                     }
@@ -59,13 +50,13 @@ namespace TrolleybusScheduleApplication.Forms
         }
         private void AddScheduleWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(_routeCount > _stopControl.StopSchedule.Count)
+            if (_routeCount > _stopControl.StopSchedule.Count)
             {
                 _stopControl.ErrorLabel.Visible = true;
                 _stopControl.ErrorLabel.Text = "Расписание не заполнено";
                 _stopControl.ErrorLabel.ForeColor = Color.Red;
             }
         }
-        
+
     }
 }

@@ -1,6 +1,6 @@
-﻿using ORMLibrary.Abstract;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using ORMLibrary.Abstract;
 
 namespace RouteSystem.Routes
 {
@@ -31,13 +31,13 @@ namespace RouteSystem.Routes
         }
         public override bool Equals(object? obj)
         {
-            if(obj == null || obj is not Stop)
+            if (obj == null || obj is not Stop)
                 return false;
             else
             {
                 Stop newObj = obj as Stop;
 
-                if(newObj.Name != Name)
+                if (newObj.Name != Name)
                     return false;
                 else
                     return true;

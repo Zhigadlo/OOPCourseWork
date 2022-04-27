@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ORMLibrary;
 using RouteSystem.Routes;
-using ORMLibrary;
+using System.Data;
 
 namespace TrolleybusScheduleApplication.Forms
 {
@@ -17,7 +9,7 @@ namespace TrolleybusScheduleApplication.Forms
         protected Form _startWindow;
         protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         protected List<Route> _routes;
-        public UserWindow(Form startWindow) 
+        public UserWindow(Form startWindow)
         {
             _startWindow = startWindow;
             InitializeComponent();

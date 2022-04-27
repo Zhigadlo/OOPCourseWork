@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ORMLibrary;
 using RouteSystem.Routes;
-using ORMLibrary;
+using System.Data;
 
 namespace TrolleybusScheduleApplication.Forms
 {
@@ -46,7 +38,7 @@ namespace TrolleybusScheduleApplication.Forms
         }
         protected void FindButton_Click(object sender, EventArgs e)
         {
-            if(BoxForNumbers.SelectedItem != null)
+            if (BoxForNumbers.SelectedItem != null)
             {
                 int number = Convert.ToInt32(BoxForNumbers.SelectedItem);
 
@@ -73,7 +65,7 @@ namespace TrolleybusScheduleApplication.Forms
         private void StopBox_Click(object sender, EventArgs e)
         {
             var stopPoint = StopBox.SelectedItem as StopPoint;
-            if(stopPoint != null)
+            if (stopPoint != null)
             {
                 string time = "";
                 for (int i = 0; i < stopPoint.Schedule.Count; i++)

@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using RouteSystem.Routes;
-using TrolleybusScheduleApplication.Forms;
+﻿using RouteSystem.Routes;
 
 namespace TrolleybusScheduleApplication.Controls
 {
@@ -37,7 +27,7 @@ namespace TrolleybusScheduleApplication.Controls
         {
             if (StopComboBox.Text != "")
                 Stop = new Stop(StopComboBox.Text);
-            
+
         }
     }
 }

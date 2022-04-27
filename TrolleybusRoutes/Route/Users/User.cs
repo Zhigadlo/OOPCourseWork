@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
-using ORMLibrary.Abstract;
 using MongoDB.Bson.Serialization.Attributes;
+using ORMLibrary.Abstract;
 
 namespace RouteSystem.Users
 {

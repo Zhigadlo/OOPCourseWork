@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ORMLibrary;
+﻿using ORMLibrary;
 using RouteSystem.Routes;
 using TrolleybusScheduleApplication.Controls;
 
@@ -20,26 +11,7 @@ namespace TrolleybusScheduleApplication.Forms
         public RouteManageWindow()
         {
             InitializeComponent();
-            RouteList = _routeORM.ReadAll();
-            foreach(Route route in RouteList)
-            {
-                RouteControl routeControl = new RouteControl(route);
-                routeControl.OnChangeButtonClick += () =>
-                {
-                    ChangeRouteWindow changeRouteWindow = new ChangeRouteWindow(this, route);
-                    changeRouteWindow.ShowDialog();
-                };
-                routeControl.OnDeleteButtonClick += () =>
-                {
-                    if (MessageBox.Show("Вы точно хотите удалить "+ routeControl.Route.NumberOfRoute 
-                        + " маршрут?", "Удаление", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        PanelOfRoutes.Controls.Remove(routeControl);
-                        DeleteRouteFromDB(routeControl.Route);
-                    }
-                };
-                PanelOfRoutes.Controls.Add(routeControl);
-            }
+            WindowInitialize();
         }
 
         private void QuitButton_Click(object sender, EventArgs e)
@@ -55,6 +27,29 @@ namespace TrolleybusScheduleApplication.Forms
         {
             AddRouteWindow window = new AddRouteWindow(this);
             window.ShowDialog();
+        }
+        protected virtual void WindowInitialize()
+        {
+            RouteList = _routeORM.ReadAll();
+            foreach (Route route in RouteList)
+            {
+                RouteControl routeControl = new RouteControl(route);
+                routeControl.OnChangeButtonClick += () =>
+                {
+                    ChangeRouteWindow changeRouteWindow = new ChangeRouteWindow(this, route);
+                    changeRouteWindow.ShowDialog();
+                };
+                routeControl.OnDeleteButtonClick += () =>
+                {
+                    if (MessageBox.Show("Вы точно хотите удалить " + routeControl.Route.NumberOfRoute
+                        + " маршрут?", "Удаление", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        PanelForControls.Controls.Remove(routeControl);
+                        DeleteRouteFromDB(routeControl.Route);
+                    }
+                };
+                PanelForControls.Controls.Add(routeControl);
+            }
         }
     }
 }

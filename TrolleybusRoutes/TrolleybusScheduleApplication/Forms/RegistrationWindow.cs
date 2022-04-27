@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ORMLibrary;
+﻿using ORMLibrary;
 using RouteSystem.Users;
+using System.Text.RegularExpressions;
 
 namespace TrolleybusScheduleApplication.Forms
 {
@@ -90,7 +81,7 @@ namespace TrolleybusScheduleApplication.Forms
         }
         private void PasswordBox_TextChanged(object sender, EventArgs e)
         {
-            PasswordBox.UseSystemPasswordChar = true;   
+            PasswordBox.UseSystemPasswordChar = true;
         }
         private void PasswordBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -101,7 +92,7 @@ namespace TrolleybusScheduleApplication.Forms
         }
         private void SecondPasswordBox_TextChanged(object sender, EventArgs e)
         {
-            SecondPasswordBox.UseSystemPasswordChar = true;    
+            SecondPasswordBox.UseSystemPasswordChar = true;
         }
         private void SecondPasswordBox_Click(object sender, EventArgs e)
         {
@@ -116,7 +107,7 @@ namespace TrolleybusScheduleApplication.Forms
                 RegistrationButton.Focus();
             }
         }
-        
+
         protected virtual void RegistrationButton_Click(object sender, EventArgs e)
         {
             if (LoginBox.Text == "")

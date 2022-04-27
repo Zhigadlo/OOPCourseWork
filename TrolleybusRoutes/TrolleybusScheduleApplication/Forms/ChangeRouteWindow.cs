@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using RouteSystem.Routes;
+﻿using RouteSystem.Routes;
 using TrolleybusScheduleApplication.Controls;
 
 namespace TrolleybusScheduleApplication.Forms
@@ -22,7 +13,7 @@ namespace TrolleybusScheduleApplication.Forms
             RouteCountBox.Text = _routeToChange.StopPoints[0].Schedule.Count.ToString();
             RouteNumberBox.Text = _routeToChange.NumberOfRoute.ToString();
             PanelForControls.Controls.Clear();
-            foreach(StopPoint stopPoint in route.StopPoints)
+            foreach (StopPoint stopPoint in route.StopPoints)
             {
                 AddStopControl control = new AddStopControl();
                 control.OnAddScheduleButtonClick += () =>
@@ -57,10 +48,10 @@ namespace TrolleybusScheduleApplication.Forms
                 _routeORM.Update(_routeToChange.Id, newRoute);
                 _startWindow.RouteList.Remove(_startWindow.RouteList.Find(x => x.Id == _routeToChange.Id));
                 _startWindow.RouteList.Add(newRoute);
-                _startWindow.PanelOfRoutes.Controls.Remove(new RouteControl(_routeToChange));
-                _startWindow.PanelOfRoutes.Controls.Add(new RouteControl(newRoute));
-                
-                
+                _startWindow.PanelForControls.Controls.Remove(new RouteControl(_routeToChange));
+                _startWindow.PanelForControls.Controls.Add(new RouteControl(newRoute));
+
+
                 MessageBox.Show("Маршрут номер " + routeNumber + " изменен.", "Успех");
                 Close();
             }
