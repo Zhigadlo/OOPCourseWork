@@ -144,13 +144,13 @@
         #endregion
 
         private Label label1;
-        private FlowLayoutPanel PanelForControls;
-        private Button AddControlButton;
-        private TextBox RouteNumberBox;
         private Label label2;
         private Label label3;
-        private Button AddRouteButton;
         private Button QuitButton;
-        private TextBox RouteCountBox;
+        protected Button AddRouteButton;
+        protected FlowLayoutPanel PanelForControls;
+        protected TextBox RouteNumberBox;
+        protected TextBox RouteCountBox;
+        protected Button AddControlButton;
     }
 }

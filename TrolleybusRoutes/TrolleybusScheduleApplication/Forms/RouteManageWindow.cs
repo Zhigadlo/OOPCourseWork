@@ -26,7 +26,8 @@ namespace TrolleybusScheduleApplication.Forms
                 RouteControl routeControl = new RouteControl(route);
                 routeControl.OnChangeButtonClick += () =>
                 {
-
+                    ChangeRouteWindow changeRouteWindow = new ChangeRouteWindow(this, route);
+                    changeRouteWindow.ShowDialog();
                 };
                 routeControl.OnDeleteButtonClick += () =>
                 {

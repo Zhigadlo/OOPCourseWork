@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using RouteSystem.Routes;
+using TrolleybusScheduleApplication.Controls;
+
+namespace TrolleybusScheduleApplication.Forms
+{
+    public partial class ChangeRouteWindow : AddRouteWindow
+    {
+        private Route _routeToChange;
+        public ChangeRouteWindow(RouteManageWindow window, Route route) : base(window)
+        {
+            _routeToChange = route;
+            AddRouteButton.Text = "Изменить маршрут";
+            RouteCountBox.Text = _routeToChange.StopPoints[0].Schedule.Count.ToString();
+            RouteNumberBox.Text = _routeToChange.NumberOfRoute.ToString();
+            PanelForControls.Controls.Clear();
+            foreach(StopPoint stopPoint in route.StopPoints)
+            {
+                AddStopControl control = new AddStopControl();
+                control.OnAddScheduleButtonClick += () =>
+                {
+                    AddSchedule(control);
+                };
+                control.OnRemoveButtonClick += () =>
+                {
+                    PanelForControls.Controls.Remove(control);
+                };
+                control.StopComboBox.Text = stopPoint.Stop.ToString();
+                control.StopSchedule = stopPoint.Schedule;
+                PanelForControls.Controls.Add(control);
+            }
+        }
+
+        protected override void AddRouteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int routeNumber = int.Parse(RouteNumberBox.Text);
+                int routeCount = int.Parse(RouteCountBox.Text);
+                List<StopPoint> stopPoints = new List<StopPoint>();
+                foreach (AddStopControl stopControl in PanelForControls.Controls)
+                {
+                    if (routeCount != stopControl.StopSchedule.Count || stopControl.Stop == null)
+                        throw new Exception();
+
+                    stopPoints.Add(new StopPoint(stopControl.StopSchedule, stopControl.Stop));
+                }
+                Route newRoute = new Route(routeNumber, stopPoints);
+                _routeORM.Update(_routeToChange.Id, newRoute);
+                _startWindow.RouteList.Remove(_startWindow.RouteList.Find(x => x.Id == _routeToChange.Id));
+                _startWindow.RouteList.Add(newRoute);
+                _startWindow.PanelOfRoutes.Controls.Remove(new RouteControl(_routeToChange));
+                _startWindow.PanelOfRoutes.Controls.Add(new RouteControl(newRoute));
+                
+                
+                MessageBox.Show("Маршрут номер " + routeNumber + " изменен.", "Успех");
+                Close();
+            }
+            catch
+            {
+                MessageBox.Show("Не все поля заполнены", "Ошибка");
+            }
+        }
+    }
+}

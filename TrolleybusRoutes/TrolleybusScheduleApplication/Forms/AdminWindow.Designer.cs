@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.ChangeUserInfoButton = new System.Windows.Forms.Button();
-            this.AddRouteButton = new System.Windows.Forms.Button();
             this.CheckScheduleButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.QuitButton = new System.Windows.Forms.Button();
@@ -50,16 +49,6 @@
             this.ChangeUserInfoButton.Text = "Смена роли пользователя";
             this.ChangeUserInfoButton.UseVisualStyleBackColor = true;
             this.ChangeUserInfoButton.Click += new System.EventHandler(this.ChangeUserInfoButton_Click);
-            // 
-            // AddRouteButton
-            // 
-            this.AddRouteButton.Location = new System.Drawing.Point(543, 130);
-            this.AddRouteButton.Name = "AddRouteButton";
-            this.AddRouteButton.Size = new System.Drawing.Size(257, 29);
-            this.AddRouteButton.TabIndex = 1;
-            this.AddRouteButton.Text = "Добавить маршрут в базу данных";
-            this.AddRouteButton.UseVisualStyleBackColor = true;
-            this.AddRouteButton.Click += new System.EventHandler(this.AddRouteButton_Click);
             // 
             // CheckScheduleButton
             // 
@@ -113,7 +102,7 @@
             // 
             // DeleteStopButton
             // 
-            this.DeleteStopButton.Location = new System.Drawing.Point(543, 165);
+            this.DeleteStopButton.Location = new System.Drawing.Point(543, 127);
             this.DeleteStopButton.Name = "DeleteStopButton";
             this.DeleteStopButton.Size = new System.Drawing.Size(257, 29);
             this.DeleteStopButton.TabIndex = 7;
@@ -155,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(464, 299);
+            this.ClientSize = new System.Drawing.Size(862, 299);
             this.Controls.Add(this.StopManageButton);
             this.Controls.Add(this.UserManagrButton);
             this.Controls.Add(this.RouteManageButton);
@@ -165,7 +154,6 @@
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckScheduleButton);
-            this.Controls.Add(this.AddRouteButton);
             this.Controls.Add(this.ChangeUserInfoButton);
             this.Name = "AdminWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -179,7 +167,6 @@
         #endregion
 
         private Button ChangeUserInfoButton;
-        private Button AddRouteButton;
         private Button CheckScheduleButton;
         private Label label1;
         private Button QuitButton;

@@ -16,9 +16,9 @@ namespace TrolleybusScheduleApplication.Forms
     public partial class AddRouteWindow : Form
     {
         private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
-        private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
+        protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         private List<Stop> _stops;
-        private RouteManageWindow _startWindow;
+        protected RouteManageWindow _startWindow;
         public AddRouteWindow(RouteManageWindow window)
         {
             _startWindow = window;
@@ -45,7 +45,7 @@ namespace TrolleybusScheduleApplication.Forms
         {
             AddStopControl();
         }
-        private void AddSchedule(AddStopControl control)
+        protected void AddSchedule(AddStopControl control)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace TrolleybusScheduleApplication.Forms
                 MessageBox.Show("Введите количество поездок", "Ошибка");
             }
         }
-        private void AddRouteButton_Click(object sender, EventArgs e)
+        protected virtual void AddRouteButton_Click(object sender, EventArgs e)
         {
             try
             {
