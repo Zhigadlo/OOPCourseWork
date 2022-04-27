@@ -68,8 +68,19 @@ namespace TrolleybusScheduleApplication.Forms
 
         private void AddRouteButton_Click(object sender, EventArgs e)
         {
-            AddRouteWindow window = new AddRouteWindow();
-            window.ShowDialog();
+            //AddRouteWindow window = new AddRouteWindow();
+            //window.ShowDialog();
+        }
+
+        private void RouteManageButton_Click(object sender, EventArgs e)
+        {
+            RouteManageWindow routeManageWindow = new RouteManageWindow();
+            routeManageWindow.ShowDialog();
+        }
+
+        private void StopManageButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

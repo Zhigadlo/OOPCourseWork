@@ -36,10 +36,15 @@ namespace TrolleybusScheduleApplication.Forms
         {
             try
             {
+                _stopControl.StopSchedule = new List<Time>();
                 foreach (AddTimeControl control in PanelForTime.Controls)
                 {
                     int hour = int.Parse(control.HourBox.Text);
                     int minutes = int.Parse(control.MinuteBox.Text);
+                    if(hour <0 || hour >= 24 || minutes < 0 || minutes >= 60)
+                    {
+                        throw new Exception();
+                    }
                     _stopControl.StopSchedule.Add(new Time(hour, minutes));
                 }
                 Close();

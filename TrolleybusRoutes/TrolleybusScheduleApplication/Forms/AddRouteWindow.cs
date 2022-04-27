@@ -18,8 +18,10 @@ namespace TrolleybusScheduleApplication.Forms
         private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
         private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         private List<Stop> _stops;
-        public AddRouteWindow()
+        private RouteManageWindow _startWindow;
+        public AddRouteWindow(RouteManageWindow window)
         {
+            _startWindow = window;
             InitializeComponent();
             _stops = _stopORM.ReadAll();
             AddStopControl();
@@ -70,8 +72,10 @@ namespace TrolleybusScheduleApplication.Forms
 
                     stopPoints.Add(new StopPoint(stopControl.StopSchedule, stopControl.Stop));
                 }
-
-                _routeORM.Write(new Route(routeNumber, stopPoints));
+                Route route = new Route(routeNumber, stopPoints);
+                _routeORM.Write(route);
+                _startWindow.RouteList.Add(route);
+                _startWindow.PanelOfRoutes.Controls.Add(new RouteControl(route));
                 MessageBox.Show("Маршрут номер " + routeNumber + " добавлен.", "Успех");
                 Close();
             }
