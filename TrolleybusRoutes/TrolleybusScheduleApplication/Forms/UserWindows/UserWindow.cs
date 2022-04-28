@@ -2,7 +2,7 @@
 using RouteSystem.Routes;
 using System.Data;
 
-namespace TrolleybusScheduleApplication.Forms
+namespace TrolleybusScheduleApplication.Forms.UserWindows
 {
     public partial class UserWindow : Form
     {

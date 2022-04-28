@@ -1,6 +1,9 @@
 ﻿using RouteSystem.Users;
+using TrolleybusScheduleApplication.Forms.AdminWindows.Schedule;
+using TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage;
+using TrolleybusScheduleApplication.Forms.AdminWindows.StopManage;
 
-namespace TrolleybusScheduleApplication.Forms
+namespace TrolleybusScheduleApplication.Forms.AdminWindows
 {
     public partial class AdminWindow : Form
     {
@@ -30,18 +33,6 @@ namespace TrolleybusScheduleApplication.Forms
         private void AdminWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             _startWindow.Close();
-        }
-
-        private void AddUserButton_Click(object sender, EventArgs e)
-        {
-            AddUserWindow window = new AddUserWindow(this);
-            window.ShowDialog();
-        }
-
-        private void ChangeUserPasswordButton_Click(object sender, EventArgs e)
-        {
-            ChangeUserPasswordWindow window = new ChangeUserPasswordWindow(this);
-            window.ShowDialog();
         }
 
         private void RouteManageButton_Click(object sender, EventArgs e)

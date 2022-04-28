@@ -1,4 +1,4 @@
-﻿namespace TrolleybusScheduleApplication.Forms
+﻿namespace TrolleybusScheduleApplication.Forms.AdminWindows.StopManage
 {
     partial class AddStopWindow
     {

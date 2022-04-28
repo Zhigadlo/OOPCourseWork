@@ -35,7 +35,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(512, 17);
+            this.DeleteButton.Location = new System.Drawing.Point(488, 17);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(35, 35);
             this.DeleteButton.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // ChangeButton
             // 
-            this.ChangeButton.Location = new System.Drawing.Point(471, 17);
+            this.ChangeButton.Location = new System.Drawing.Point(447, 17);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(35, 35);
             this.ChangeButton.TabIndex = 1;
@@ -74,7 +74,7 @@
             this.Controls.Add(this.ChangeButton);
             this.Controls.Add(this.DeleteButton);
             this.Name = "RouteControl";
-            this.Size = new System.Drawing.Size(562, 68);
+            this.Size = new System.Drawing.Size(547, 68);
             this.ResumeLayout(false);
             this.PerformLayout();
 

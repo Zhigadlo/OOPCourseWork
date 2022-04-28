@@ -1,4 +1,4 @@
-﻿namespace TrolleybusScheduleApplication.Forms
+﻿namespace TrolleybusScheduleApplication.Forms.GuestWindows
 {
     partial class GhuestWindow
     {

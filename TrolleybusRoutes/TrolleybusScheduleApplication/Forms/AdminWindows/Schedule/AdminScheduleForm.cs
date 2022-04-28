@@ -1,4 +1,6 @@
-﻿namespace TrolleybusScheduleApplication.Forms
+﻿using TrolleybusScheduleApplication.Forms.UserWindows;
+
+namespace TrolleybusScheduleApplication.Forms.AdminWindows.Schedule
 {
     public partial class AdminScheduleForm : UserWindow
     {

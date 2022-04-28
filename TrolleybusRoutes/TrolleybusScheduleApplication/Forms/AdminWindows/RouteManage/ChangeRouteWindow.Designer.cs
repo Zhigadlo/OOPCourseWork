@@ -1,6 +1,6 @@
-﻿namespace TrolleybusScheduleApplication.Forms
+﻿namespace TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage
 {
-    partial class ChangeUserPasswordWindow
+    partial class ChangeRouteWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // ChangeUserPasswordWindow
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "ChangeUserPasswordWindow";
-            this.Text = "Изменение пароля пользователя";
-            this.ResumeLayout(false);
-
+            this.Text = "ChangeRouteWindow";
         }
 
         #endregion

@@ -2,7 +2,7 @@
 using RouteSystem.Routes;
 using System.Data;
 
-namespace TrolleybusScheduleApplication.Forms
+namespace TrolleybusScheduleApplication.Forms.GuestWindows
 {
     public partial class GhuestWindow : Form
     {

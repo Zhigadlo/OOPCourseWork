@@ -2,7 +2,7 @@
 using RouteSystem.Routes;
 using TrolleybusScheduleApplication.Controls;
 
-namespace TrolleybusScheduleApplication.Forms
+namespace TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage
 {
     public partial class RouteManageWindow : Form
     {

@@ -1,6 +1,6 @@
 ﻿using RouteSystem.Users;
 
-namespace TrolleybusScheduleApplication.Forms
+namespace TrolleybusScheduleApplication.Forms.AdminWindows.StopManage
 {
     public partial class AddUserWindow : RegistrationWindow
     {

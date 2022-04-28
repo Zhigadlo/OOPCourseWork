@@ -1,6 +1,6 @@
-﻿namespace TrolleybusScheduleApplication.Forms
+﻿namespace TrolleybusScheduleApplication.Forms.AdminWindows.Schedule
 {
-    partial class StopsManageWindow
+    partial class AdminScheduleForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "StopsManageWindow";
+            this.Text = "AdminScheduleForm";
         }
 
         #endregion

@@ -1,4 +1,4 @@
-﻿namespace TrolleybusScheduleApplication.Forms
+﻿namespace TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage
 {
     partial class AddScheduleWindow
     {

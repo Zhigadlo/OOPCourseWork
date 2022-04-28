@@ -1,4 +1,4 @@
-﻿namespace TrolleybusScheduleApplication.Forms
+﻿namespace TrolleybusScheduleApplication.Forms.AdminWindows
 {
     partial class AdminWindow
     {
@@ -31,8 +31,6 @@
             this.CheckScheduleButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.QuitButton = new System.Windows.Forms.Button();
-            this.AddUserButton = new System.Windows.Forms.Button();
-            this.ChangeUserPasswordButton = new System.Windows.Forms.Button();
             this.RouteManageButton = new System.Windows.Forms.Button();
             this.UserManagrButton = new System.Windows.Forms.Button();
             this.StopManageButton = new System.Windows.Forms.Button();
@@ -68,26 +66,6 @@
             this.QuitButton.UseVisualStyleBackColor = true;
             this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
-            // AddUserButton
-            // 
-            this.AddUserButton.Location = new System.Drawing.Point(543, 57);
-            this.AddUserButton.Name = "AddUserButton";
-            this.AddUserButton.Size = new System.Drawing.Size(257, 29);
-            this.AddUserButton.TabIndex = 5;
-            this.AddUserButton.Text = "Добавление пользователя";
-            this.AddUserButton.UseVisualStyleBackColor = true;
-            this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
-            // 
-            // ChangeUserPasswordButton
-            // 
-            this.ChangeUserPasswordButton.Location = new System.Drawing.Point(543, 92);
-            this.ChangeUserPasswordButton.Name = "ChangeUserPasswordButton";
-            this.ChangeUserPasswordButton.Size = new System.Drawing.Size(257, 29);
-            this.ChangeUserPasswordButton.TabIndex = 6;
-            this.ChangeUserPasswordButton.Text = "Смена пароля пользователя";
-            this.ChangeUserPasswordButton.UseVisualStyleBackColor = true;
-            this.ChangeUserPasswordButton.Click += new System.EventHandler(this.ChangeUserPasswordButton_Click);
-            // 
             // RouteManageButton
             // 
             this.RouteManageButton.Location = new System.Drawing.Point(96, 114);
@@ -122,12 +100,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(459, 299);
+            this.ClientSize = new System.Drawing.Size(465, 299);
             this.Controls.Add(this.StopManageButton);
             this.Controls.Add(this.UserManagrButton);
             this.Controls.Add(this.RouteManageButton);
-            this.Controls.Add(this.ChangeUserPasswordButton);
-            this.Controls.Add(this.AddUserButton);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckScheduleButton);
@@ -144,8 +120,6 @@
         private Button CheckScheduleButton;
         private Label label1;
         private Button QuitButton;
-        private Button AddUserButton;
-        private Button ChangeUserPasswordButton;
         private Button RouteManageButton;
         private Button UserManagrButton;
         private Button StopManageButton;

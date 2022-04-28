@@ -1,4 +1,4 @@
-﻿namespace TrolleybusScheduleApplication.Forms
+﻿namespace TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage
 {
     partial class RouteManageWindow
     {
@@ -79,7 +79,7 @@
             this.PanelForControls.AutoScroll = true;
             this.PanelForControls.Location = new System.Drawing.Point(12, 50);
             this.PanelForControls.Name = "PanelForControls";
-            this.PanelForControls.Size = new System.Drawing.Size(587, 340);
+            this.PanelForControls.Size = new System.Drawing.Size(579, 340);
             this.PanelForControls.TabIndex = 4;
             // 
             // RouteManageWindow

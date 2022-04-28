@@ -1,7 +1,7 @@
 ﻿using ORMLibrary;
 using RouteSystem.Routes;
 
-namespace TrolleybusScheduleApplication.Forms
+namespace TrolleybusScheduleApplication.Forms.AdminWindows.StopManage
 {
     public partial class AddStopWindow : Form
     {

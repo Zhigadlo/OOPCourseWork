@@ -1,5 +1,8 @@
 using ORMLibrary;
 using RouteSystem.Users;
+using TrolleybusScheduleApplication.Forms.GuestWindows;
+using TrolleybusScheduleApplication.Forms.AdminWindows;
+using TrolleybusScheduleApplication.Forms.UserWindows;
 
 namespace TrolleybusScheduleApplication.Forms
 {
