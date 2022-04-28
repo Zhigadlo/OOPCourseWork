@@ -82,6 +82,6 @@
 
         private Button ChangeButton;
         private Button DeleteButton;
-        private Label StopName;
+        public Label StopName;
     }
 }

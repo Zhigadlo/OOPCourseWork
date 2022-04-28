@@ -5,9 +5,9 @@ namespace TrolleybusScheduleApplication.Forms
 {
     public partial class AddScheduleWindow : Form
     {
-        private AddStopControl _stopControl;
+        private AddStopPointControl _stopControl;
         private int _routeCount;
-        public AddScheduleWindow(int routeCount, AddStopControl stopControl)
+        public AddScheduleWindow(int routeCount, AddStopPointControl stopControl)
         {
             _stopControl = stopControl;
             _routeCount = routeCount;

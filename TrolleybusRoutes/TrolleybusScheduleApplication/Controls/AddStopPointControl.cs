@@ -2,13 +2,13 @@
 
 namespace TrolleybusScheduleApplication.Controls
 {
-    public partial class AddStopControl : UserControl
+    public partial class AddStopPointControl : UserControl
     {
         public Action OnRemoveButtonClick;
         public Action OnAddScheduleButtonClick;
         public List<Time> StopSchedule = new List<Time>();
         public Stop Stop;
-        public AddStopControl()
+        public AddStopPointControl()
         {
             InitializeComponent();
         }

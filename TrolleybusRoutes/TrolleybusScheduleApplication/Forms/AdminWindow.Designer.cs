@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ChangeUserInfoButton = new System.Windows.Forms.Button();
             this.CheckScheduleButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.QuitButton = new System.Windows.Forms.Button();
@@ -38,16 +37,6 @@
             this.UserManagrButton = new System.Windows.Forms.Button();
             this.StopManageButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // ChangeUserInfoButton
-            // 
-            this.ChangeUserInfoButton.Location = new System.Drawing.Point(543, 22);
-            this.ChangeUserInfoButton.Name = "ChangeUserInfoButton";
-            this.ChangeUserInfoButton.Size = new System.Drawing.Size(257, 29);
-            this.ChangeUserInfoButton.TabIndex = 0;
-            this.ChangeUserInfoButton.Text = "Смена роли пользователя";
-            this.ChangeUserInfoButton.UseVisualStyleBackColor = true;
-            this.ChangeUserInfoButton.Click += new System.EventHandler(this.ChangeUserInfoButton_Click);
             // 
             // CheckScheduleButton
             // 
@@ -133,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(451, 299);
+            this.ClientSize = new System.Drawing.Size(459, 299);
             this.Controls.Add(this.StopManageButton);
             this.Controls.Add(this.UserManagrButton);
             this.Controls.Add(this.RouteManageButton);
@@ -142,7 +131,6 @@
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckScheduleButton);
-            this.Controls.Add(this.ChangeUserInfoButton);
             this.Name = "AdminWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Окно администратора";
@@ -153,8 +141,6 @@
         }
 
         #endregion
-
-        private Button ChangeUserInfoButton;
         private Button CheckScheduleButton;
         private Label label1;
         private Button QuitButton;

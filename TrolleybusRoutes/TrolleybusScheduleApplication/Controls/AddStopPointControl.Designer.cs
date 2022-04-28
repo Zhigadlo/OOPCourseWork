@@ -1,6 +1,6 @@
 ﻿namespace TrolleybusScheduleApplication.Controls
 {
-    partial class AddStopControl
+    partial class AddStopPointControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.

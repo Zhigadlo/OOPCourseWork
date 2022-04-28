@@ -23,7 +23,7 @@ namespace TrolleybusScheduleApplication.Forms
             _routeORM.Delete(route.Id);
         }
 
-        private void AddRouteButton_Click(object sender, EventArgs e)
+        protected virtual void AddRouteButton_Click(object sender, EventArgs e)
         {
             AddRouteWindow window = new AddRouteWindow(this);
             window.ShowDialog();

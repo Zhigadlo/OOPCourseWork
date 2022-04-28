@@ -103,9 +103,9 @@
         #endregion
 
         private FlowLayoutPanel RoutePanel;
-        private Button AddRouteButton;
         private Button QuitButton;
         public FlowLayoutPanel PanelForControls;
         protected Label label1;
+        protected Button AddRouteButton;
     }
 }

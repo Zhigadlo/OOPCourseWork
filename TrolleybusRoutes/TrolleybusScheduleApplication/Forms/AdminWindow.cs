@@ -27,13 +27,6 @@ namespace TrolleybusScheduleApplication.Forms
                 Close();
             }
         }
-
-        private void ChangeUserInfoButton_Click(object sender, EventArgs e)
-        {
-            ChangeUserRoleWindow window = new ChangeUserRoleWindow(_user);
-            window.ShowDialog();
-        }
-
         private void AdminWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             _startWindow.Close();
@@ -48,12 +41,6 @@ namespace TrolleybusScheduleApplication.Forms
         private void ChangeUserPasswordButton_Click(object sender, EventArgs e)
         {
             ChangeUserPasswordWindow window = new ChangeUserPasswordWindow(this);
-            window.ShowDialog();
-        }
-
-        private void DeleteStopButton_Click(object sender, EventArgs e)
-        {
-            DeleteStopWindow window = new DeleteStopWindow();
             window.ShowDialog();
         }
 

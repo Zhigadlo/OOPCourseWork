@@ -15,7 +15,7 @@ namespace TrolleybusScheduleApplication.Forms
             PanelForControls.Controls.Clear();
             foreach (StopPoint stopPoint in route.StopPoints)
             {
-                AddStopControl control = new AddStopControl();
+                AddStopPointControl control = new AddStopPointControl();
                 control.OnAddScheduleButtonClick += () =>
                 {
                     AddSchedule(control);
@@ -37,7 +37,7 @@ namespace TrolleybusScheduleApplication.Forms
                 int routeNumber = int.Parse(RouteNumberBox.Text);
                 int routeCount = int.Parse(RouteCountBox.Text);
                 List<StopPoint> stopPoints = new List<StopPoint>();
-                foreach (AddStopControl stopControl in PanelForControls.Controls)
+                foreach (AddStopPointControl stopControl in PanelForControls.Controls)
                 {
                     if (routeCount != stopControl.StopSchedule.Count || stopControl.Stop == null)
                         throw new Exception();

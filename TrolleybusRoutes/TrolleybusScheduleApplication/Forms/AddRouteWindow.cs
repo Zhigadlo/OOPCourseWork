@@ -20,7 +20,7 @@ namespace TrolleybusScheduleApplication.Forms
 
         private void AddStopControl()
         {
-            AddStopControl stopControl = new AddStopControl();
+            AddStopPointControl stopControl = new AddStopPointControl();
             stopControl.StopComboBox.Items.AddRange(_stops.ToArray());
             PanelForControls.Controls.Add(stopControl);
             stopControl.OnRemoveButtonClick += () =>
@@ -36,7 +36,7 @@ namespace TrolleybusScheduleApplication.Forms
         {
             AddStopControl();
         }
-        protected void AddSchedule(AddStopControl control)
+        protected void AddSchedule(AddStopPointControl control)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace TrolleybusScheduleApplication.Forms
                 int routeNumber = int.Parse(RouteNumberBox.Text);
                 int routeCount = int.Parse(RouteCountBox.Text);
                 List<StopPoint> stopPoints = new List<StopPoint>();
-                foreach (AddStopControl stopControl in PanelForControls.Controls)
+                foreach (AddStopPointControl stopControl in PanelForControls.Controls)
                 {
                     if (routeCount != stopControl.StopSchedule.Count || stopControl.Stop == null)
                         throw new Exception();
@@ -84,7 +84,7 @@ namespace TrolleybusScheduleApplication.Forms
             try
             {
                 int count = int.Parse(RouteCountBox.Text);
-                foreach (AddStopControl stopControl in PanelForControls.Controls)
+                foreach (AddStopPointControl stopControl in PanelForControls.Controls)
                 {
                     if (stopControl.StopSchedule.Count < count)
                     {
