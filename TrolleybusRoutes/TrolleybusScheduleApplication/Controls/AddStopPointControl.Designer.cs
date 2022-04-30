@@ -73,15 +73,16 @@
             this.ErrorLabel.Text = "label1";
             this.ErrorLabel.Visible = false;
             // 
-            // AddStopControl
+            // AddStopPointControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Controls.Add(this.ErrorLabel);
             this.Controls.Add(this.DeleteControlButton);
             this.Controls.Add(this.AddScheduleButton);
             this.Controls.Add(this.StopComboBox);
-            this.Name = "AddStopControl";
+            this.Name = "AddStopPointControl";
             this.Size = new System.Drawing.Size(689, 62);
             this.ResumeLayout(false);
             this.PerformLayout();

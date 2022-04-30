@@ -1,7 +1,7 @@
 using ORMLibrary;
 using RouteSystem.Users;
-using TrolleybusScheduleApplication.Forms.GuestWindows;
 using TrolleybusScheduleApplication.Forms.AdminWindows;
+using TrolleybusScheduleApplication.Forms.GuestWindows;
 using TrolleybusScheduleApplication.Forms.UserWindows;
 
 namespace TrolleybusScheduleApplication.Forms
@@ -57,20 +57,29 @@ namespace TrolleybusScheduleApplication.Forms
         }
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (PasswordBox.Text == "" && LoginBox.Text == "")
-            {
-                PasswordError.Visible = true;
-                LoginError.Visible = true;
-            }
-            else if (PasswordBox.Text == "")
-            {
-                PasswordError.Visible = true;
-            }
-            else if (LoginBox.Text == "")
+
+            if (LoginBox.Text == "")
             {
                 LoginError.Visible = true;
             }
-            else
+
+            if (PasswordBox.Text == "")
+            {
+                User user = _userORM.Read("Login", LoginBox.Text);
+                if (_userORM.Contains("Login", LoginBox.Text) && user.Password == null)
+                {
+                    MessageBox.Show("Ваш пароль был сброшен администратором", "Пароль");
+                    PasswordRecoveryWindow passwordRecoveryWindow = new PasswordRecoveryWindow(this, user);
+                    passwordRecoveryWindow.ShowDialog();
+                }
+                else
+                {
+                    PasswordError.Visible = true;
+                }
+            }
+
+
+            if(PasswordBox.Text != "" && LoginBox.Text != "")
             {
                 try
                 {
@@ -80,6 +89,7 @@ namespace TrolleybusScheduleApplication.Forms
                         Hide();
                         switch (user.Role)
                         {
+                            case Roles.RootAdmin:
                             case Roles.Admin:
                                 AdminWindow adminWindow = new AdminWindow(this, user);
                                 adminWindow.ShowDialog();

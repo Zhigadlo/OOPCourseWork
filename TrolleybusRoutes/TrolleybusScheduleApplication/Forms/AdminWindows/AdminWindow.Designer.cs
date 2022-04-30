@@ -84,6 +84,7 @@
             this.UserManagrButton.TabIndex = 9;
             this.UserManagrButton.Text = "Управление пользователями";
             this.UserManagrButton.UseVisualStyleBackColor = true;
+            this.UserManagrButton.Click += new System.EventHandler(this.UserManagrButton_Click);
             // 
             // StopManageButton
             // 
@@ -100,7 +101,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(465, 299);
+            this.ClientSize = new System.Drawing.Size(457, 299);
             this.Controls.Add(this.StopManageButton);
             this.Controls.Add(this.UserManagrButton);
             this.Controls.Add(this.RouteManageButton);

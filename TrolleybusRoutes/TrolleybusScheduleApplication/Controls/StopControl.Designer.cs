@@ -35,7 +35,7 @@
             // 
             // ChangeButton
             // 
-            this.ChangeButton.Location = new System.Drawing.Point(386, 15);
+            this.ChangeButton.Location = new System.Drawing.Point(432, 15);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(35, 35);
             this.ChangeButton.TabIndex = 3;
@@ -45,7 +45,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(427, 15);
+            this.DeleteButton.Location = new System.Drawing.Point(473, 15);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(35, 35);
             this.DeleteButton.TabIndex = 2;
@@ -56,10 +56,10 @@
             // StopName
             // 
             this.StopName.AutoSize = true;
-            this.StopName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StopName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.StopName.Location = new System.Drawing.Point(20, 15);
             this.StopName.Name = "StopName";
-            this.StopName.Size = new System.Drawing.Size(65, 28);
+            this.StopName.Size = new System.Drawing.Size(76, 31);
             this.StopName.TabIndex = 4;
             this.StopName.Text = "label1";
             // 
@@ -72,7 +72,7 @@
             this.Controls.Add(this.ChangeButton);
             this.Controls.Add(this.DeleteButton);
             this.Name = "StopControl";
-            this.Size = new System.Drawing.Size(476, 63);
+            this.Size = new System.Drawing.Size(533, 63);
             this.ResumeLayout(false);
             this.PerformLayout();
 

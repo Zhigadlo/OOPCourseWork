@@ -12,6 +12,7 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.StopManage
         public List<Stop> StopList = new List<Stop>();
         protected override void WindowInitialize()
         {
+            Text = "Управление остановками";
             StopList = _stopORM.ReadAll();
             label1.Text = "Остановки";
             AddRouteButton.Text = "Добавить остановку";
@@ -63,7 +64,7 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.StopManage
                 };
                 stopControl.StopName.Visible = false;
                 stopControl.Controls.Add(textBox);
-                
+
             };
             stopControl.OnDeleteButtonClick += () =>
             {

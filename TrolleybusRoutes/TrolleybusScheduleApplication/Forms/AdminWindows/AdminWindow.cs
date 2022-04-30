@@ -1,18 +1,19 @@
 ﻿using RouteSystem.Users;
-using TrolleybusScheduleApplication.Forms.AdminWindows.Schedule;
 using TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage;
+using TrolleybusScheduleApplication.Forms.AdminWindows.Schedule;
 using TrolleybusScheduleApplication.Forms.AdminWindows.StopManage;
+using TrolleybusScheduleApplication.Forms.AdminWindows.UserManage;
 
 namespace TrolleybusScheduleApplication.Forms.AdminWindows
 {
     public partial class AdminWindow : Form
     {
         private Form _startWindow;
-        private User _user;
-        public AdminWindow(Form startWindow, User user)
+        private User _admin;
+        public AdminWindow(Form startWindow, User admin)
         {
             _startWindow = startWindow;
-            _user = user;
+            _admin = admin;
             InitializeComponent();
         }
 
@@ -45,6 +46,12 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows
         {
             StopsManageWindow stopsManageWindow = new StopsManageWindow();
             stopsManageWindow.ShowDialog();
+        }
+
+        private void UserManagrButton_Click(object sender, EventArgs e)
+        {
+            UsersManageWindow usersManageWindow = new UsersManageWindow(_admin);
+            usersManageWindow.ShowDialog();
         }
     }
 }

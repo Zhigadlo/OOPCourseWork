@@ -72,6 +72,12 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage
             }
             catch
             {
+                foreach(AddStopPointControl routeControl in PanelForControls.Controls)
+                {
+                    routeControl.ErrorLabel.Visible = true;
+                    routeControl.ErrorLabel.Text = "Расписание не заполнено";
+                    routeControl.ErrorLabel.ForeColor = Color.Red;
+                }
                 MessageBox.Show("Не все поля заполнены", "Ошибка");
             }
         }
