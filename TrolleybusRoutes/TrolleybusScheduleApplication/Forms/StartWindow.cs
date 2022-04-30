@@ -68,9 +68,7 @@ namespace TrolleybusScheduleApplication.Forms
                 User user = _userORM.Read("Login", LoginBox.Text);
                 if (_userORM.Contains("Login", LoginBox.Text) && user.Password == null)
                 {
-                    MessageBox.Show("Ваш пароль был сброшен администратором", "Пароль");
-                    PasswordRecoveryWindow passwordRecoveryWindow = new PasswordRecoveryWindow(this, user);
-                    passwordRecoveryWindow.ShowDialog();
+                    PasswordRecovery(user);
                 }
                 else
                 {
@@ -101,6 +99,10 @@ namespace TrolleybusScheduleApplication.Forms
                         }
 
                     }
+                    else if(user.Password == null)
+                    {
+                        PasswordRecovery(user);
+                    }
                     else
                     {
                         PasswordLoginError.Visible = true;
@@ -111,6 +113,13 @@ namespace TrolleybusScheduleApplication.Forms
                     PasswordLoginError.Visible = true;
                 }
             }
+        }
+
+        private void PasswordRecovery(User user)
+        {
+            MessageBox.Show("Ваш пароль был сброшен администратором", "Пароль");
+            PasswordRecoveryWindow passwordRecoveryWindow = new PasswordRecoveryWindow(this, user);
+            passwordRecoveryWindow.ShowDialog();
         }
     }
 }

@@ -112,6 +112,7 @@
             this.SecondPasswordBox.Size = new System.Drawing.Size(195, 27);
             this.SecondPasswordBox.TabIndex = 24;
             this.SecondPasswordBox.UseSystemPasswordChar = true;
+            this.SecondPasswordBox.Click += new System.EventHandler(this.SecondPasswordBox_Click);
             // 
             // PasswordLabel
             // 
@@ -132,6 +133,7 @@
             this.PasswordBox.Size = new System.Drawing.Size(195, 27);
             this.PasswordBox.TabIndex = 22;
             this.PasswordBox.UseSystemPasswordChar = true;
+            this.PasswordBox.Click += new System.EventHandler(this.PasswordBox_Click);
             // 
             // PasswordRecoveryWindow
             // 

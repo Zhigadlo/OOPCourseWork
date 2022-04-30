@@ -144,7 +144,8 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.UserManage
 
         protected override void AddRouteButton_Click(object sender, EventArgs e)
         {
-            
+            AddUserForm addUserForm = new AddUserForm(this);
+            addUserForm.ShowDialog();
         }
     }
 }

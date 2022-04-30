@@ -41,7 +41,6 @@ namespace TrolleybusScheduleApplication.Forms
                 _startWindow.Show();
             }
         }
-
         private bool IsPasswordValid()
         {
             if (Regex.IsMatch(PasswordBox.Text, Validation.RegexForPassword) && PasswordBox.Text == SecondPasswordBox.Text)
@@ -58,6 +57,16 @@ namespace TrolleybusScheduleApplication.Forms
                 SecondPasswordError.Visible = true;
             }
             return false;
+        }
+
+        private void PasswordBox_Click(object sender, EventArgs e)
+        {
+            PasswordError.Visible = false;
+        }
+
+        private void SecondPasswordBox_Click(object sender, EventArgs e)
+        {
+            SecondPasswordError.Visible = false;
         }
     }
 }
