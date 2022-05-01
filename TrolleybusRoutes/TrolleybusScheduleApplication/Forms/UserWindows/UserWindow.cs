@@ -13,10 +13,10 @@ namespace TrolleybusScheduleApplication.Forms.UserWindows
         {
             _startWindow = startWindow;
             InitializeComponent();
-
-            _routes = (from x in _routeORM.ReadAll().AsEnumerable()
-                       orderby x.NumberOfRoute
-                       select x).ToList();
+            _routes = _routeORM.ReadAll().OrderBy(x => x.NumberOfRoute).ToList();
+            //_routes = (from x in _routeORM.ReadAll().AsEnumerable()
+            //           orderby x.NumberOfRoute
+            //           select x).ToList();
             RouteBox.Items.AddRange(_routes.ToArray());
 
             var numbers = (from x in _routes.AsQueryable()

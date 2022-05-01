@@ -81,9 +81,8 @@
         }
 
         #endregion
-
-        private Button DeleteButton;
-        private Button ChangeButton;
         private Label label1;
+        public Button DeleteButton;
+        public Button ChangeButton;
     }
 }

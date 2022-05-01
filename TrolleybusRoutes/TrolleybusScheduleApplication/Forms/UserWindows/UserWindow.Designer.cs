@@ -66,6 +66,7 @@
             // 
             // RouteBox
             // 
+            this.RouteBox.BackColor = System.Drawing.SystemColors.Window;
             this.RouteBox.FormattingEnabled = true;
             this.RouteBox.ItemHeight = 20;
             this.RouteBox.Location = new System.Drawing.Point(55, 157);
@@ -76,6 +77,7 @@
             // 
             // ResultBox
             // 
+            this.ResultBox.BackColor = System.Drawing.SystemColors.Window;
             this.ResultBox.FormattingEnabled = true;
             this.ResultBox.ItemHeight = 20;
             this.ResultBox.Location = new System.Drawing.Point(457, 157);

@@ -1,6 +1,7 @@
 ﻿using ORMLibrary;
 using RouteSystem.Routes;
 using System.Data;
+using TrolleybusScheduleApplication.Controls;
 
 namespace TrolleybusScheduleApplication.Forms.GuestWindows
 {
@@ -14,28 +15,12 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
             _startWindow = startWindow;
             InitializeComponent();
 
-            _routes = (from x in _routeORM.ReadAll().AsEnumerable()
-                       orderby x.NumberOfRoute
-                       select x).ToList();
-            RouteBox.Items.AddRange(_routes.ToArray());
-
-            var numbers = (from x in _routes.AsQueryable()
-                           select x.NumberOfRoute.ToString()).ToArray();
-            BoxForNumbers.Items.AddRange(numbers);
+            _routes = _routeORM.ReadAll().OrderBy(x => x.NumberOfRoute).ToList();
+            foreach(Route route in _routes)
+                BoxForNumbers.Items.Add(route.NumberOfRoute);
+            ShowAllRoutes();
         }
 
-        protected void RouteBox_Click(object sender, EventArgs e)
-        {
-            var route = RouteBox.SelectedItem as Route;
-            if (route != null)
-            {
-                StopBox.Visible = true;
-                StopBox.Items.Clear();
-                StopBox.Items.AddRange(route.StopPoints.ToArray());
-                NameOfResultBox.Visible = true;
-                NameOfResultBox.Text = "Список остановок\n маршрута " + route.NumberOfRoute.ToString();
-            }
-        }
         protected void FindButton_Click(object sender, EventArgs e)
         {
             if (BoxForNumbers.SelectedItem != null)
@@ -43,11 +28,7 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
                 int number = Convert.ToInt32(BoxForNumbers.SelectedItem);
 
                 Route route = _routes.Find(x => x.NumberOfRoute == number);
-                StopBox.Visible = true;
-                StopBox.Items.Clear();
-                StopBox.Items.AddRange(route.StopPoints.ToArray());
-                NameOfResultBox.Text = "Список остановок\n маршрута " + route.NumberOfRoute.ToString();
-                NameOfResultBox.Visible = true;
+                FromRoutePanelToStopPanel(route);
             }
             else
             {
@@ -61,28 +42,57 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
                 Close();
             }
         }
-
-        private void StopBox_Click(object sender, EventArgs e)
-        {
-            var stopPoint = StopBox.SelectedItem as StopPoint;
-            if (stopPoint != null)
-            {
-                string time = "";
-                for (int i = 0; i < stopPoint.Schedule.Count; i++)
-                {
-                    if ((i + 1) % 4 == 0)
-                        time += "\n";
-
-                    time += stopPoint.Schedule[i].ToString() + " ";
-                }
-
-                MessageBox.Show(time, stopPoint.Stop.ToString());
-            }
-        }
-
         private void GhuestWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             _startWindow.Close();
+        }
+        private void AddRouteControl(Route route)
+        {
+            RouteControl control = new RouteControl(route);
+            control.ChangeButton.Visible = false;
+            control.DeleteButton.Visible = false;
+            control.Click += (o, e) =>
+            {
+                FromRoutePanelToStopPanel(route);
+            };
+            PanelForControls.Controls.Add(control);
+
+        }
+        private void AddStopControl(Stop stop)
+        {
+            StopControl control = new StopControl(stop);
+            control.ChangeButton.Visible = false;
+            control.DeleteButton.Visible = false;
+            PanelForControls.Controls.Add(control);
+        }
+        private void AddStopControlsFromRoute(Route route)
+        {
+            foreach (StopPoint stopPoint in route.StopPoints)
+                AddStopControl(stopPoint.Stop);
+        }
+
+        private void FromRoutePanelToStopPanel(Route route)
+        {
+            PanelForControls.Controls.Clear();
+            AddStopControlsFromRoute(route);
+            TitleLabel.Text = "Остановки маршрута " + route.NumberOfRoute;
+        }
+
+        private void ShowAllRoutes()
+        {
+            PanelForControls.Controls.Clear();
+            foreach (var route in _routes)
+            {
+                AddRouteControl(route);
+            }
+            TitleLabel.Text = "Список всех маршрутов";
+            //_routes = (from x in _routeORM.ReadAll().AsEnumerable()
+            //           orderby x.NumberOfRoute
+            //           select x).ToList();
+        }
+        private void ShowAllRoutesButton_Click(object sender, EventArgs e)
+        {
+            ShowAllRoutes();
         }
     }
 }

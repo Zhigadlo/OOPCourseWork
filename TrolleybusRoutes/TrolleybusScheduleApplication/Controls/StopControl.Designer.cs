@@ -35,7 +35,7 @@
             // 
             // ChangeButton
             // 
-            this.ChangeButton.Location = new System.Drawing.Point(432, 15);
+            this.ChangeButton.Location = new System.Drawing.Point(449, 15);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(35, 35);
             this.ChangeButton.TabIndex = 3;
@@ -45,7 +45,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(473, 15);
+            this.DeleteButton.Location = new System.Drawing.Point(490, 15);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(35, 35);
             this.DeleteButton.TabIndex = 2;
@@ -72,16 +72,15 @@
             this.Controls.Add(this.ChangeButton);
             this.Controls.Add(this.DeleteButton);
             this.Name = "StopControl";
-            this.Size = new System.Drawing.Size(533, 63);
+            this.Size = new System.Drawing.Size(547, 63);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button ChangeButton;
-        private Button DeleteButton;
         public Label StopName;
+        public Button ChangeButton;
+        public Button DeleteButton;
     }
 }
