@@ -5,12 +5,12 @@ using TrolleybusScheduleApplication.Controls;
 
 namespace TrolleybusScheduleApplication.Forms.GuestWindows
 {
-    public partial class GhuestWindow : Form
+    public partial class GuestWindow : Form
     {
-        private Form _startWindow;
+        protected Form _startWindow;
         protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         protected List<Route> _routes;
-        public GhuestWindow(Form startWindow)
+        public GuestWindow(Form startWindow)
         {
             _startWindow = startWindow;
             InitializeComponent();
@@ -35,14 +35,14 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
                 MessageBox.Show("Нет такого маршрута", "Ошибка");
             }
         }
-        protected void QuitButton_Click(object sender, EventArgs e)
+        protected virtual void QuitButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Вы точно хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Close();
             }
         }
-        private void GhuestWindow_FormClosed(object sender, FormClosedEventArgs e)
+        protected virtual void GhuestWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             _startWindow.Close();
         }
@@ -58,9 +58,9 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
             PanelForControls.Controls.Add(control);
 
         }
-        private void AddStopControl(Stop stop)
+        protected virtual void AddStopControl(StopPoint stopPoint)
         {
-            StopControl control = new StopControl(stop);
+            StopControl control = new StopControl(stopPoint.Stop);
             control.ChangeButton.Visible = false;
             control.DeleteButton.Visible = false;
             PanelForControls.Controls.Add(control);
@@ -68,16 +68,14 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
         private void AddStopControlsFromRoute(Route route)
         {
             foreach (StopPoint stopPoint in route.StopPoints)
-                AddStopControl(stopPoint.Stop);
+                AddStopControl(stopPoint);
         }
-
         private void FromRoutePanelToStopPanel(Route route)
         {
             PanelForControls.Controls.Clear();
             AddStopControlsFromRoute(route);
             TitleLabel.Text = "Остановки маршрута " + route.NumberOfRoute;
         }
-
         private void ShowAllRoutes()
         {
             PanelForControls.Controls.Clear();
@@ -93,6 +91,36 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
         private void ShowAllRoutesButton_Click(object sender, EventArgs e)
         {
             ShowAllRoutes();
+        }
+
+        private void FindRoutesBetweenStopsButton_Click(object sender, EventArgs e)
+        {
+            if (FirstStopBox.SelectedItem == null || LastStopBox.SelectedItem == null)
+                MessageBox.Show("Вы не выбрали остановок");
+            else
+            {
+                Stop stop1 = FirstStopBox.SelectedItem as Stop;
+                Stop stop2 = LastStopBox.SelectedItem as Stop;
+                var routes = Route.FindRoutesBetweenStops(stop1, stop2, _routes);
+                if (routes.Count != 0 && stop1 != null && stop2 != null)
+                {
+                    if (stop1.Name == stop2.Name)
+                    {
+                        MessageBox.Show("Выберете разные остановки", "Ошибка");
+                    }
+                    else
+                    {
+                        PanelForControls.Controls.Clear();
+                        foreach (var route in routes)
+                            AddRouteControl(route);
+                        TitleLabel.Text = stop1.ToString() + " - " + stop2.ToString();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Нет таких маршрутов", "Ошибка");
+                }
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ namespace TrolleybusScheduleApplication.Forms
 
         private void GhuestLinkLabel_Click(object sender, EventArgs e)
         {
-            GhuestWindow ghuestWindow = new GhuestWindow(this);
+            GuestWindow ghuestWindow = new GuestWindow(this);
             Hide();
             ghuestWindow.ShowDialog();
         }
