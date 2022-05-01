@@ -17,23 +17,6 @@ namespace RouteSystem.Routes
             this.StopPoints = StopPoints;
         }
 
-        public static List<Stop> FindAllStops(List<Route> routes)
-        {
-            List<Stop> stopList = new List<Stop>();
-
-            foreach (Route route in routes)
-            {
-                foreach (StopPoint stopPoint in route.StopPoints)
-                {
-                    if (!stopList.Contains(stopPoint.Stop))
-                    {
-                        stopList.Add(stopPoint.Stop);
-                    }
-                }
-            }
-
-            return stopList;
-        }
         public static List<Route> FindRoutesBetweenStops(Stop stop1, Stop stop2, List<Route> listOfRoutes)
         {
             List<Route> routes = new List<Route>();
@@ -44,7 +27,6 @@ namespace RouteSystem.Routes
                 bool second = false;
                 foreach (StopPoint stopPoint in route.StopPoints)
                 {
-
                     if (stopPoint.Stop.Name == stop1.Name && second == false)
                         first = true;
 
@@ -57,21 +39,6 @@ namespace RouteSystem.Routes
             }
 
             return routes;
-        }
-        public static void DeleteStopFromRoutes(List<Route> routes, Stop stop)
-        {
-            foreach (Route route in routes)
-            {
-                route.StopPoints.Where(x => x.Stop.Equals(stop)).ToList().ForEach(x => route.StopPoints.Remove(x));
-
-                //foreach(StopPoint stopPoint in route.StopPoints)
-                //{
-                //    if(stopPoint.Stop.Equals(stop))
-                //    {
-                //        route.StopPoints.Remove(stopPoint);
-                //    }
-                //}
-            }
         }
         public override string ToString()
         {

@@ -17,6 +17,10 @@ namespace RouteSystem.Routes
         {
             Hour = hour;
             Minute = minute;
+            if (hour < 0 || hour >= 24 || minute < 0 || minute >= 60)
+            {
+                throw new Exception("Format error, hour: [0:23], minute: [0:59]");
+            }
         }
 
         public static bool operator ==(Time time1, Time time2)

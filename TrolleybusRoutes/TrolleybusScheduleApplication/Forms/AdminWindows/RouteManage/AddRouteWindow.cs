@@ -6,7 +6,7 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage
 {
     public partial class AddRouteWindow : Form
     {
-        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
+        protected MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
         protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         private List<Stop> _stops;
         protected RouteManageWindow _startWindow;

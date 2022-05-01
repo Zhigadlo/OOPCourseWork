@@ -1,11 +1,13 @@
 ﻿using RouteSystem.Routes;
 using TrolleybusScheduleApplication.Controls;
 using TrolleybusScheduleApplication.Forms.GuestWindows;
+using ORMLibrary;
 
 namespace TrolleybusScheduleApplication.Forms.UserWindows
 {
     public partial class UserWindow : GuestWindow
     {
+        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
         public UserWindow(Form startWindow) : base(startWindow)
         {
             label2.Visible = true;
@@ -14,7 +16,7 @@ namespace TrolleybusScheduleApplication.Forms.UserWindows
             FindRoutesBetweenStopsButton.Visible = true;
             FirstStopBox.Visible = true;
             LastStopBox.Visible = true;
-            List<Stop> stopList = Route.FindAllStops(_routes);
+            List<Stop> stopList = _stopORM.ReadAll();
             FirstStopBox.Items.AddRange(stopList.ToArray());
             LastStopBox.Items.AddRange(stopList.ToArray());
         }
@@ -36,7 +38,7 @@ namespace TrolleybusScheduleApplication.Forms.UserWindows
             control.DeleteButton.Visible = false;
             control.Click += (s, e) =>
             {
-                MessageBox.Show(GetScheduleFromStop(stopPoint), "Расписание");
+                MessageBox.Show(GetScheduleFromStop(stopPoint), stopPoint.Stop.ToString());
             };
             PanelForControls.Controls.Add(control);
         }

@@ -28,7 +28,8 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
                 int number = Convert.ToInt32(BoxForNumbers.SelectedItem);
 
                 Route route = _routes.Find(x => x.NumberOfRoute == number);
-                FromRoutePanelToStopPanel(route);
+                PanelForControls.Controls.Clear();
+                AddRouteControl(route);
             }
             else
             {
@@ -84,15 +85,11 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
                 AddRouteControl(route);
             }
             TitleLabel.Text = "Список всех маршрутов";
-            //_routes = (from x in _routeORM.ReadAll().AsEnumerable()
-            //           orderby x.NumberOfRoute
-            //           select x).ToList();
         }
         private void ShowAllRoutesButton_Click(object sender, EventArgs e)
         {
             ShowAllRoutes();
         }
-
         private void FindRoutesBetweenStopsButton_Click(object sender, EventArgs e)
         {
             if (FirstStopBox.SelectedItem == null || LastStopBox.SelectedItem == null)

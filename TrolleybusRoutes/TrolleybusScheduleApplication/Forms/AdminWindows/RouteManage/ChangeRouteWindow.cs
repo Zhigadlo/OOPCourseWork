@@ -10,6 +10,7 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage
         {
             _routeToChange = route;
             AddRouteButton.Text = "Изменить маршрут";
+            List<Stop> listOfStops = _stopORM.ReadAll();
             RouteCountBox.Text = _routeToChange.StopPoints[0].Schedule.Count.ToString();
             RouteNumberBox.Text = _routeToChange.NumberOfRoute.ToString();
             PanelForControls.Controls.Clear();
@@ -25,6 +26,7 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage
                     PanelForControls.Controls.Remove(control);
                 };
                 control.StopComboBox.Text = stopPoint.Stop.ToString();
+                control.StopComboBox.Items.AddRange(listOfStops.ToArray());
                 control.StopSchedule = stopPoint.Schedule;
                 PanelForControls.Controls.Add(control);
             }
