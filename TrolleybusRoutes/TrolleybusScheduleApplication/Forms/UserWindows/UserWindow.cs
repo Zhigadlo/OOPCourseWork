@@ -26,11 +26,6 @@ namespace TrolleybusScheduleApplication.Forms.UserWindows
             base.QuitButton_Click(sender, e);
         }
 
-        //protected override void GuestWindow_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    _startWindow.Dispose();
-        //}
-
         protected override void AddStopControl(StopPoint stopPoint)
         {
             StopControl control = new StopControl(stopPoint.Stop);
