@@ -64,6 +64,8 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
             // RouteControl
             // 
@@ -75,14 +77,16 @@
             this.Controls.Add(this.DeleteButton);
             this.Name = "RouteControl";
             this.Size = new System.Drawing.Size(547, 68);
+            this.MouseEnter += new System.EventHandler(this.RouteControl_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.RouteControl_MouseLeave);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Label label1;
         public Button DeleteButton;
         public Button ChangeButton;
+        public Label label1;
     }
 }

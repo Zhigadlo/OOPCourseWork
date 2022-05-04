@@ -1,26 +1,23 @@
-using ORMLibrary;
+п»їusing Xunit;
 using RouteSystem.Routes;
 using System.Collections.Generic;
-using Xunit;
+using System.Linq;
 
 namespace RouteTests
 {
-    public class ActionWithMongoDBTests
+    public class RouteMethodTest
     {
-        private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("TestDatabase", "Routes");
-        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("TestDatabase", "Stops");
-        
         [Fact]
-        public void WriteAndReadTest()
+        public void FindRouteBetweenStopsTest()
         {
             List<Stop> stops = new List<Stop>
             {
-                new Stop("Солнечная"),
-                new Stop("ТЦ Речицкий"),
-                new Stop("Площадь Ленина"),
-                new Stop("Рынок Привоз"),
-                new Stop("Школа 12"),
-                new Stop("Спорткомлекс")
+                new Stop("РЎРѕР»РЅРµС‡РЅР°СЏ"),
+                new Stop("РўР¦ Р РµС‡РёС†РєРёР№"),
+                new Stop("РџР»РѕС‰Р°РґСЊ Р›РµРЅРёРЅР°"),
+                new Stop("Р С‹РЅРѕРє РџСЂРёРІРѕР·"),
+                new Stop("РЁРєРѕР»Р° 12"),
+                new Stop("РЎРїРѕСЂС‚РєРѕРјР»РµРєСЃ")
             };
 
             List<Time> schedule11 = new List<Time>
@@ -49,6 +46,7 @@ namespace RouteTests
                 new StopPoint(schedule11, stops[0]),
                 new StopPoint(schedule12, stops[1]),
                 new StopPoint(schedule13, stops[2]),
+                new StopPoint(schedule13, stops[3])
             };
 
             List<Time> schedule21 = new List<Time>
@@ -86,45 +84,12 @@ namespace RouteTests
                 new Route(14, stopPoints2)
             };
 
-            foreach(var stop in stops)
-                _stopORM.Write(stop);
 
-            foreach(var route in routes)
-                _routeORM.Write(route);
+            List<Route> actual = Route.FindRoutesBetweenStops(stops[0], stops[3], routes);
 
-            foreach(var stop in stops)
-            {
-                Assert.True(stop.Equals(_stopORM.Read("Name", stop.Name)));
-            }
-            foreach(var route in routes)
-            {
-                Assert.True(route.Equals(_routeORM.Read("NumberOfRoute", route.NumberOfRoute)));
-            }
+            List<Route> expected = new List<Route> { routes[0] };
 
-            for(int i = 0; i < stops.Count; i++)
-            {
-                _stopORM.Delete(i);
-            }
-
-            for (int i = 0; i < routes.Count; i++)
-            {
-                _routeORM.Delete(i);
-            }
-        }
-        [Fact]
-        public void UpdateTest()
-        {
-            Stop stop = new Stop("остановка");
-
-            _stopORM.Write(stop);
-
-            stop.Name = "новая остановка";
-
-            _stopORM.Update(0, stop);
-
-            Assert.True(stop.Equals(_stopORM.Read("Name", "новая остановка")));
-
-            _stopORM.Delete(0);
+            Assert.True(actual.SequenceEqual(expected));
         }
     }
 }

@@ -62,6 +62,9 @@
             this.StopName.Size = new System.Drawing.Size(76, 31);
             this.StopName.TabIndex = 4;
             this.StopName.Text = "label1";
+            this.StopName.Click += new System.EventHandler(this.StopName_Click);
+            this.StopName.MouseEnter += new System.EventHandler(this.StopName_MouseEnter);
+            this.StopName.MouseLeave += new System.EventHandler(this.StopName_MouseLeave);
             // 
             // StopControl
             // 
@@ -73,6 +76,8 @@
             this.Controls.Add(this.DeleteButton);
             this.Name = "StopControl";
             this.Size = new System.Drawing.Size(547, 63);
+            this.MouseEnter += new System.EventHandler(this.StopControl_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.StopControl_MouseLeave);
             this.ResumeLayout(false);
             this.PerformLayout();
 

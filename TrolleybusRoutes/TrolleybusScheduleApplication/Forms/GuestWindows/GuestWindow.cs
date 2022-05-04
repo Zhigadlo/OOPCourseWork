@@ -56,6 +56,10 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
             {
                 FromRoutePanelToStopPanel(route);
             };
+            control.label1.Click += (o, e) =>
+            {
+                FromRoutePanelToStopPanel(route);
+            };
             PanelForControls.Controls.Add(control);
 
         }

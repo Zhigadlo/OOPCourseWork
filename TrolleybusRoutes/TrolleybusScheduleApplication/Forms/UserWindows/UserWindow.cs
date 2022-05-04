@@ -40,6 +40,10 @@ namespace TrolleybusScheduleApplication.Forms.UserWindows
             {
                 MessageBox.Show(GetScheduleFromStop(stopPoint), stopPoint.Stop.ToString());
             };
+            control.StopName.Click += (s, e) =>
+            {
+                MessageBox.Show(GetScheduleFromStop(stopPoint), stopPoint.Stop.ToString());
+            };
             PanelForControls.Controls.Add(control);
         }
 

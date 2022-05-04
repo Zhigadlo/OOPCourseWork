@@ -23,5 +23,30 @@ namespace TrolleybusScheduleApplication.Controls
         {
             OnDeleteButtonClick?.Invoke();
         }
+
+        private void StopControl_MouseEnter(object sender, EventArgs e)
+        {
+            this.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void StopControl_MouseLeave(object sender, EventArgs e)
+        {
+            this.BorderStyle = BorderStyle.None;
+        }
+
+        private void StopName_MouseEnter(object sender, EventArgs e)
+        {
+            this.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void StopName_MouseLeave(object sender, EventArgs e)
+        {
+            this.BorderStyle = BorderStyle.None;
+        }
+
+        private void StopName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
