@@ -72,11 +72,11 @@
             // 
             // QuitButton
             // 
-            this.QuitButton.Location = new System.Drawing.Point(32, 500);
+            this.QuitButton.Location = new System.Drawing.Point(12, 500);
             this.QuitButton.Name = "QuitButton";
             this.QuitButton.Size = new System.Drawing.Size(94, 29);
             this.QuitButton.TabIndex = 5;
-            this.QuitButton.Text = "Выйти";
+            this.QuitButton.Text = "Выход";
             this.QuitButton.UseVisualStyleBackColor = true;
             this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
@@ -187,7 +187,8 @@
             this.Name = "GuestWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расписание троллейбусов";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GhuestWindow_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GuestWindow_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GuestWindow_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

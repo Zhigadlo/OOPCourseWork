@@ -31,14 +31,11 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows
 
         private void QuitButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Вы точно хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                Close();
-            }
+            Close();
         }
         private void AdminWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _startWindow.Close();
+            _startWindow.Dispose();
         }
 
         private void RouteManageButton_Click(object sender, EventArgs e)
@@ -67,5 +64,18 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows
                 MessageBox.Show("Отчет сохранен", "Успех");
             }
         }
+
+        private void AdminWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Вы точно хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        
     }
 }

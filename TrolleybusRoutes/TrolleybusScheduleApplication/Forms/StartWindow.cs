@@ -121,5 +121,17 @@ namespace TrolleybusScheduleApplication.Forms
             PasswordRecoveryWindow passwordRecoveryWindow = new PasswordRecoveryWindow(this, user);
             passwordRecoveryWindow.ShowDialog();
         }
+
+        private void StartWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Вы точно хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

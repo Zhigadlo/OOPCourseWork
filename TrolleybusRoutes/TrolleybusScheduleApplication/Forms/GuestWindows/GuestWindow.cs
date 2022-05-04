@@ -38,14 +38,7 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
         }
         protected virtual void QuitButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Вы точно хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                Close();
-            }
-        }
-        protected virtual void GhuestWindow_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _startWindow.Close();
+            Close();
         }
         private void AddRouteControl(Route route)
         {
@@ -121,6 +114,23 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
                 {
                     MessageBox.Show("Нет таких маршрутов", "Ошибка");
                 }
+            }
+        }
+
+        protected virtual void GuestWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _startWindow.Dispose();
+        }
+
+        protected virtual void GuestWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Вы точно хотите выйти?", "Выход", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
     }

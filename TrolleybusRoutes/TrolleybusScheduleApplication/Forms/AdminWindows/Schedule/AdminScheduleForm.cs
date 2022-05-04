@@ -13,9 +13,13 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.Schedule
             Close();
         }
 
-        protected override void GhuestWindow_FormClosed(object sender, FormClosedEventArgs e)
+        protected override void GuestWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             
+        }
+
+        protected override void GuestWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }
