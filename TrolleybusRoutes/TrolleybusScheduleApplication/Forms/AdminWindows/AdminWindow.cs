@@ -1,4 +1,7 @@
 ﻿using RouteSystem.Users;
+using RouteSystem.Reports;
+using RouteSystem.Routes;
+using ORMLibrary;
 using TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage;
 using TrolleybusScheduleApplication.Forms.AdminWindows.Schedule;
 using TrolleybusScheduleApplication.Forms.AdminWindows.StopManage;
@@ -10,6 +13,8 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows
     {
         private Form _startWindow;
         private User _admin;
+        private FolderBrowserDialog _folderBrowserDialog = new FolderBrowserDialog();
+        private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
         public AdminWindow(Form startWindow, User admin)
         {
             _startWindow = startWindow;
@@ -52,6 +57,15 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows
         {
             UsersManageWindow usersManageWindow = new UsersManageWindow(_admin);
             usersManageWindow.ShowDialog();
+        }
+
+        private void XmlReportButton_Click(object sender, EventArgs e)
+        {
+            if(_folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                RouteReport.CreateRoutesReport(_routeORM.ReadAll(), _folderBrowserDialog.SelectedPath);
+                MessageBox.Show("Отчет сохранен", "Успех");
+            }
         }
     }
 }

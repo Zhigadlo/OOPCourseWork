@@ -34,11 +34,12 @@
             this.RouteManageButton = new System.Windows.Forms.Button();
             this.UserManagrButton = new System.Windows.Forms.Button();
             this.StopManageButton = new System.Windows.Forms.Button();
+            this.XmlReportButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CheckScheduleButton
             // 
-            this.CheckScheduleButton.Location = new System.Drawing.Point(96, 79);
+            this.CheckScheduleButton.Location = new System.Drawing.Point(104, 57);
             this.CheckScheduleButton.Name = "CheckScheduleButton";
             this.CheckScheduleButton.Size = new System.Drawing.Size(257, 29);
             this.CheckScheduleButton.TabIndex = 2;
@@ -50,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(190, 48);
+            this.label1.Location = new System.Drawing.Point(198, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 28);
             this.label1.TabIndex = 3;
@@ -68,7 +69,7 @@
             // 
             // RouteManageButton
             // 
-            this.RouteManageButton.Location = new System.Drawing.Point(96, 114);
+            this.RouteManageButton.Location = new System.Drawing.Point(104, 92);
             this.RouteManageButton.Name = "RouteManageButton";
             this.RouteManageButton.Size = new System.Drawing.Size(257, 29);
             this.RouteManageButton.TabIndex = 8;
@@ -78,7 +79,7 @@
             // 
             // UserManagrButton
             // 
-            this.UserManagrButton.Location = new System.Drawing.Point(96, 184);
+            this.UserManagrButton.Location = new System.Drawing.Point(104, 162);
             this.UserManagrButton.Name = "UserManagrButton";
             this.UserManagrButton.Size = new System.Drawing.Size(257, 29);
             this.UserManagrButton.TabIndex = 9;
@@ -88,7 +89,7 @@
             // 
             // StopManageButton
             // 
-            this.StopManageButton.Location = new System.Drawing.Point(96, 149);
+            this.StopManageButton.Location = new System.Drawing.Point(104, 127);
             this.StopManageButton.Name = "StopManageButton";
             this.StopManageButton.Size = new System.Drawing.Size(257, 29);
             this.StopManageButton.TabIndex = 10;
@@ -96,12 +97,23 @@
             this.StopManageButton.UseVisualStyleBackColor = true;
             this.StopManageButton.Click += new System.EventHandler(this.StopManageButton_Click);
             // 
+            // XmlReportButton
+            // 
+            this.XmlReportButton.Location = new System.Drawing.Point(104, 197);
+            this.XmlReportButton.Name = "XmlReportButton";
+            this.XmlReportButton.Size = new System.Drawing.Size(257, 29);
+            this.XmlReportButton.TabIndex = 11;
+            this.XmlReportButton.Text = "Отчет по маршрутам в xml";
+            this.XmlReportButton.UseVisualStyleBackColor = true;
+            this.XmlReportButton.Click += new System.EventHandler(this.XmlReportButton_Click);
+            // 
             // AdminWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(457, 299);
+            this.Controls.Add(this.XmlReportButton);
             this.Controls.Add(this.StopManageButton);
             this.Controls.Add(this.UserManagrButton);
             this.Controls.Add(this.RouteManageButton);
@@ -124,5 +136,6 @@
         private Button RouteManageButton;
         private Button UserManagrButton;
         private Button StopManageButton;
+        private Button XmlReportButton;
     }
 }
