@@ -6,7 +6,7 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.UserManage
 {
     public partial class AddUserForm : Form
     {
-        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
+        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users", DbConnection.Instance.GetClient());
         private UsersManageWindow _startWindow;
         public AddUserForm(UsersManageWindow startWindow)
         {

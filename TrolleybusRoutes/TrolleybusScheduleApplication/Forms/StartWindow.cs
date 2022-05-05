@@ -8,7 +8,7 @@ namespace TrolleybusScheduleApplication.Forms
 {
     public partial class StartWindow : Form
     {
-        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
+        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users", DbConnection.Instance.GetClient());
         public StartWindow()
         {
             InitializeComponent();

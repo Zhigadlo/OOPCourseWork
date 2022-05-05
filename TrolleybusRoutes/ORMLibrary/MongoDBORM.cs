@@ -14,9 +14,8 @@ namespace ORMLibrary
         private static int _maxId;
         private IMongoDatabase _db;
         private string _collectionName;
-        public MongoDBORM(string databaseName, string collectionName)
+        public MongoDBORM(string databaseName, string collectionName, MongoClient mongoClient)
         {
-            MongoClient mongoClient = new MongoClient("mongodb://localhost:27017");
             _db = mongoClient.GetDatabase(databaseName);
             _collectionName = collectionName;
             List<T> objects = ReadAll();

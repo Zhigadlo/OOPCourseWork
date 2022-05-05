@@ -8,7 +8,7 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
     public partial class GuestWindow : Form
     {
         protected Form _startWindow;
-        protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
+        protected MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes", DbConnection.Instance.GetClient());
         protected List<Route> _routes;
         public GuestWindow(Form startWindow)
         {

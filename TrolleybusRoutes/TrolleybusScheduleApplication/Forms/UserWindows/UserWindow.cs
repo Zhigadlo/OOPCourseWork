@@ -7,7 +7,7 @@ namespace TrolleybusScheduleApplication.Forms.UserWindows
 {
     public partial class UserWindow : GuestWindow
     {
-        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
+        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops", DbConnection.Instance.GetClient());
         public UserWindow(Form startWindow) : base(startWindow)
         {
             label2.Visible = true;

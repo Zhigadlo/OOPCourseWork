@@ -8,7 +8,7 @@ namespace TrolleybusScheduleApplication.Forms
     {
         private string _emptyString = "Поле пустое";
         private User _userForRecovery;
-        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
+        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users", DbConnection.Instance.GetClient());
         private Form _startWindow;
         public PasswordRecoveryWindow(Form startWindow, User user)
         {

@@ -5,7 +5,7 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows.StopManage
 {
     public partial class AddStopWindow : Form
     {
-        protected MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
+        protected MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops", DbConnection.Instance.GetClient());
         protected StopsManageWindow _startWindow;
         public AddStopWindow(StopsManageWindow window)
         {

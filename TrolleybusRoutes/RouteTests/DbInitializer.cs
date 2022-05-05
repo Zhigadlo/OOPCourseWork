@@ -4,11 +4,13 @@ using RouteSystem.Users;
 using System.Collections.Generic;
 using System;
 using System.Threading;
+using MongoDB.Driver;
 
 namespace RouteTests
 {
     public class DbInitializer
     {
+        private static MongoClient _client = new MongoClient("mongodb://localhost:27017");
         public static void StopCollectionInitialize()
         {
             List<string> stopsName = new List<string>()
@@ -153,14 +155,14 @@ namespace RouteTests
                 "Технический университет им. П.О. Сухого"
             };
 
-            MongoDBORM<Stop> stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
+            MongoDBORM<Stop> stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops", _client);
 
             foreach(string stopName in stopsName)
                 stopORM.Write(new Stop(stopName));
         }
         public static void UsersCollectionInitialize()
         {
-            MongoDBORM<User> userORM = new MongoDBORM<User>("RouteSystem", "Users");
+            MongoDBORM<User> userORM = new MongoDBORM<User>("RouteSystem", "Users", _client);
 
             int countOfUsers = 200;
 
@@ -214,8 +216,8 @@ namespace RouteTests
         public static void RoutesCollectionInitialize()
         {
             Thread.Sleep(1);
-            MongoDBORM<Route> routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
-            MongoDBORM<Stop> stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
+            MongoDBORM<Route> routeORM = new MongoDBORM<Route>("RouteSystem", "Routes", _client);
+            MongoDBORM<Stop> stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops", _client);
             int routeCount = 20;
             List<Stop> stopList = stopORM.ReadAll();
             Random random = new Random();

@@ -9,7 +9,7 @@ namespace TrolleybusScheduleApplication.Forms
         protected Form _startWindow;
         protected string _emptyString = "Поле пустое";
         private ToolTip _toolTip = new ToolTip();
-        protected MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
+        protected MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users", DbConnection.Instance.GetClient());
         public RegistrationWindow(Form startWindow)
         {
             _startWindow = startWindow;

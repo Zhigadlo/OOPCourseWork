@@ -3,14 +3,16 @@ using RouteSystem.Routes;
 using System.Collections.Generic;
 using Xunit;
 using RouteSystem.Users;
+using MongoDB.Driver;
 
 namespace RouteTests
 {
     public class ActionWithMongoDBTests
     {
-        private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("TestDatabase", "Routes");
-        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
-        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
+        
+        private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("TestDatabase", "Routes", new MongoClient("mongodb://localhost:27017"));
+        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops", new MongoClient("mongodb://localhost:27017"));
+        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users", new MongoClient("mongodb://localhost:27017"));
         
         [Fact]
         public void WriteAndReadTest()

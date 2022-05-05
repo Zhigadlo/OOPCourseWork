@@ -6,6 +6,7 @@ using TrolleybusScheduleApplication.Forms.AdminWindows.RouteManage;
 using TrolleybusScheduleApplication.Forms.AdminWindows.Schedule;
 using TrolleybusScheduleApplication.Forms.AdminWindows.StopManage;
 using TrolleybusScheduleApplication.Forms.AdminWindows.UserManage;
+using TrolleybusScheduleApplication;
 
 namespace TrolleybusScheduleApplication.Forms.AdminWindows
 {
@@ -14,7 +15,7 @@ namespace TrolleybusScheduleApplication.Forms.AdminWindows
         private Form _startWindow;
         private User _admin;
         private FolderBrowserDialog _folderBrowserDialog = new FolderBrowserDialog();
-        private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes");
+        private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("RouteSystem", "Routes", DbConnection.Instance.GetClient());
         public AdminWindow(Form startWindow, User admin)
         {
             _startWindow = startWindow;
