@@ -82,6 +82,7 @@
             // 
             // PanelForControls
             // 
+            this.PanelForControls.AutoScroll = true;
             this.PanelForControls.Location = new System.Drawing.Point(32, 140);
             this.PanelForControls.Name = "PanelForControls";
             this.PanelForControls.Size = new System.Drawing.Size(577, 354);

@@ -55,11 +55,11 @@
             // 
             // StopName
             // 
-            this.StopName.AutoSize = true;
+            this.StopName.AutoEllipsis = true;
             this.StopName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.StopName.Location = new System.Drawing.Point(20, 15);
             this.StopName.Name = "StopName";
-            this.StopName.Size = new System.Drawing.Size(76, 31);
+            this.StopName.Size = new System.Drawing.Size(423, 31);
             this.StopName.TabIndex = 4;
             this.StopName.Text = "label1";
             this.StopName.Click += new System.EventHandler(this.StopName_Click);
@@ -79,7 +79,6 @@
             this.MouseEnter += new System.EventHandler(this.StopControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.StopControl_MouseLeave);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

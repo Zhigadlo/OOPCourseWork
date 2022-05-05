@@ -55,15 +55,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.AutoEllipsis = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(18, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 28);
+            this.label1.Size = new System.Drawing.Size(423, 35);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
@@ -80,7 +80,6 @@
             this.MouseEnter += new System.EventHandler(this.RouteControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.RouteControl_MouseLeave);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -17,6 +17,7 @@ namespace RouteSystem.Users
         {
             this.Login = Login;
             this.Password = Password;
+            Role = Roles.User;
         }
 
         public override string ToString()

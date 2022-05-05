@@ -2,13 +2,15 @@ using ORMLibrary;
 using RouteSystem.Routes;
 using System.Collections.Generic;
 using Xunit;
+using RouteSystem.Users;
 
 namespace RouteTests
 {
     public class ActionWithMongoDBTests
     {
         private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("TestDatabase", "Routes");
-        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("TestDatabase", "Stops");
+        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops");
+        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users");
         
         [Fact]
         public void WriteAndReadTest()
