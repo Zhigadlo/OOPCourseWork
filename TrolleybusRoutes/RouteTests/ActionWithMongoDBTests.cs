@@ -11,8 +11,8 @@ namespace RouteTests
     {
         
         private MongoDBORM<Route> _routeORM = new MongoDBORM<Route>("TestDatabase", "Routes", new MongoClient("mongodb://localhost:27017"));
-        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("RouteSystem", "Stops", new MongoClient("mongodb://localhost:27017"));
-        private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users", new MongoClient("mongodb://localhost:27017"));
+        private MongoDBORM<Stop> _stopORM = new MongoDBORM<Stop>("TestDatabase", "Stops", new MongoClient("mongodb://localhost:27017"));
+        //private MongoDBORM<User> _userORM = new MongoDBORM<User>("RouteSystem", "Users", new MongoClient("mongodb://localhost:27017"));
         
         [Fact]
         public void WriteAndReadTest()
@@ -130,5 +130,6 @@ namespace RouteTests
 
             _stopORM.Delete(0);
         }
+
     }
 }

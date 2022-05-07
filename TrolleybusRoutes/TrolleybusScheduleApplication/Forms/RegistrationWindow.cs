@@ -145,7 +145,7 @@ namespace TrolleybusScheduleApplication.Forms
 
         protected virtual void RegistrationWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            _startWindow.Close();
+            _startWindow.Show();
         }
     }
 }

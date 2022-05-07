@@ -63,14 +63,21 @@ namespace TrolleybusScheduleApplication.Forms
                 LoginError.Visible = true;
             }
 
-            if (PasswordBox.Text == "")
+            if (PasswordBox.Text == "" && LoginBox.Text != "")
             {
-                User user = _userORM.Read("Login", LoginBox.Text);
-                if (_userORM.Contains("Login", LoginBox.Text) && user.Password == null)
+                try
                 {
-                    PasswordRecovery(user);
+                    User user = _userORM.Read("Login", LoginBox.Text);
+                    if (_userORM.Contains("Login", LoginBox.Text) && user.Password == null)
+                    {
+                        PasswordRecovery(user);
+                    }
+                    else
+                    {
+                        PasswordError.Visible = true;
+                    }
                 }
-                else
+                catch
                 {
                     PasswordError.Visible = true;
                 }
