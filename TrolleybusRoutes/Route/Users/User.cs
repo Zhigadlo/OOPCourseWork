@@ -4,6 +4,9 @@ using ORMLibrary.Abstract;
 
 namespace RouteSystem.Users
 {
+    /// <summary>
+    /// Class for users
+    /// </summary>
     public class User : Entity
     {
         [BsonRepresentation(BsonType.String)]

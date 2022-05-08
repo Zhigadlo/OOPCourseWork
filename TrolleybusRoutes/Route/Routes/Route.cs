@@ -4,6 +4,9 @@ using ORMLibrary.Abstract;
 
 namespace RouteSystem.Routes
 {
+    /// <summary>
+    /// Class for trolleybus routes
+    /// </summary>
     public class Route : Entity
     {
         [BsonElement("NumberOfRoute")]
@@ -17,6 +20,13 @@ namespace RouteSystem.Routes
             this.StopPoints = StopPoints;
         }
 
+        /// <summary>
+        /// Finds routes between two stops
+        /// </summary>
+        /// <param name="stop1"></param>
+        /// <param name="stop2"></param>
+        /// <param name="listOfRoutes">list of routes to search</param>
+        /// <returns></returns>
         public static List<Route> FindRoutesBetweenStops(Stop stop1, Stop stop2, List<Route> listOfRoutes)
         {
             List<Route> routes = new List<Route>();

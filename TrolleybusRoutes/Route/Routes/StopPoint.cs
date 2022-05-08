@@ -3,6 +3,9 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace RouteSystem.Routes
 {
+    /// <summary>
+    /// Class that contains stop and its schedule
+    /// </summary>
     public class StopPoint
     {
         [BsonElement("Schedule")]

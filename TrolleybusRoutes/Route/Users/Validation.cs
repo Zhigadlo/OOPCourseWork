@@ -1,5 +1,8 @@
 ﻿namespace RouteSystem.Users
 {
+    /// <summary>
+    /// static class that contains some validation regular expressions
+    /// </summary>
     public static class Validation
     {
         public static string RegexForLogin = @"^[a-zA-Z][a-zA-Z0-9]{5,12}$";

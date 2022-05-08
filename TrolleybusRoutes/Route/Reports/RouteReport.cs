@@ -3,6 +3,9 @@ using System.Xml;
 
 namespace RouteSystem.Reports
 {
+    /// <summary>
+    /// Class for creating reports
+    /// </summary>
     public class RouteReport
     {
         public static void CreateRoutesReport(List<Route> routes, string path)

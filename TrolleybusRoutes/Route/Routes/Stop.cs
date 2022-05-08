@@ -4,6 +4,9 @@ using ORMLibrary.Abstract;
 
 namespace RouteSystem.Routes
 {
+    /// <summary>
+    /// Class for stop
+    /// </summary>
     public class Stop : Entity
     {
         [BsonElement("Name")]
