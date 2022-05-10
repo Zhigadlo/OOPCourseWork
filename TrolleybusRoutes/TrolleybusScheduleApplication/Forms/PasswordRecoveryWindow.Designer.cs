@@ -149,6 +149,9 @@
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.RecoveryButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PasswordRecoveryWindow";
             this.Text = "Восстановление пароля";
             this.ResumeLayout(false);

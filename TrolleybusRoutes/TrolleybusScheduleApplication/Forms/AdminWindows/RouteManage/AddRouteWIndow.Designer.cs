@@ -134,6 +134,9 @@
             this.Controls.Add(this.AddControlButton);
             this.Controls.Add(this.PanelForControls);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddRouteWindow";
             this.Text = "Добавление маршрута";
             this.ResumeLayout(false);

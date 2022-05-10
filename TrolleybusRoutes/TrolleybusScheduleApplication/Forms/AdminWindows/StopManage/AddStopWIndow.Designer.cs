@@ -98,6 +98,8 @@
             this.Controls.Add(this.TextBoxError);
             this.Controls.Add(this.Label);
             this.Controls.Add(this.TextBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddStopWindow";
             this.Text = "Добавление остановки";
             this.ResumeLayout(false);

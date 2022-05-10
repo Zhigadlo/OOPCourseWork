@@ -93,6 +93,9 @@
             this.Controls.Add(this.AddRouteButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RoutePanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RouteManageWindow";
             this.Text = "Управление маршрутами";
             this.ResumeLayout(false);

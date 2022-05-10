@@ -120,6 +120,9 @@
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CheckScheduleButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AdminWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Окно администратора";

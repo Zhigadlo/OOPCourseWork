@@ -58,6 +58,9 @@
             this.ClientSize = new System.Drawing.Size(273, 317);
             this.Controls.Add(this.AddScheduleButton);
             this.Controls.Add(this.PanelForTime);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddScheduleWindow";
             this.Text = "Добавление расписания";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddScheduleWindow_FormClosed);

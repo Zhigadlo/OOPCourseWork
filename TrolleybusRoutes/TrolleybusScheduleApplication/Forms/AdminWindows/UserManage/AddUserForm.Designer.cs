@@ -97,6 +97,8 @@
             this.Controls.Add(this.LoginError);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.LoginBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddUserForm";
             this.Text = "Добавление пользователя";
             this.ResumeLayout(false);

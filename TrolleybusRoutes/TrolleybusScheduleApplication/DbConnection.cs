@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using System.Configuration;
 
 namespace TrolleybusScheduleApplication
 {
@@ -19,7 +20,8 @@ namespace TrolleybusScheduleApplication
 
         private DbConnection()
         {
-            _mongoClient = new MongoClient("mongodb://localhost:27017");
+            ConnectionStringSettingsCollection settings = ConfigurationManager.ConnectionStrings;
+            _mongoClient = new MongoClient(settings["mongodb"].ConnectionString);
         }
 
         public MongoClient GetClient()

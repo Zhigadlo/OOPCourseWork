@@ -185,6 +185,9 @@
             this.Controls.Add(this.FindButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BoxForNumbers);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GuestWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Расписание троллейбусов";
