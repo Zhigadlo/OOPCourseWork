@@ -138,6 +138,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddRouteWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление маршрута";
             this.ResumeLayout(false);
             this.PerformLayout();

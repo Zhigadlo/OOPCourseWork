@@ -153,6 +153,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PasswordRecoveryWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Восстановление пароля";
             this.ResumeLayout(false);
             this.PerformLayout();

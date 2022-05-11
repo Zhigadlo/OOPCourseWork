@@ -62,6 +62,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddScheduleWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление расписания";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddScheduleWindow_FormClosed);
             this.ResumeLayout(false);

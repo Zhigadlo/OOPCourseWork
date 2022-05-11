@@ -97,6 +97,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RouteManageWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Управление маршрутами";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -100,6 +100,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddUserForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление пользователя";
             this.ResumeLayout(false);
             this.PerformLayout();
