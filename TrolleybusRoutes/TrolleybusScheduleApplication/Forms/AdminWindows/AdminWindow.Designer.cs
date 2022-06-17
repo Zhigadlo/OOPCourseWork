@@ -39,9 +39,10 @@
             // 
             // CheckScheduleButton
             // 
-            this.CheckScheduleButton.Location = new System.Drawing.Point(104, 57);
+            this.CheckScheduleButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CheckScheduleButton.Location = new System.Drawing.Point(150, 71);
             this.CheckScheduleButton.Name = "CheckScheduleButton";
-            this.CheckScheduleButton.Size = new System.Drawing.Size(257, 29);
+            this.CheckScheduleButton.Size = new System.Drawing.Size(405, 52);
             this.CheckScheduleButton.TabIndex = 2;
             this.CheckScheduleButton.Text = "Посмотреть расписание";
             this.CheckScheduleButton.UseVisualStyleBackColor = true;
@@ -50,18 +51,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(198, 26);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(286, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 28);
+            this.label1.Size = new System.Drawing.Size(117, 46);
             this.label1.TabIndex = 3;
             this.label1.Text = "Меню";
             // 
             // QuitButton
             // 
-            this.QuitButton.Location = new System.Drawing.Point(12, 258);
+            this.QuitButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.QuitButton.Location = new System.Drawing.Point(12, 382);
             this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(94, 29);
+            this.QuitButton.Size = new System.Drawing.Size(132, 53);
             this.QuitButton.TabIndex = 4;
             this.QuitButton.Text = "Выйти";
             this.QuitButton.UseVisualStyleBackColor = true;
@@ -69,9 +71,10 @@
             // 
             // RouteManageButton
             // 
-            this.RouteManageButton.Location = new System.Drawing.Point(104, 92);
+            this.RouteManageButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RouteManageButton.Location = new System.Drawing.Point(150, 129);
             this.RouteManageButton.Name = "RouteManageButton";
-            this.RouteManageButton.Size = new System.Drawing.Size(257, 29);
+            this.RouteManageButton.Size = new System.Drawing.Size(405, 52);
             this.RouteManageButton.TabIndex = 8;
             this.RouteManageButton.Text = "Управление маршрутами";
             this.RouteManageButton.UseVisualStyleBackColor = true;
@@ -79,9 +82,10 @@
             // 
             // UserManagrButton
             // 
-            this.UserManagrButton.Location = new System.Drawing.Point(104, 162);
+            this.UserManagrButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UserManagrButton.Location = new System.Drawing.Point(150, 245);
             this.UserManagrButton.Name = "UserManagrButton";
-            this.UserManagrButton.Size = new System.Drawing.Size(257, 29);
+            this.UserManagrButton.Size = new System.Drawing.Size(405, 52);
             this.UserManagrButton.TabIndex = 9;
             this.UserManagrButton.Text = "Управление пользователями";
             this.UserManagrButton.UseVisualStyleBackColor = true;
@@ -89,9 +93,10 @@
             // 
             // StopManageButton
             // 
-            this.StopManageButton.Location = new System.Drawing.Point(104, 127);
+            this.StopManageButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StopManageButton.Location = new System.Drawing.Point(150, 187);
             this.StopManageButton.Name = "StopManageButton";
-            this.StopManageButton.Size = new System.Drawing.Size(257, 29);
+            this.StopManageButton.Size = new System.Drawing.Size(405, 52);
             this.StopManageButton.TabIndex = 10;
             this.StopManageButton.Text = "Управление остановками";
             this.StopManageButton.UseVisualStyleBackColor = true;
@@ -99,9 +104,10 @@
             // 
             // XmlReportButton
             // 
-            this.XmlReportButton.Location = new System.Drawing.Point(104, 197);
+            this.XmlReportButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.XmlReportButton.Location = new System.Drawing.Point(150, 303);
             this.XmlReportButton.Name = "XmlReportButton";
-            this.XmlReportButton.Size = new System.Drawing.Size(257, 29);
+            this.XmlReportButton.Size = new System.Drawing.Size(405, 52);
             this.XmlReportButton.TabIndex = 11;
             this.XmlReportButton.Text = "Отчет по маршрутам в xml";
             this.XmlReportButton.UseVisualStyleBackColor = true;
@@ -112,7 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(457, 299);
+            this.ClientSize = new System.Drawing.Size(687, 447);
             this.Controls.Add(this.XmlReportButton);
             this.Controls.Add(this.StopManageButton);
             this.Controls.Add(this.UserManagrButton);

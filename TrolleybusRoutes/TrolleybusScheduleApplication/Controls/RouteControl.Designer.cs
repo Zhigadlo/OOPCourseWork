@@ -35,9 +35,10 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(488, 17);
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DeleteButton.Location = new System.Drawing.Point(852, 17);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(35, 35);
+            this.DeleteButton.Size = new System.Drawing.Size(70, 70);
             this.DeleteButton.TabIndex = 0;
             this.DeleteButton.Text = "╳";
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // ChangeButton
             // 
-            this.ChangeButton.Location = new System.Drawing.Point(447, 17);
+            this.ChangeButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ChangeButton.Location = new System.Drawing.Point(776, 17);
             this.ChangeButton.Name = "ChangeButton";
-            this.ChangeButton.Size = new System.Drawing.Size(35, 35);
+            this.ChangeButton.Size = new System.Drawing.Size(70, 70);
             this.ChangeButton.TabIndex = 1;
             this.ChangeButton.Text = "✎";
             this.ChangeButton.UseVisualStyleBackColor = true;
@@ -56,11 +58,11 @@
             // label1
             // 
             this.label1.AutoEllipsis = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(18, 17);
+            this.label1.Location = new System.Drawing.Point(19, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(423, 35);
+            this.label1.Size = new System.Drawing.Size(751, 70);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -76,7 +78,7 @@
             this.Controls.Add(this.ChangeButton);
             this.Controls.Add(this.DeleteButton);
             this.Name = "RouteControl";
-            this.Size = new System.Drawing.Size(547, 68);
+            this.Size = new System.Drawing.Size(936, 102);
             this.MouseEnter += new System.EventHandler(this.RouteControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.RouteControl_MouseLeave);
             this.ResumeLayout(false);

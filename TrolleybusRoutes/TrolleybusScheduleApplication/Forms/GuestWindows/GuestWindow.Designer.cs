@@ -45,26 +45,29 @@
             // 
             // BoxForNumbers
             // 
+            this.BoxForNumbers.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BoxForNumbers.FormattingEnabled = true;
-            this.BoxForNumbers.Location = new System.Drawing.Point(98, 36);
+            this.BoxForNumbers.Location = new System.Drawing.Point(96, 53);
             this.BoxForNumbers.Name = "BoxForNumbers";
-            this.BoxForNumbers.Size = new System.Drawing.Size(54, 28);
+            this.BoxForNumbers.Size = new System.Drawing.Size(74, 43);
             this.BoxForNumbers.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 13);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(32, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
+            this.label1.Size = new System.Drawing.Size(214, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "Выбор маршрута";
             // 
             // FindButton
             // 
-            this.FindButton.Location = new System.Drawing.Point(78, 70);
+            this.FindButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FindButton.Location = new System.Drawing.Point(81, 102);
             this.FindButton.Name = "FindButton";
-            this.FindButton.Size = new System.Drawing.Size(94, 29);
+            this.FindButton.Size = new System.Drawing.Size(104, 47);
             this.FindButton.TabIndex = 4;
             this.FindButton.Text = "Найти";
             this.FindButton.UseVisualStyleBackColor = true;
@@ -72,9 +75,10 @@
             // 
             // QuitButton
             // 
-            this.QuitButton.Location = new System.Drawing.Point(12, 500);
+            this.QuitButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.QuitButton.Location = new System.Drawing.Point(12, 687);
             this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(94, 29);
+            this.QuitButton.Size = new System.Drawing.Size(132, 42);
             this.QuitButton.TabIndex = 5;
             this.QuitButton.Text = "Выход";
             this.QuitButton.UseVisualStyleBackColor = true;
@@ -83,26 +87,28 @@
             // PanelForControls
             // 
             this.PanelForControls.AutoScroll = true;
-            this.PanelForControls.Location = new System.Drawing.Point(32, 140);
+            this.PanelForControls.Location = new System.Drawing.Point(12, 211);
             this.PanelForControls.Name = "PanelForControls";
-            this.PanelForControls.Size = new System.Drawing.Size(577, 354);
+            this.PanelForControls.Size = new System.Drawing.Size(975, 470);
             this.PanelForControls.TabIndex = 6;
             // 
             // TitleLabel
             // 
-            this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TitleLabel.Location = new System.Drawing.Point(32, 100);
+            this.TitleLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TitleLabel.Location = new System.Drawing.Point(32, 159);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(400, 37);
             this.TitleLabel.TabIndex = 7;
             this.TitleLabel.Text = "label2";
             this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TitleLabel.Click += new System.EventHandler(this.TitleLabel_Click);
             // 
             // ShowAllRoutesButton
             // 
-            this.ShowAllRoutesButton.Location = new System.Drawing.Point(438, 105);
+            this.ShowAllRoutesButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ShowAllRoutesButton.Location = new System.Drawing.Point(772, 152);
             this.ShowAllRoutesButton.Name = "ShowAllRoutesButton";
-            this.ShowAllRoutesButton.Size = new System.Drawing.Size(159, 29);
+            this.ShowAllRoutesButton.Size = new System.Drawing.Size(196, 44);
             this.ShowAllRoutesButton.TabIndex = 8;
             this.ShowAllRoutesButton.Text = "Все маршруты";
             this.ShowAllRoutesButton.UseVisualStyleBackColor = true;
@@ -110,9 +116,10 @@
             // 
             // FindRoutesBetweenStopsButton
             // 
-            this.FindRoutesBetweenStopsButton.Location = new System.Drawing.Point(376, 70);
+            this.FindRoutesBetweenStopsButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.FindRoutesBetweenStopsButton.Location = new System.Drawing.Point(529, 102);
             this.FindRoutesBetweenStopsButton.Name = "FindRoutesBetweenStopsButton";
-            this.FindRoutesBetweenStopsButton.Size = new System.Drawing.Size(94, 29);
+            this.FindRoutesBetweenStopsButton.Size = new System.Drawing.Size(159, 47);
             this.FindRoutesBetweenStopsButton.TabIndex = 9;
             this.FindRoutesBetweenStopsButton.Text = "Найти";
             this.FindRoutesBetweenStopsButton.UseVisualStyleBackColor = true;
@@ -121,28 +128,31 @@
             // 
             // FirstStopBox
             // 
+            this.FirstStopBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FirstStopBox.FormattingEnabled = true;
-            this.FirstStopBox.Location = new System.Drawing.Point(268, 36);
+            this.FirstStopBox.Location = new System.Drawing.Point(380, 53);
             this.FirstStopBox.Name = "FirstStopBox";
-            this.FirstStopBox.Size = new System.Drawing.Size(151, 28);
+            this.FirstStopBox.Size = new System.Drawing.Size(234, 43);
             this.FirstStopBox.TabIndex = 10;
             this.FirstStopBox.Visible = false;
             // 
             // LastStopBox
             // 
+            this.LastStopBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LastStopBox.FormattingEnabled = true;
-            this.LastStopBox.Location = new System.Drawing.Point(446, 36);
+            this.LastStopBox.Location = new System.Drawing.Point(661, 53);
             this.LastStopBox.Name = "LastStopBox";
-            this.LastStopBox.Size = new System.Drawing.Size(151, 28);
+            this.LastStopBox.Size = new System.Drawing.Size(234, 43);
             this.LastStopBox.TabIndex = 11;
             this.LastStopBox.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 9);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(380, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(279, 20);
+            this.label2.Size = new System.Drawing.Size(465, 35);
             this.label2.TabIndex = 12;
             this.label2.Text = "Поиск маршрутов между остановками";
             this.label2.Visible = false;
@@ -150,9 +160,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(244, 39);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(342, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 20);
+            this.label3.Size = new System.Drawing.Size(32, 28);
             this.label3.TabIndex = 13;
             this.label3.Text = "от";
             this.label3.Visible = false;
@@ -160,9 +171,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(420, 39);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(620, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 20);
+            this.label4.Size = new System.Drawing.Size(35, 28);
             this.label4.TabIndex = 14;
             this.label4.Text = "до";
             this.label4.Visible = false;
@@ -171,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 538);
+            this.ClientSize = new System.Drawing.Size(999, 741);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

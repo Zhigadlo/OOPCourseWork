@@ -68,5 +68,10 @@ namespace TrolleybusScheduleApplication.Forms
         {
             SecondPasswordError.Visible = false;
         }
+
+        private void PasswordError_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

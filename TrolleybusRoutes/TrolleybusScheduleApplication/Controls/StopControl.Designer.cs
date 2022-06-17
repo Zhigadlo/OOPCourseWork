@@ -35,9 +35,10 @@
             // 
             // ChangeButton
             // 
-            this.ChangeButton.Location = new System.Drawing.Point(449, 15);
+            this.ChangeButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ChangeButton.Location = new System.Drawing.Point(775, 15);
             this.ChangeButton.Name = "ChangeButton";
-            this.ChangeButton.Size = new System.Drawing.Size(35, 35);
+            this.ChangeButton.Size = new System.Drawing.Size(70, 70);
             this.ChangeButton.TabIndex = 3;
             this.ChangeButton.Text = "✎";
             this.ChangeButton.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(490, 15);
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DeleteButton.Location = new System.Drawing.Point(851, 15);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(35, 35);
+            this.DeleteButton.Size = new System.Drawing.Size(70, 70);
             this.DeleteButton.TabIndex = 2;
             this.DeleteButton.Text = "╳";
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -56,12 +58,13 @@
             // StopName
             // 
             this.StopName.AutoEllipsis = true;
-            this.StopName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StopName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.StopName.Location = new System.Drawing.Point(20, 15);
             this.StopName.Name = "StopName";
-            this.StopName.Size = new System.Drawing.Size(423, 31);
+            this.StopName.Size = new System.Drawing.Size(749, 70);
             this.StopName.TabIndex = 4;
             this.StopName.Text = "label1";
+            this.StopName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.StopName.Click += new System.EventHandler(this.StopName_Click);
             this.StopName.MouseEnter += new System.EventHandler(this.StopName_MouseEnter);
             this.StopName.MouseLeave += new System.EventHandler(this.StopName_MouseLeave);
@@ -75,7 +78,7 @@
             this.Controls.Add(this.ChangeButton);
             this.Controls.Add(this.DeleteButton);
             this.Name = "StopControl";
-            this.Size = new System.Drawing.Size(547, 63);
+            this.Size = new System.Drawing.Size(936, 102);
             this.MouseEnter += new System.EventHandler(this.StopControl_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.StopControl_MouseLeave);
             this.ResumeLayout(false);

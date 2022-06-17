@@ -30,5 +30,10 @@ namespace TrolleybusScheduleApplication.Controls
         {
             OnDeleteButtonClick?.Invoke();
         }
+
+        private void ControlForUsers_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

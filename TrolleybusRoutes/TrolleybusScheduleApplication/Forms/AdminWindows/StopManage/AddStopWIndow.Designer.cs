@@ -38,10 +38,11 @@
             // TextBoxError
             // 
             this.TextBoxError.AutoSize = true;
+            this.TextBoxError.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBoxError.ForeColor = System.Drawing.Color.Red;
-            this.TextBoxError.Location = new System.Drawing.Point(134, 104);
+            this.TextBoxError.Location = new System.Drawing.Point(221, 147);
             this.TextBoxError.Name = "TextBoxError";
-            this.TextBoxError.Size = new System.Drawing.Size(186, 20);
+            this.TextBoxError.Size = new System.Drawing.Size(243, 28);
             this.TextBoxError.TabIndex = 25;
             this.TextBoxError.Text = "Такая остановка уже есть";
             this.TextBoxError.Visible = false;
@@ -49,28 +50,30 @@
             // Label
             // 
             this.Label.AutoSize = true;
-            this.Label.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Label.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Label.Location = new System.Drawing.Point(78, 43);
             this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(341, 28);
+            this.Label.Size = new System.Drawing.Size(578, 46);
             this.Label.TabIndex = 23;
             this.Label.Text = "Введите название новой остановки\r\n";
             // 
             // TextBox
             // 
+            this.TextBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TextBox.ForeColor = System.Drawing.Color.Black;
-            this.TextBox.Location = new System.Drawing.Point(128, 74);
+            this.TextBox.Location = new System.Drawing.Point(187, 103);
             this.TextBox.Name = "TextBox";
             this.TextBox.PlaceholderText = "Введите название";
-            this.TextBox.Size = new System.Drawing.Size(195, 27);
+            this.TextBox.Size = new System.Drawing.Size(318, 41);
             this.TextBox.TabIndex = 21;
             this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // ChangeRoleButton
             // 
-            this.ChangeRoleButton.Location = new System.Drawing.Point(166, 127);
+            this.ChangeRoleButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ChangeRoleButton.Location = new System.Drawing.Point(262, 178);
             this.ChangeRoleButton.Name = "ChangeRoleButton";
-            this.ChangeRoleButton.Size = new System.Drawing.Size(114, 29);
+            this.ChangeRoleButton.Size = new System.Drawing.Size(171, 57);
             this.ChangeRoleButton.TabIndex = 29;
             this.ChangeRoleButton.Text = "Добавить";
             this.ChangeRoleButton.UseVisualStyleBackColor = true;
@@ -79,10 +82,11 @@
             // EmptyTextBox
             // 
             this.EmptyTextBox.AutoSize = true;
+            this.EmptyTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EmptyTextBox.ForeColor = System.Drawing.Color.Red;
-            this.EmptyTextBox.Location = new System.Drawing.Point(329, 77);
+            this.EmptyTextBox.Location = new System.Drawing.Point(511, 111);
             this.EmptyTextBox.Name = "EmptyTextBox";
-            this.EmptyTextBox.Size = new System.Drawing.Size(148, 20);
+            this.EmptyTextBox.Size = new System.Drawing.Size(194, 28);
             this.EmptyTextBox.TabIndex = 31;
             this.EmptyTextBox.Text = "Вы ничего не ввели";
             this.EmptyTextBox.Visible = false;
@@ -92,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(491, 233);
+            this.ClientSize = new System.Drawing.Size(711, 267);
             this.Controls.Add(this.EmptyTextBox);
             this.Controls.Add(this.ChangeRoleButton);
             this.Controls.Add(this.TextBoxError);

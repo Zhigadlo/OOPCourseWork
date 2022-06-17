@@ -140,5 +140,10 @@ namespace TrolleybusScheduleApplication.Forms
                 e.Cancel = true;
             }
         }
+
+        private void PasswordLoginError_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

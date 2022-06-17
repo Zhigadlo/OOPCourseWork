@@ -133,5 +133,10 @@ namespace TrolleybusScheduleApplication.Forms.GuestWindows
                 e.Cancel = true;
             }
         }
+
+        private void TitleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
