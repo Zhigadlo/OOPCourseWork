@@ -1,0 +1,33 @@
+﻿using RouteSystem.Routes;
+
+namespace TrolleybusScheduleApplication.Controls
+{
+    public partial class AddStopPointControl : UserControl
+    {
+        public Action OnRemoveButtonClick;
+        public Action OnAddScheduleButtonClick;
+        public List<Time> StopSchedule = new List<Time>();
+        public Stop Stop;
+        public AddStopPointControl()
+        {
+            InitializeComponent();
+        }
+
+        private void DeleteControlButton_Click(object sender, EventArgs e)
+        {
+            OnRemoveButtonClick?.Invoke();
+        }
+
+        private void AddScheduleButton_Click(object sender, EventArgs e)
+        {
+            OnAddScheduleButtonClick?.Invoke();
+        }
+
+        private void StopComboBox_TextChanged(object sender, EventArgs e)
+        {
+            if (StopComboBox.Text != "")
+                Stop = new Stop(StopComboBox.Text);
+
+        }
+    }
+}
