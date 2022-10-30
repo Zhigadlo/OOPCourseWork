@@ -10,7 +10,7 @@ namespace RouteTests
 {
     public class DbInitializer
     {
-        private static MongoClient _client = new MongoClient("mongodb://localhost:27017");
+        private static MongoClient _client = new MongoClient("mongodb+srv://Zhigadlo:3VQhXcNw1HPh2mJi@amazoncloud.mismmy6.mongodb.net/RoteSystem?retryWrites=true&w=majority");
         public static void StopCollectionInitialize()
         {
             List<string> stopsName = new List<string>()

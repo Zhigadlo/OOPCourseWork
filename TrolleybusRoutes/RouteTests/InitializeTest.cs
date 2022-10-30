@@ -4,22 +4,25 @@ namespace RouteTests
 {
     public class InitializeTest
     {
-        //[Fact]
-        //public void InitializeUsers()
-        //{
-        //    DbInitializer.UsersCollectionInitialize();
-        //}
+        // Запускать первым
+        [Fact]
+        public void InitializeUsers()
+        {
+           DbInitializer.UsersCollectionInitialize();
+        }
 
-        //[Fact]
-        //public void InitializeStops()
-        //{
-        //    DbInitializer.StopCollectionInitialize();
-        //}
+        //запускать вторым
+        [Fact]
+        public void InitializeStops()
+        {
+            DbInitializer.StopCollectionInitialize();
+        }
 
-        //[Fact]
-        //public void InitializeRoutes()
-        //{
-        //    DbInitializer.RoutesCollectionInitialize();
-        //}
+        //запускать третьим
+        [Fact]
+        public void InitializeRoutes()
+        {
+            DbInitializer.RoutesCollectionInitialize();
+        }
     }
 }
